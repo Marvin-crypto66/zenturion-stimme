@@ -50,6 +50,13 @@ header{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .chip i{width:7px;height:7px;border-radius:50%;background:var(--dim)}
 .chip.live i{background:var(--ok);box-shadow:0 0 10px var(--ok)}
 .chip.err i{background:var(--bad)}
+.hr{display:flex;gap:6px;align-items:center}
+button.chip{cursor:pointer;background:rgba(13,11,14,.75)}
+.chip.wach{border-color:var(--gold-lo);color:var(--gold-hi)}
+.chip.wach i{background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2.2s ease-in-out infinite}
+.chip.tap i{background:var(--warn)}
+@keyframes pulse{50%{opacity:.3}}
+@media (max-width:390px){.mark b{letter-spacing:.22em}}
 .greet{display:flex;flex-direction:column;gap:2px}
 .greet h1{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(26px,7vw,36px);letter-spacing:.04em;line-height:1}
 .greet h1 em{font-style:normal;color:var(--gold)}
@@ -126,7 +133,10 @@ footer{display:flex;align-items:center;justify-content:center;gap:16px}
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="#d6b26a"/></svg>
     <b>ZENTURION</b>
   </div>
-  <span class="chip" id="chip"><i></i><span id="chipText">bereit</span></span>
+  <div class="hr">
+    <button class="chip" id="wache" aria-pressed="true" aria-label="Wache an oder aus"><i></i><span id="wacheText">Wache</span></button>
+    <span class="chip" id="chip"><i></i><span id="chipText">bereit</span></span>
+  </div>
 </header>
 
 <section class="wrap greet">
@@ -221,7 +231,7 @@ function renderLage(){
   $("cLd").className = "d" + (!bad && !warn ? " up" : "");
   $("cR").textContent = fmt(L.reach_30d);
   $("cRd").textContent = fmt(L.views_30d) + " Aufrufe";
-  if (status === "idle" && L.lagesatz) $("sub").textContent = L.lagesatz;
+  if (status === "idle") idleText();
   jubi();
 }
 function jubi(){
@@ -280,18 +290,20 @@ function lageText(){
 }
 async function start(){
   if (conv || status === "connecting") return;
+  if (wArmed) disarm(true);
   const lib = window.ElevenLabsClient;
-  if (!lib || !lib.Conversation){ setChip("offline", "err"); setState("Keine Verbindung", "Prüfe dein Internet und lade die App neu."); return; }
+  if (!lib || !lib.Conversation){ dropHeld(); pending = null; setChip("offline", "err"); setState("Keine Verbindung", "Prüfe dein Internet und lade die App neu."); setTimeout(() => arm(false), 6000); return; }
   status = "connecting"; $("go").disabled = true;
   setChip("verbinde", ""); setState("Verbinde …", "Erlaube das Mikrofon, wenn dein Gerät fragt.");
   try { const s = await navigator.mediaDevices.getUserMedia({ audio: true }); s.getTracks().forEach(t => t.stop()); }
-  catch (e) { status = "idle"; $("go").disabled = false; pending = null; setChip("kein Mikrofon", "err"); setState("Mikrofon gesperrt", "Erlaube Zenturion das Mikrofon in den Einstellungen deines Geräts."); return; }
+  catch (e) { dropHeld(); status = "idle"; $("go").disabled = false; pending = null; setChip("kein Mikrofon", "err"); setState("Mikrofon gesperrt", "Erlaube Zenturion das Mikrofon in den Einstellungen deines Geräts."); return; }
   try {
     conv = await lib.Conversation.startSession({
       agentId: AGENT_ID,
       connectionType: "websocket",
       onConnect: () => {
-        status = "live"; setChip("live", "live"); setState("Ich höre", "Sprich einfach. Tippe auf Beenden, wenn du fertig bist."); grabWake(); buzz(18);
+        status = "live"; setChip("live", "live"); setState("Ich höre", "Sprich einfach. Sag „danke, das wars“, wenn du fertig bist."); grabWake(); buzz(18);
+        setTimeout(dropHeld, 1500);
         setTimeout(() => {
           try { const t = lageText(); if (t && conv) conv.sendContextualUpdate(t); } catch {}
           if (pending && conv){ try { conv.sendUserMessage(pending); addLine("user", pending); } catch {} pending = null; }
@@ -304,8 +316,9 @@ async function start(){
     });
     $("go").disabled = false; $("go").textContent = "Beenden"; $("go").classList.add("end"); $("mute").disabled = false;
   } catch (e) {
-    conv = null; status = "idle"; $("go").disabled = false; pending = null;
+    conv = null; status = "idle"; $("go").disabled = false; pending = null; dropHeld();
     setChip("Fehler", "err"); setState("Zenturion antwortet nicht", "Versuch es gleich noch einmal.");
+    setTimeout(() => arm(false), 4000);
   }
 }
 async function end(fromServer){
@@ -314,8 +327,9 @@ async function end(fromServer){
   status = "idle"; mode = "listening"; muted = false;
   $("mute").setAttribute("aria-pressed", "false"); $("mute").disabled = true;
   $("go").disabled = false; $("go").textContent = "Rufen"; $("go").classList.remove("end");
-  setChip("bereit", ""); setState("Wegtreten", L?.lagesatz || "Ich bin da, wenn du mich rufst.");
-  releaseWake(); buzz(10);
+  setChip("bereit", ""); setState("Wegtreten", wOn ? "Gleich wieder auf Wache." : (L?.lagesatz || "Ich bin da, wenn du mich rufst."));
+  dropHeld(); releaseWake(); buzz(10);
+  setTimeout(() => { if (status === "idle"){ if (wOn) arm(false); else idleText(); } }, 1400);
 }
 function ask(text){
   if (conv && status === "live"){ try { conv.sendUserMessage(text); addLine("user", text); } catch {} }
@@ -331,9 +345,182 @@ $("mute").addEventListener("click", () => {
   if (muted) setState("Stumm", "Zenturion hört dich gerade nicht."); else setState(mode === "speaking" ? "Zenturion spricht" : "Ich höre", "");
 });
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && conv) grabWake(); });
-async function grabWake(){ try { wake = await navigator.wakeLock?.request("screen"); } catch {} }
+async function grabWake(){ if (wake && !wake.released) return; try { wake = await navigator.wakeLock?.request("screen"); } catch {} }
 function releaseWake(){ try { wake?.release(); } catch {} wake = null; }
 function buzz(ms){ try { navigator.vibrate?.(ms); } catch {} }
+
+/* ---------- Wache: zweimal klatschen oder „Zenturion, melde dich“ ---------- */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const WAKE = /([zcs]ent[ou]r[iy]?on|zenturio|centurio|melde dich)/;
+let wOn = true; try { wOn = localStorage.getItem("z-wache") !== "0"; } catch {}
+let actx = null, wStream = null, held = null, wSrc = null, wAn = null, wBuf = null, wTimer = null;
+let wArmed = false, arming = false, needTap = false, micBlocked = false;
+let rec = null, recOk = !!SR, recFails = 0, wakeT = null;
+let floor = .004, cand = null, lastOnset = 0, claps = [], wLevel = 0, clapFlash = 0, hearFlash = 0;
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+function idleText(){
+  if (status !== "idle") return;
+  if (wOn && wArmed && needTap) setState("Ich halte Wache", "Sag: „Zenturion, melde dich.“ Fürs Klatschen einmal irgendwo tippen.");
+  else if (wOn && wArmed) setState("Ich halte Wache", recOk ? "Klatsch zweimal in die Hände oder sag: „Zenturion, melde dich.“" : "Klatsch zweimal in die Hände, dann melde ich mich.");
+  else if (wOn && micBlocked) setState("Mikrofon gesperrt", "Erlaube Zenturion das Mikrofon, dann kann er auf dich hören.");
+  else if (wOn && needTap) setState("Tippe einmal irgendwo", "Dann zieht die Wache auf und Zenturion hört auf dein Klatschen und seinen Namen.");
+  else setState("Tippe auf den Stern", L?.lagesatz || "Zenturion hört erst zu, wenn du ihn rufst.");
+}
+function wacheUI(){
+  const b = $("wache");
+  b.setAttribute("aria-pressed", String(wOn));
+  b.className = "chip" + (wOn && wArmed ? " wach" : wOn && (needTap || micBlocked) ? " tap" : "");
+  $("wacheText").textContent = !wOn ? "Wache aus" : wArmed ? "Wache" : needTap ? "Tippen" : micBlocked ? "kein Mikro" : "Wache";
+  idleText();
+}
+function unlockAudio(){
+  try {
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state !== "running") actx.resume();
+    const b = actx.createBuffer(1, 1, 22050), s = actx.createBufferSource(); s.buffer = b; s.connect(actx.destination); s.start(0);
+  } catch {}
+}
+async function arm(gesture){
+  if (!wOn || wArmed || arming || conv || status !== "idle" || document.visibilityState !== "visible") { wacheUI(); return; }
+  arming = true;
+  try {
+    if (gesture) unlockAudio();
+    if (!actx) { try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch {} }
+    if (actx && actx.state !== "running") await Promise.race([actx.resume().catch(() => {}), sleep(350)]);
+    const clapReady = actx && actx.state === "running";
+    if (!clapReady && !recOk) { needTap = true; return; }
+    needTap = !clapReady;
+    if (clapReady){
+      wStream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+      micBlocked = false;
+      if (!wOn || conv || status !== "idle") { wStream.getTracks().forEach(t => t.stop()); wStream = null; return; }
+      wSrc = actx.createMediaStreamSource(wStream);
+      const hp = actx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 1400;
+      wAn = actx.createAnalyser(); wAn.fftSize = 1024; wBuf = new Float32Array(wAn.fftSize);
+      wSrc.connect(hp); hp.connect(wAn);
+      floor = .004; cand = null; claps = [];
+      wTimer = setInterval(listenTick, 12);
+    }
+    wArmed = true; recFails = 0; startRec(); grabWake();
+  } catch (e) {
+    if (wStream) { wStream.getTracks().forEach(t => t.stop()); wStream = null; }
+    if (e && (e.name === "NotAllowedError" || e.name === "SecurityError")) micBlocked = true;
+  } finally { arming = false; wacheUI(); }
+}
+function disarm(hold){
+  wArmed = false; clearInterval(wTimer); wTimer = null; clearTimeout(wakeT); cand = null; claps = [];
+  stopRec();
+  try { wSrc?.disconnect(); } catch {}
+  wSrc = null; wAn = null;
+  if (wStream){ if (hold) held = wStream; else wStream.getTracks().forEach(t => t.stop()); }
+  wStream = null;
+  if (!conv && !hold) releaseWake();
+  wacheUI();
+}
+function dropHeld(){ if (held){ held.getTracks().forEach(t => t.stop()); held = null; } }
+
+// Klatschen: kurzer, harter Anstieg im Hochton, der nach 0,1 s wieder abfällt; zwei davon im Abstand von 0,15 bis 0,8 s
+function listenTick(){
+  if (!wAn) return;
+  wAn.getFloatTimeDomainData(wBuf);
+  let pk = 0, s = 0;
+  for (let i = 0; i < wBuf.length; i++){ const v = wBuf[i], a = v < 0 ? -v : v; if (a > pk) pk = a; s += v*v; }
+  const rms = Math.sqrt(s / wBuf.length), now = performance.now();
+  wLevel = wLevel*.8 + rms*.2;
+  if (cand){
+    const age = now - cand.t;
+    if (age < 35) cand.r = Math.max(cand.r, rms);
+    else if (age > 100){ if (rms < cand.r*.45) clap(cand.t); cand = null; }
+    return;
+  }
+  if (pk > .1 && rms > floor*8 && rms > .012 && now - lastOnset > 140){ cand = { t: now, r: rms }; lastOnset = now; return; }
+  floor = floor*.996 + Math.min(rms, floor*3)*.004;
+  if (floor < .0015) floor = .0015;
+}
+function clap(t){
+  clapFlash = 1;
+  claps = claps.filter(x => t - x < 900); claps.push(t);
+  if (claps.length >= 2){
+    const d = t - claps[claps.length - 2];
+    if (d > 150 && d < 800){ claps = []; fire(""); }
+  }
+}
+
+// Ruf: Spracherkennung des Geräts hört auf seinen Namen
+function norm(t){ return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+function startRec(){
+  if (!SR || !recOk || rec || !wArmed) return;
+  let r;
+  try { r = new SR(); } catch { recOk = false; wacheUI(); return; }
+  rec = r;
+  r.lang = "de-DE"; r.continuous = true; r.interimResults = true; r.maxAlternatives = 3;
+  r.onresult = (ev) => {
+    recFails = 0;
+    for (let i = ev.resultIndex; i < ev.results.length; i++){
+      const res = ev.results[i];
+      for (let k = 0; k < res.length; k++){
+        const t = norm(res[k].transcript), m = t.match(WAKE);
+        if (!m) continue;
+        hearFlash = 1;
+        if (res.isFinal){
+          let rest = t.slice(m.index + m[0].length).replace(/^[\s,.!?]*(melde dich)?[\s,.!?]*/, "").trim();
+          fire(rest.split(/\s+/).length >= 3 ? res[k].transcript.trim() : "");
+        } else { clearTimeout(wakeT); wakeT = setTimeout(() => fire(""), 1100); }
+        return;
+      }
+    }
+  };
+  r.onerror = (e) => {
+    if (e.error === "not-allowed" || e.error === "service-not-allowed") { recOk = false; wacheUI(); }
+    else if (e.error !== "no-speech" && e.error !== "aborted") recFails++;
+  };
+  r.onend = () => {
+    if (rec === r) rec = null;
+    if (!wArmed || !recOk) return;
+    if (recFails > 8) { recOk = false; wacheUI(); return; }
+    setTimeout(startRec, recFails > 2 ? 2500 : 250);
+  };
+  try { r.start(); } catch { rec = null; recFails++; }
+}
+function stopRec(){ const r = rec; rec = null; if (r){ r.onend = null; r.onresult = null; try { r.abort(); } catch {} } }
+
+function fire(question){
+  if (!wArmed || conv || status !== "idle") return;
+  clearTimeout(wakeT);
+  disarm(true);
+  chime(); buzz([20, 50, 20]);
+  if (question) pending = question;
+  start();
+}
+function chime(){
+  try {
+    if (!actx || actx.state !== "running") return;
+    const t0 = actx.currentTime;
+    [[659.3, 0], [987.8, .11]].forEach(([f, d]) => {
+      const o = actx.createOscillator(), g = actx.createGain();
+      o.type = "sine"; o.frequency.value = f;
+      g.gain.setValueAtTime(0, t0 + d); g.gain.linearRampToValueAtTime(.09, t0 + d + .015); g.gain.exponentialRampToValueAtTime(.0001, t0 + d + .35);
+      o.connect(g); g.connect(actx.destination); o.start(t0 + d); o.stop(t0 + d + .4);
+    });
+  } catch {}
+}
+
+$("wache").addEventListener("click", () => {
+  wOn = !wOn; try { localStorage.setItem("z-wache", wOn ? "1" : "0"); } catch {}
+  if (wOn) { micBlocked = false; arm(true); } else disarm(false);
+  buzz(10);
+});
+document.addEventListener("pointerdown", (e) => {
+  unlockAudio();
+  if (e.target.closest("#go, #stage, .q, #wache, #hq, #mute")) return;
+  if (wOn && status === "idle" && (!wArmed || needTap)) { if (wArmed) disarm(false); micBlocked = false; arm(true); }
+}, true);
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") { if (!conv) arm(false); }
+  else if (wArmed) disarm(false);
+});
+arm(false);
 
 /* ---------- Stern, Follower-Ring, Legion ---------- */
 const cv = $("c"), cx = cv.getContext("2d");
@@ -387,6 +574,18 @@ function frame(t){
   if (speak > .02){ for (let k = 0; k < 4; k++){ const p = (T*.7 + k/4) % 1, rr = R*(.6 + p*1.0); cx.strokeStyle = `rgba(246,223,166,${(1 - p)*.45*speak})`; cx.lineWidth = 1.4; cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke(); } }
   // Zuhören
   if (conv && mode !== "speaking" && !muted){ const a = .25 + inV*2.2; cx.strokeStyle = "rgba(147,199,158,.8)"; cx.lineWidth = 3; cx.lineCap = "round"; cx.beginPath(); cx.arc(X, Y, R*1.3, -Math.PI/2 - a, -Math.PI/2 + a); cx.stroke(); }
+  // Wache: kreisender Späherbogen, Pegel und Aufblitzen bei jedem Klatschen
+  if (wArmed && !conv){
+    const wr = R*1.56, sw = T*.8;
+    cx.lineCap = "round"; cx.setLineDash([2, 7]); cx.lineWidth = 1.3;
+    cx.strokeStyle = "rgba(214,178,106,.42)"; cx.beginPath(); cx.arc(X, Y, wr, sw, sw + 1.1); cx.stroke();
+    cx.strokeStyle = "rgba(214,178,106,.22)"; cx.beginPath(); cx.arc(X, Y, wr, sw + Math.PI, sw + Math.PI + .6); cx.stroke();
+    cx.setLineDash([]);
+    const lv = Math.min(1, wLevel*30);
+    if (lv > .03){ cx.strokeStyle = `rgba(147,199,158,${.25 + lv*.5})`; cx.lineWidth = 2.2; cx.beginPath(); cx.arc(X, Y, wr, Math.PI/2 - lv*.5, Math.PI/2 + lv*.5); cx.stroke(); }
+  }
+  if (clapFlash > .02){ cx.strokeStyle = `rgba(246,223,166,${clapFlash*.7})`; cx.lineWidth = 2; cx.beginPath(); cx.arc(X, Y, R*(1.05 + (1 - clapFlash)*.6), 0, 6.283); cx.stroke(); clapFlash *= .9; }
+  if (hearFlash > .02){ cx.strokeStyle = `rgba(147,199,158,${hearFlash*.7})`; cx.lineWidth = 2; cx.beginPath(); cx.arc(X, Y, R*(1.05 + (1 - hearFlash)*.6), 0, 6.283); cx.stroke(); hearFlash *= .92; }
   // Stern
   const live = conv ? 1 : 0;
   const breathe = 1 + Math.sin(T*1.1)*.03 + speak*.16 + inV*.05;
