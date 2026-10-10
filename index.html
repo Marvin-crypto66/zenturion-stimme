@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zenturion</title>
+<meta name="description" content="Zenturion, die Kommandozentrale von mrvn.lines. Live per Stimme.">
+<meta name="theme-color" content="#060507">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Zenturion">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Eine Bühne: der Stern ist Zenturion. Oben die Kennung, Mitte der Stern, darunter was gesprochen wird, unten der eine Knopf. */
+:root{
+  --void:#060507; --hull:#0d0b0e; --seam:#2b2520; --seam-2:#4a3e2c;
+  --bone:#f0e7d4; --dust:#9e937d; --dim:#6d6455;
+  --gold:#d6b26a; --gold-hi:#f6dfa6; --gold-lo:#7c6337; --on-gold:#150f06;
+  --ok:#93c79e; --bad:#e47560;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0;background:var(--void);color:var(--bone);font-family:var(--f-body);overflow:hidden;overscroll-behavior:none}
+body{display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 14px) 18px calc(env(safe-area-inset-bottom,0px) + 18px);user-select:none;-webkit-user-select:none}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:
+  radial-gradient(70% 45% at 50% 42%,rgba(214,178,106,.12),transparent 70%),
+  repeating-linear-gradient(90deg,rgba(240,231,212,.02) 0 1px,transparent 1px 64px),
+  repeating-linear-gradient(0deg,rgba(240,231,212,.016) 0 1px,transparent 1px 64px)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+a{color:inherit}
+
+header{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mark{display:flex;align-items:center;gap:10px}
+.mark svg{width:20px;height:20px}
+.mark b{font-family:var(--f-display);font-weight:900;font-size:18px;letter-spacing:.42em}
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dust);border:1px solid var(--seam-2);border-radius:99px;padding:5px 11px}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--dim)}
+.chip.live i{background:var(--ok);box-shadow:0 0 10px var(--ok)}
+.chip.err i{background:var(--bad)}
+
+main{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}
+canvas{position:absolute;inset:0;width:100%;height:100%}
+.stage-btn{position:relative;z-index:2;width:min(62vmin,340px);aspect-ratio:1;border-radius:50%}
+.state{position:relative;z-index:2;margin-top:clamp(10px,3vh,26px);font-family:var(--f-display);font-weight:800;font-size:clamp(26px,6.2vw,40px);letter-spacing:.06em;text-transform:uppercase;text-align:center;text-wrap:balance;min-height:1.1em}
+.sub{position:relative;z-index:2;margin-top:6px;font-family:var(--f-mono);font-size:12px;color:var(--dust);letter-spacing:.06em;text-align:center;min-height:1.4em;padding-inline:8px}
+
+.lines{position:relative;z-index:2;width:min(640px,100%);margin-inline:auto;display:flex;flex-direction:column;gap:6px;min-height:84px;justify-content:flex-end;margin-bottom:14px}
+.line{font-size:15px;line-height:1.45;color:var(--bone);opacity:.92;transition:opacity .6s}
+.line.me{color:var(--dust);text-align:right}
+.line:nth-last-child(2){opacity:.55}
+.line:nth-last-child(3){opacity:.28}
+.line b{font-family:var(--f-mono);font-weight:500;font-size:10.5px;letter-spacing:.16em;color:var(--gold);margin-right:8px}
+
+footer{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:18px}
+.side{width:52px;height:52px;border-radius:50%;border:1px solid var(--seam-2);display:grid;place-items:center;color:var(--dust);background:rgba(13,11,14,.7)}
+.side svg{width:22px;height:22px}
+.side[aria-pressed="true"]{color:var(--bad);border-color:var(--bad)}
+.side:disabled{opacity:.35}
+.go{min-width:200px;height:60px;padding-inline:28px;border-radius:99px;background:var(--gold);color:var(--on-gold);font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 0 0 rgba(214,178,106,.5),0 10px 40px -10px rgba(214,178,106,.6);transition:background .2s,transform .15s}
+.go:active{transform:scale(.97)}
+.go.end{background:transparent;color:var(--bone);border:1px solid var(--bad);box-shadow:none}
+.go:disabled{opacity:.6}
+.hint{position:relative;z-index:2;text-align:center;margin-top:14px;font-size:12.5px;color:var(--dim)}
+.hint a{color:var(--gold);text-decoration:none}
+.install{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 58px);z-index:5;max-width:calc(100vw - 32px);width:420px;background:var(--hull);border:1px solid var(--gold-lo);border-radius:6px;padding:12px 14px;font-size:13.5px;line-height:1.45;color:var(--bone);display:flex;gap:12px;align-items:flex-start}
+.install b{color:var(--gold-hi)}
+.install button{margin-left:auto;color:var(--dust);font-size:18px;line-height:1}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){.go{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="mark">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="#d6b26a"/></svg>
+    <b>ZENTURION</b>
+  </div>
+  <span class="chip" id="chip"><i></i><span id="chipText">bereit</span></span>
+</header>
+
+<main>
+  <canvas id="c" aria-hidden="true"></canvas>
+  <button class="stage-btn" id="stage" aria-label="Mit Zenturion sprechen"></button>
+  <div class="state" id="state">Tippe auf den Stern</div>
+  <div class="sub" id="sub">Zenturion hört erst zu, wenn du ihn rufst.</div>
+</main>
+
+<div class="lines" id="lines" aria-live="polite"></div>
+
+<footer>
+  <button class="side" id="mute" aria-pressed="false" aria-label="Mikrofon stumm" disabled>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+  </button>
+  <button class="go" id="go">Rufen</button>
+  <a class="side" id="hq" href="https://claude.ai/artifact/VA8AMXCN9fEpxxdnFnWr8u" aria-label="Kommandozentrale öffnen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+  </a>
+</footer>
+<p class="hint">Lagebild und Befehle in der <a href="https://claude.ai/artifact/VA8AMXCN9fEpxxdnFnWr8u">Kommandozentrale</a></p>
+
+<div class="install" id="install" hidden>
+  <div id="installText"></div>
+  <button id="installClose" aria-label="Hinweis schließen">×</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@elevenlabs/client@1.25.0/dist/lib.iife.js"></script>
+<script>
+(() => {
+"use strict";
+const AGENT_ID = "agent_6601m4kye7c0exz9c4tafb1e51v4";
+const $ = (id) => document.getElementById(id);
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Zustand ---------- */
+let conv = null, status = "idle", mode = "listening", muted = false, wake = null;
+let outV = 0, inV = 0, lastSpeak = 0;
+
+function setChip(text, cls){ $("chipText").textContent = text; $("chip").className = "chip" + (cls ? " " + cls : ""); }
+function setState(t, s){ $("state").textContent = t; if (s !== undefined) $("sub").textContent = s; }
+function addLine(role, text){
+  text = String(text || "").trim(); if (!text) return;
+  const box = $("lines"), el = document.createElement("div");
+  el.className = "line" + (role === "user" ? " me" : "");
+  if (role !== "user"){ const b = document.createElement("b"); b.textContent = "ZENTURION"; el.appendChild(b); }
+  el.appendChild(document.createTextNode(text));
+  box.appendChild(el);
+  while (box.children.length > 3) box.removeChild(box.firstChild);
+}
+
+/* ---------- Gespräch ---------- */
+async function start(){
+  if (conv || status === "connecting") return;
+  const lib = window.ElevenLabsClient;
+  if (!lib || !lib.Conversation){ setChip("offline", "err"); setState("Keine Verbindung", "Prüfe dein Internet und lade die App neu."); return; }
+  status = "connecting"; $("go").disabled = true;
+  setChip("verbinde", ""); setState("Verbinde …", "Erlaube das Mikrofon, wenn dein Gerät fragt.");
+  try {
+    // Mikrofon zuerst anfragen, damit die Fehlermeldung klar ist
+    const s = await navigator.mediaDevices.getUserMedia({ audio: true });
+    s.getTracks().forEach(t => t.stop());
+  } catch (e) {
+    status = "idle"; $("go").disabled = false;
+    setChip("kein Mikrofon", "err");
+    setState("Mikrofon gesperrt", "Erlaube Zenturion das Mikrofon in den Einstellungen deines Geräts und versuch es erneut.");
+    return;
+  }
+  try {
+    conv = await lib.Conversation.startSession({
+      agentId: AGENT_ID,
+      connectionType: "websocket",
+      onConnect: () => { status = "live"; setChip("live", "live"); setState("Ich höre", "Sprich einfach. Tippe auf Beenden, wenn du fertig bist."); grabWake(); },
+      onDisconnect: () => { end(true); },
+      onError: (msg) => { setChip("Fehler", "err"); setState("Verbindung gestört", String(msg || "Versuch es gleich noch einmal.").slice(0, 140)); },
+      onModeChange: ({ mode: m }) => { mode = m; if (status === "live") setState(m === "speaking" ? "Zenturion spricht" : "Ich höre", ""); },
+      onMessage: (p) => { const role = p.role || (p.source === "user" ? "user" : "agent"); addLine(role === "user" ? "user" : "agent", p.message); }
+    });
+    $("go").disabled = false; $("go").textContent = "Beenden"; $("go").classList.add("end");
+    $("mute").disabled = false;
+  } catch (e) {
+    conv = null; status = "idle"; $("go").disabled = false;
+    setChip("Fehler", "err"); setState("Zenturion antwortet nicht", "Versuch es gleich noch einmal.");
+  }
+}
+async function end(fromServer){
+  const c = conv; conv = null;
+  if (c && !fromServer){ try { await c.endSession(); } catch {} }
+  status = "idle"; mode = "listening"; muted = false;
+  $("mute").setAttribute("aria-pressed", "false"); $("mute").disabled = true;
+  $("go").disabled = false; $("go").textContent = "Rufen"; $("go").classList.remove("end");
+  setChip("bereit", ""); setState("Tippe auf den Stern", "Wegtreten. Ich bin da, wenn du mich rufst.");
+  releaseWake();
+}
+$("go").addEventListener("click", () => conv ? end(false) : start());
+$("stage").addEventListener("click", () => conv ? null : start());
+$("mute").addEventListener("click", () => {
+  if (!conv) return; muted = !muted;
+  try { conv.setMicMuted(muted); } catch {}
+  $("mute").setAttribute("aria-pressed", String(muted));
+  if (muted) setState("Stumm", "Zenturion hört dich gerade nicht."); else setState(mode === "speaking" ? "Zenturion spricht" : "Ich höre", "");
+});
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && conv) grabWake(); });
+async function grabWake(){ try { wake = await navigator.wakeLock?.request("screen"); } catch {} }
+function releaseWake(){ try { wake?.release(); } catch {} wake = null; }
+
+/* ---------- Stern ---------- */
+const cv = $("c"), cx = cv.getContext("2d");
+let W = 0, H = 0;
+function size(){ const r = cv.getBoundingClientRect(), d = Math.min(2, devicePixelRatio || 1); W = r.width; H = r.height; cv.width = W*d; cv.height = H*d; cx.setTransform(d,0,0,d,0,0); }
+addEventListener("resize", size); size();
+const motes = Array.from({length: 90}, () => ({ a: Math.random()*6.283, r: .3 + Math.random()*1.2, s: (Math.random()*.5+.1)*(Math.random()<.5?-1:1), z: Math.random() }));
+function star(x, y, R, rot, inner){ cx.beginPath(); for (let i = 0; i < 8; i++){ const a = rot + i*Math.PI/4, rr = i%2 ? R*inner : R; const px = x + Math.cos(a)*rr, py = y + Math.sin(a)*rr; i ? cx.lineTo(px,py) : cx.moveTo(px,py); } cx.closePath(); }
+function frame(t){
+  const T = reduced ? 0 : t/1000;
+  if (conv){ try { outV = outV*.7 + (conv.getOutputVolume() || 0)*.3; inV = inV*.7 + (muted ? 0 : (conv.getInputVolume() || 0))*.3; } catch {} }
+  else { outV *= .9; inV *= .9; }
+  cx.clearRect(0,0,W,H);
+  const X = W/2, Y = H/2 - 30, R = Math.min(W, H)*.25;
+  for (const m of motes){ const a = m.a + T*m.s*.05, rr = R*(.6 + m.r); cx.fillStyle = `rgba(214,178,106,${.06 + .2*m.z})`; cx.fillRect(X + Math.cos(a)*rr, Y + Math.sin(a)*rr*.86, 1.2, 1.2); }
+  // Ringe
+  [1.5, 1.18, .9].forEach((k, i) => {
+    const rr = R*k*(1 + inV*.06*(i === 2 ? 1 : 0));
+    cx.strokeStyle = `rgba(214,178,106,${i === 0 ? .26 : .14 + inV*.5})`; cx.lineWidth = 1;
+    cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke();
+    const n = i === 0 ? 120 : i === 1 ? 60 : 24, rot = T*(i % 2 ? -.02 : .015)*(i+1);
+    for (let q = 0; q < n; q++){ const a = rot + q/n*6.283, L = q % (n/12) === 0 ? 9 : 3; cx.beginPath(); cx.moveTo(X + Math.cos(a)*rr, Y + Math.sin(a)*rr); cx.lineTo(X + Math.cos(a)*(rr - L), Y + Math.sin(a)*(rr - L)); cx.stroke(); }
+  });
+  // Stimme als Wellen
+  const speak = Math.min(1, outV*2.2);
+  if (speak > .02){ for (let k = 0; k < 4; k++){ const p = (T*.7 + k/4) % 1, rr = R*(.7 + p*1.1); cx.strokeStyle = `rgba(246,223,166,${(1 - p)*.45*speak})`; cx.lineWidth = 1.4; cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke(); } }
+  // Ohr: wenn er zuhört, ein Bogen, der mit deiner Stimme wächst
+  if (conv && mode !== "speaking" && !muted){ const a = .3 + inV*2.2; cx.strokeStyle = "rgba(147,199,158,.75)"; cx.lineWidth = 3; cx.lineCap = "round"; cx.beginPath(); cx.arc(X, Y, R*1.32, -Math.PI/2 - a, -Math.PI/2 + a); cx.stroke(); }
+  // Stern
+  const live = conv ? 1 : 0;
+  const breathe = 1 + Math.sin(T*1.1)*.03 + speak*.16 + inV*.05;
+  const sR = R*.62*breathe;
+  const glow = cx.createRadialGradient(X, Y, 0, X, Y, sR*2.3); glow.addColorStop(0, `rgba(246,223,166,${.22 + speak*.3 + live*.06})`); glow.addColorStop(1, "rgba(214,178,106,0)");
+  cx.fillStyle = glow; cx.beginPath(); cx.arc(X, Y, sR*2.3, 0, 6.283); cx.fill();
+  const g = cx.createLinearGradient(X - sR, Y - sR, X + sR, Y + sR); g.addColorStop(0, "#f6dfa6"); g.addColorStop(.55, "#d6b26a"); g.addColorStop(1, "#9c7d43");
+  cx.fillStyle = g; cx.shadowColor = "#d6b26a"; cx.shadowBlur = 26 + speak*40; star(X, Y, sR, T*.035, .24); cx.fill(); cx.shadowBlur = 0;
+  cx.strokeStyle = "rgba(246,223,166,.45)"; cx.lineWidth = 1; star(X, Y, sR*1.34, -T*.025 + Math.PI/8, .3); cx.stroke();
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+/* ---------- Installieren ---------- */
+const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+let dismissed = false; try { dismissed = localStorage.getItem("z-install") === "1"; } catch {}
+if (!standalone && !dismissed){
+  const ua = navigator.userAgent, isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const isMacSafari = !isIOS && /Macintosh/.test(ua) && /Safari/.test(ua) && !/Chrome|Chromium|Edg/.test(ua);
+  let txt = "";
+  if (isIOS) txt = "<b>Als App installieren:</b> Tippe unten auf Teilen und dann auf „Zum Home-Bildschirm“.";
+  else if (isMacSafari) txt = "<b>Als App installieren:</b> In Safari oben auf Ablage und dann „Zum Dock hinzufügen“.";
+  else txt = "<b>Als App installieren:</b> Im Browsermenü auf „App installieren“ oder „Zenturion installieren“.";
+  $("installText").innerHTML = txt; $("install").hidden = false;
+}
+$("installClose").addEventListener("click", () => { $("install").hidden = true; try { localStorage.setItem("z-install", "1"); } catch {} });
+if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+})();
+</script>
+</body>
+</html>
