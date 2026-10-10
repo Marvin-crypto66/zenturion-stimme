@@ -15,14 +15,14 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Eine Bühne: der Stern ist Zenturion. Oben die Kennung, Mitte der Stern, darunter was gesprochen wird, unten der eine Knopf. */
+/* Kommandobrücke im Taschenformat: Kopf mit Gruß und Parole, in der Mitte der Stern mit Follower-Ring und kreisender Legion, darunter Lagekarten, Schnellbefehle, Gesprächszeilen und der eine Knopf. */
 :root{
-  --void:#060507; --hull:#0d0b0e; --seam:#2b2520; --seam-2:#4a3e2c;
+  --void:#060507; --hull:#0d0b0e; --plate:#141116; --seam:#2b2520; --seam-2:#4a3e2c;
   --bone:#f0e7d4; --dust:#9e937d; --dim:#6d6455;
   --gold:#d6b26a; --gold-hi:#f6dfa6; --gold-lo:#7c6337; --on-gold:#150f06;
-  --ok:#93c79e; --bad:#e47560;
+  --ok:#93c79e; --warn:#e6a55c; --bad:#e47560;
   --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -30,63 +30,110 @@
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;margin:0;background:var(--void);color:var(--bone);font-family:var(--f-body);overflow:hidden;overscroll-behavior:none}
-body{display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 14px) 18px calc(env(safe-area-inset-bottom,0px) + 18px);user-select:none;-webkit-user-select:none}
+body{height:100dvh;display:flex;flex-direction:column;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(env(safe-area-inset-bottom,0px) + 14px);user-select:none;-webkit-user-select:none}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background:
-  radial-gradient(70% 45% at 50% 42%,rgba(214,178,106,.12),transparent 70%),
+  radial-gradient(70% 40% at 50% 38%,rgba(214,178,106,.13),transparent 70%),
   repeating-linear-gradient(90deg,rgba(240,231,212,.02) 0 1px,transparent 1px 64px),
   repeating-linear-gradient(0deg,rgba(240,231,212,.016) 0 1px,transparent 1px 64px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);mix-blend-mode:multiply;opacity:.5}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 a{color:inherit}
+.wrap{position:relative;z-index:2;width:100%;max-width:760px;margin-inline:auto}
 
-header{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px}
+/* Kopf */
+header{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .mark{display:flex;align-items:center;gap:10px}
-.mark svg{width:20px;height:20px}
-.mark b{font-family:var(--f-display);font-weight:900;font-size:18px;letter-spacing:.42em}
-.chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dust);border:1px solid var(--seam-2);border-radius:99px;padding:5px 11px}
+.mark svg{width:18px;height:18px}
+.mark b{font-family:var(--f-display);font-weight:900;font-size:17px;letter-spacing:.42em}
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dust);border:1px solid var(--seam-2);border-radius:99px;padding:5px 11px;white-space:nowrap}
 .chip i{width:7px;height:7px;border-radius:50%;background:var(--dim)}
 .chip.live i{background:var(--ok);box-shadow:0 0 10px var(--ok)}
 .chip.err i{background:var(--bad)}
+.greet{display:flex;flex-direction:column;gap:2px}
+.greet h1{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(26px,7vw,36px);letter-spacing:.04em;line-height:1}
+.greet h1 em{font-style:normal;color:var(--gold)}
+.meta{font-family:var(--f-mono);font-size:11px;color:var(--dust);letter-spacing:.06em}
+.parole{font-style:italic;font-size:13.5px;color:var(--gold-hi);opacity:.85;margin-top:4px;min-height:1em}
 
-main{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}
+/* Bühne */
+main{position:relative;z-index:1;flex:1 1 auto;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
 canvas{position:absolute;inset:0;width:100%;height:100%}
-.stage-btn{position:relative;z-index:2;width:min(62vmin,340px);aspect-ratio:1;border-radius:50%}
-.state{position:relative;z-index:2;margin-top:clamp(10px,3vh,26px);font-family:var(--f-display);font-weight:800;font-size:clamp(26px,6.2vw,40px);letter-spacing:.06em;text-transform:uppercase;text-align:center;text-wrap:balance;min-height:1.1em}
-.sub{position:relative;z-index:2;margin-top:6px;font-family:var(--f-mono);font-size:12px;color:var(--dust);letter-spacing:.06em;text-align:center;min-height:1.4em;padding-inline:8px}
+.stage-btn{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:min(46vmin,260px);aspect-ratio:1;border-radius:50%;z-index:2}
+.state{position:relative;z-index:2;font-family:var(--f-display);font-weight:800;font-size:clamp(24px,6vw,34px);letter-spacing:.06em;text-transform:uppercase;text-align:center;line-height:1.05}
+.sub{position:relative;z-index:2;margin-top:4px;font-size:13px;color:var(--dust);text-align:center;min-height:1.3em;max-width:46ch;text-wrap:balance}
 
-.lines{position:relative;z-index:2;width:min(640px,100%);margin-inline:auto;display:flex;flex-direction:column;gap:6px;min-height:84px;justify-content:flex-end;margin-bottom:14px}
-.line{font-size:15px;line-height:1.45;color:var(--bone);opacity:.92;transition:opacity .6s}
+/* Karten */
+.cards{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+.cards::-webkit-scrollbar{display:none}
+.card{flex:0 0 auto;min-width:132px;max-width:190px;scroll-snap-align:start;border:1px solid var(--seam);background:linear-gradient(180deg,rgba(214,178,106,.05),transparent 60%),var(--hull);border-radius:5px;padding:9px 12px;display:flex;flex-direction:column;gap:2px}
+.card .k{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dust)}
+.card .v{font-family:var(--f-display);font-weight:800;font-size:clamp(20px,2.4vw,25px);line-height:1.05;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .v small{font-size:13px;color:var(--dust);font-weight:600}
+.card .d{font-size:11.5px;color:var(--dust);line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.card .d.up{color:var(--ok)}
+.card.hot{border-color:var(--gold-lo)}
+@media (min-width:760px){.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}.card{max-width:none;min-width:0}}
+
+/* Schnellbefehle */
+.quick{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.quick::-webkit-scrollbar{display:none}
+.q{flex:0 0 auto;border:1px solid var(--seam-2);border-radius:99px;padding:7px 13px;font-size:13px;color:var(--bone);background:rgba(13,11,14,.75);white-space:nowrap}
+.q:active{border-color:var(--gold);color:var(--gold-hi)}
+@media (min-width:760px){.quick{justify-content:center}}
+
+/* Gespräch */
+.lines{display:flex;flex-direction:column;gap:4px;min-height:40px;justify-content:flex-end}
+.line{font-size:14px;line-height:1.4;color:var(--bone);transition:opacity .6s;overflow-wrap:anywhere}
 .line.me{color:var(--dust);text-align:right}
-.line:nth-last-child(2){opacity:.55}
-.line:nth-last-child(3){opacity:.28}
-.line b{font-family:var(--f-mono);font-weight:500;font-size:10.5px;letter-spacing:.16em;color:var(--gold);margin-right:8px}
+.line:nth-last-child(2){opacity:.45}
+.line b{font-family:var(--f-mono);font-weight:500;font-size:10px;letter-spacing:.16em;color:var(--gold);margin-right:8px}
 
-footer{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:18px}
-.side{width:52px;height:52px;border-radius:50%;border:1px solid var(--seam-2);display:grid;place-items:center;color:var(--dust);background:rgba(13,11,14,.7)}
-.side svg{width:22px;height:22px}
+footer{display:flex;align-items:center;justify-content:center;gap:16px}
+.side{width:50px;height:50px;border-radius:50%;border:1px solid var(--seam-2);display:grid;place-items:center;color:var(--dust);background:rgba(13,11,14,.75);flex:none}
+.side svg{width:21px;height:21px}
 .side[aria-pressed="true"]{color:var(--bad);border-color:var(--bad)}
 .side:disabled{opacity:.35}
-.go{min-width:200px;height:60px;padding-inline:28px;border-radius:99px;background:var(--gold);color:var(--on-gold);font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 0 0 rgba(214,178,106,.5),0 10px 40px -10px rgba(214,178,106,.6);transition:background .2s,transform .15s}
+.go{min-width:190px;height:58px;padding-inline:26px;border-radius:99px;background:var(--gold);color:var(--on-gold);font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 40px -10px rgba(214,178,106,.7);transition:transform .15s}
 .go:active{transform:scale(.97)}
 .go.end{background:transparent;color:var(--bone);border:1px solid var(--bad);box-shadow:none}
 .go:disabled{opacity:.6}
-.hint{position:relative;z-index:2;text-align:center;margin-top:14px;font-size:12.5px;color:var(--dim)}
-.hint a{color:var(--gold);text-decoration:none}
-.install{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 58px);z-index:5;max-width:calc(100vw - 32px);width:420px;background:var(--hull);border:1px solid var(--gold-lo);border-radius:6px;padding:12px 14px;font-size:13.5px;line-height:1.45;color:var(--bone);display:flex;gap:12px;align-items:flex-start}
+
+/* Boot */
+.boot{position:fixed;inset:0;z-index:20;background:var(--void);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .6s}
+.boot.off{opacity:0;pointer-events:none}
+.boot svg{width:64px;height:64px;filter:drop-shadow(0 0 18px rgba(214,178,106,.6));animation:spin 2.4s cubic-bezier(.5,0,.2,1) both}
+@keyframes spin{from{transform:rotate(-90deg) scale(.4);opacity:0}to{transform:rotate(0) scale(1);opacity:1}}
+.boot pre{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.8;color:var(--dust);min-height:7.2em;white-space:pre}
+.boot pre b{color:var(--gold-hi);font-weight:500}
+
+.install{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 54px);z-index:15;max-width:calc(100vw - 32px);width:420px;background:var(--hull);border:1px solid var(--gold-lo);border-radius:6px;padding:12px 14px;font-size:13.5px;line-height:1.45;display:flex;gap:12px;align-items:flex-start}
 .install b{color:var(--gold-hi)}
 .install button{margin-left:auto;color:var(--dust);font-size:18px;line-height:1}
 [hidden]{display:none!important}
-@media (prefers-reduced-motion:reduce){.go{transition:none}}
+@media (max-height:700px){.parole{display:none}.cards .card .d{-webkit-line-clamp:1}}
+@media (prefers-reduced-motion:reduce){.boot svg{animation:none}.go{transition:none}}
 </style>
 </head>
 <body>
-<header>
+<div class="boot" id="boot" aria-hidden="true">
+  <svg viewBox="0 0 32 32"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="#d6b26a"/></svg>
+  <pre id="bootText"></pre>
+</div>
+
+<header class="wrap">
   <div class="mark">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="#d6b26a"/></svg>
     <b>ZENTURION</b>
   </div>
   <span class="chip" id="chip"><i></i><span id="chipText">bereit</span></span>
 </header>
+
+<section class="wrap greet">
+  <h1 id="hello">Guten Abend, <em>Marvin</em></h1>
+  <div class="meta" id="meta">–</div>
+  <div class="parole" id="parole"></div>
+</section>
 
 <main>
   <canvas id="c" aria-hidden="true"></canvas>
@@ -95,9 +142,25 @@ footer{position:relative;z-index:2;display:flex;align-items:center;justify-conte
   <div class="sub" id="sub">Zenturion hört erst zu, wenn du ihn rufst.</div>
 </main>
 
-<div class="lines" id="lines" aria-live="polite"></div>
+<section class="wrap cards" id="cards" aria-label="Lage">
+  <div class="card hot"><span class="k">Follower</span><span class="v" id="cF">–</span><span class="d" id="cFd">–</span></div>
+  <div class="card"><span class="k">Nächster Post</span><span class="v" id="cP">–</span><span class="d" id="cPd">–</span></div>
+  <div class="card hot"><span class="k">Jubiläums-Flash</span><span class="v" id="cJ">–</span><span class="d" id="cJd">–</span></div>
+  <div class="card"><span class="k">Legion</span><span class="v" id="cL">–</span><span class="d" id="cLd">–</span></div>
+  <div class="card"><span class="k">Reichweite 30 T</span><span class="v" id="cR">–</span><span class="d" id="cRd">–</span></div>
+</section>
 
-<footer>
+<nav class="wrap quick" aria-label="Schnellbefehle">
+  <button class="q" data-say="Gib mir den Lagebericht.">Lagebericht</button>
+  <button class="q" data-say="Was steht als Nächstes an?">Was steht an?</button>
+  <button class="q" data-say="Wie läuft Instagram gerade?">Instagram</button>
+  <button class="q" data-say="Wie ist der Stand beim Jubiläums-Flash?">Jubiläum</button>
+  <button class="q" data-say="Gib mir einen kurzen Satz, der mich heute antreibt. Ohne Kitsch.">Motivier mich</button>
+</nav>
+
+<div class="wrap lines" id="lines" aria-live="polite"></div>
+
+<footer class="wrap">
   <button class="side" id="mute" aria-pressed="false" aria-label="Mikrofon stumm" disabled>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
   </button>
@@ -106,7 +169,6 @@ footer{position:relative;z-index:2;display:flex;align-items:center;justify-conte
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
   </a>
 </footer>
-<p class="hint">Lagebild und Befehle in der <a href="https://claude.ai/artifact/VA8AMXCN9fEpxxdnFnWr8u">Kommandozentrale</a></p>
 
 <div class="install" id="install" hidden>
   <div id="installText"></div>
@@ -120,11 +182,86 @@ footer{position:relative;z-index:2;display:flex;align-items:center;justify-conte
 const AGENT_ID = "agent_6601m4kye7c0exz9c4tafb1e51v4";
 const $ = (id) => document.getElementById(id);
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const TZ = "Europe/Berlin";
+const ROM = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV"];
+const fmt = (n) => (n == null || isNaN(n)) ? "–" : Number(n).toLocaleString("de-DE");
+const dtf = (d, o) => new Intl.DateTimeFormat("de-DE", Object.assign({ timeZone: TZ }, o)).format(d);
 
-/* ---------- Zustand ---------- */
-let conv = null, status = "idle", mode = "listening", muted = false, wake = null;
-let outV = 0, inV = 0, lastSpeak = 0;
+/* ---------- Lage ---------- */
+let L = null;
+async function loadLage(){
+  try {
+    const r = await fetch("lage.json?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) return;
+    L = await r.json(); renderLage();
+  } catch {}
+}
+function greet(){
+  const h = Number(dtf(new Date(), { hour: "2-digit", hour12: false }));
+  const g = h < 5 ? "Gute Nacht" : h < 11 ? "Guten Morgen" : h < 17 ? "Guten Tag" : h < 22 ? "Guten Abend" : "Gute Nacht";
+  $("hello").innerHTML = g + ", <em>Marvin</em>";
+  const now = new Date();
+  $("meta").textContent = dtf(now, { weekday: "short", day: "2-digit", month: "2-digit" }) + " · " + dtf(now, { hour: "2-digit", minute: "2-digit" }) + (L?.stand ? " · Lage " + dtf(new Date(L.stand), { hour: "2-digit", minute: "2-digit" }) : "");
+}
+function renderLage(){
+  greet();
+  if (!L) return;
+  $("parole").textContent = L.parole ? "„" + L.parole + "“" : "";
+  const f = L.followers, goal = L.ziel || 1000;
+  $("cF").innerHTML = f != null ? fmt(f) + "<small> /" + fmt(goal) + "</small>" : "–";
+  const d7 = L.delta_7d;
+  $("cFd").textContent = d7 != null ? (d7 > 0 ? "+" : "") + d7 + " in 7 Tagen" : "";
+  $("cFd").className = "d" + (d7 > 0 ? " up" : "");
+  const p = (L.naechste_posts || [])[0];
+  if (p){ const d = new Date(p.slot_at); $("cP").textContent = dtf(d, { weekday: "short" }) + " " + dtf(d, { hour: "2-digit", minute: "2-digit" }); $("cPd").textContent = p.titel || ""; }
+  const lg = L.legion || [];
+  const bad = lg.filter(a => a.status === "error").length, warn = lg.filter(a => a.status === "warn").length;
+  $("cL").innerHTML = lg.length ? lg.length + "<small> Agenten</small>" : "–";
+  $("cLd").textContent = bad ? bad + " mit Fehler" : warn ? warn + " mit Hinweis" : "alle bereit";
+  $("cLd").className = "d" + (!bad && !warn ? " up" : "");
+  $("cR").textContent = fmt(L.reach_30d);
+  $("cRd").textContent = fmt(L.views_30d) + " Aufrufe";
+  if (status === "idle" && L.lagesatz) $("sub").textContent = L.lagesatz;
+  jubi();
+}
+function jubi(){
+  const J = L?.jubilaeum; if (!J) return;
+  const now = Date.now(), st = Date.parse(J.start_at), en = Date.parse(J.ende_at);
+  const n = (J.vergeben || []).length, g = J.gesamt || 8;
+  let target = null, label = "";
+  if (now < st){ target = st; label = "bis zum Start"; } else if (now < en){ target = en; label = "läuft · " + n + " von " + g + " vergeben"; }
+  if (target){
+    const ms = target - now, dd = Math.floor(ms / 864e5), hh = Math.floor(ms % 864e5 / 36e5), mm = Math.floor(ms % 36e5 / 6e4), ss = Math.floor(ms % 6e4 / 1e3);
+    $("cJ").textContent = dd + "T " + String(hh).padStart(2, "0") + ":" + String(mm).padStart(2, "0") + ":" + String(ss).padStart(2, "0");
+    $("cJd").textContent = label;
+  } else { $("cJ").textContent = n + " / " + g; $("cJd").textContent = "Aktion beendet"; }
+}
+setInterval(() => { jubi(); }, 1000);
+setInterval(greet, 30000);
+loadLage();
+setInterval(() => { if (document.visibilityState === "visible") loadLage(); }, 5 * 60 * 1000);
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") loadLage(); });
 
+/* ---------- Boot ---------- */
+(function boot(){
+  let seen = false; try { seen = sessionStorage.getItem("z-boot") === "1"; } catch {}
+  const el = $("boot");
+  if (seen || reduced){ el.remove(); return; }
+  try { sessionStorage.setItem("z-boot", "1"); } catch {}
+  const lines = ["ZENTURION · KOMMANDO MRVN.LINES", "Wache ............ <b>besetzt</b>", "Legion ........... <b>wird gezählt</b>", "Gedächtnis ....... <b>geladen</b>", "Stimme ........... <b>bereit</b>"];
+  let i = 0; const pre = $("bootText");
+  const t = setInterval(() => {
+    if (i < lines.length){
+      let s = lines[i];
+      if (i === 2 && L?.legion) s = "Legion ........... <b>" + L.legion.length + " Agenten</b>";
+      pre.innerHTML += (i ? "\n" : "") + s; i++;
+    } else { clearInterval(t); el.classList.add("off"); setTimeout(() => el.remove(), 700); }
+  }, 280);
+})();
+
+/* ---------- Gespräch ---------- */
+let conv = null, status = "idle", mode = "listening", muted = false, wake = null, pending = null;
+let outV = 0, inV = 0;
 function setChip(text, cls){ $("chipText").textContent = text; $("chip").className = "chip" + (cls ? " " + cls : ""); }
 function setState(t, s){ $("state").textContent = t; if (s !== undefined) $("sub").textContent = s; }
 function addLine(role, text){
@@ -134,40 +271,40 @@ function addLine(role, text){
   if (role !== "user"){ const b = document.createElement("b"); b.textContent = "ZENTURION"; el.appendChild(b); }
   el.appendChild(document.createTextNode(text));
   box.appendChild(el);
-  while (box.children.length > 3) box.removeChild(box.firstChild);
+  while (box.children.length > 2) box.removeChild(box.firstChild);
 }
-
-/* ---------- Gespräch ---------- */
+function lageText(){
+  if (!L) return "";
+  const p = (L.naechste_posts || []).slice(0, 3).map(x => dtf(new Date(x.slot_at), { weekday: "long", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) + " Uhr: " + x.titel).join("; ");
+  return "Aktuelles Lagebild aus der Zenturion-App, Stand " + (L.stand ? dtf(new Date(L.stand), { weekday: "long", hour: "2-digit", minute: "2-digit" }) + " Uhr" : "unbekannt") + ". " + (L.lagesatz || "") + " Follower " + L.followers + " von " + (L.ziel || 1000) + ". Nächste Posts: " + p + ".";
+}
 async function start(){
   if (conv || status === "connecting") return;
   const lib = window.ElevenLabsClient;
   if (!lib || !lib.Conversation){ setChip("offline", "err"); setState("Keine Verbindung", "Prüfe dein Internet und lade die App neu."); return; }
   status = "connecting"; $("go").disabled = true;
   setChip("verbinde", ""); setState("Verbinde …", "Erlaube das Mikrofon, wenn dein Gerät fragt.");
-  try {
-    // Mikrofon zuerst anfragen, damit die Fehlermeldung klar ist
-    const s = await navigator.mediaDevices.getUserMedia({ audio: true });
-    s.getTracks().forEach(t => t.stop());
-  } catch (e) {
-    status = "idle"; $("go").disabled = false;
-    setChip("kein Mikrofon", "err");
-    setState("Mikrofon gesperrt", "Erlaube Zenturion das Mikrofon in den Einstellungen deines Geräts und versuch es erneut.");
-    return;
-  }
+  try { const s = await navigator.mediaDevices.getUserMedia({ audio: true }); s.getTracks().forEach(t => t.stop()); }
+  catch (e) { status = "idle"; $("go").disabled = false; pending = null; setChip("kein Mikrofon", "err"); setState("Mikrofon gesperrt", "Erlaube Zenturion das Mikrofon in den Einstellungen deines Geräts."); return; }
   try {
     conv = await lib.Conversation.startSession({
       agentId: AGENT_ID,
       connectionType: "websocket",
-      onConnect: () => { status = "live"; setChip("live", "live"); setState("Ich höre", "Sprich einfach. Tippe auf Beenden, wenn du fertig bist."); grabWake(); },
+      onConnect: () => {
+        status = "live"; setChip("live", "live"); setState("Ich höre", "Sprich einfach. Tippe auf Beenden, wenn du fertig bist."); grabWake(); buzz(18);
+        setTimeout(() => {
+          try { const t = lageText(); if (t && conv) conv.sendContextualUpdate(t); } catch {}
+          if (pending && conv){ try { conv.sendUserMessage(pending); addLine("user", pending); } catch {} pending = null; }
+        }, 400);
+      },
       onDisconnect: () => { end(true); },
       onError: (msg) => { setChip("Fehler", "err"); setState("Verbindung gestört", String(msg || "Versuch es gleich noch einmal.").slice(0, 140)); },
-      onModeChange: ({ mode: m }) => { mode = m; if (status === "live") setState(m === "speaking" ? "Zenturion spricht" : "Ich höre", ""); },
+      onModeChange: ({ mode: m }) => { mode = m; if (status === "live" && !muted) setState(m === "speaking" ? "Zenturion spricht" : "Ich höre", ""); },
       onMessage: (p) => { const role = p.role || (p.source === "user" ? "user" : "agent"); addLine(role === "user" ? "user" : "agent", p.message); }
     });
-    $("go").disabled = false; $("go").textContent = "Beenden"; $("go").classList.add("end");
-    $("mute").disabled = false;
+    $("go").disabled = false; $("go").textContent = "Beenden"; $("go").classList.add("end"); $("mute").disabled = false;
   } catch (e) {
-    conv = null; status = "idle"; $("go").disabled = false;
+    conv = null; status = "idle"; $("go").disabled = false; pending = null;
     setChip("Fehler", "err"); setState("Zenturion antwortet nicht", "Versuch es gleich noch einmal.");
   }
 }
@@ -177,11 +314,16 @@ async function end(fromServer){
   status = "idle"; mode = "listening"; muted = false;
   $("mute").setAttribute("aria-pressed", "false"); $("mute").disabled = true;
   $("go").disabled = false; $("go").textContent = "Rufen"; $("go").classList.remove("end");
-  setChip("bereit", ""); setState("Tippe auf den Stern", "Wegtreten. Ich bin da, wenn du mich rufst.");
-  releaseWake();
+  setChip("bereit", ""); setState("Wegtreten", L?.lagesatz || "Ich bin da, wenn du mich rufst.");
+  releaseWake(); buzz(10);
+}
+function ask(text){
+  if (conv && status === "live"){ try { conv.sendUserMessage(text); addLine("user", text); } catch {} }
+  else { pending = text; start(); }
 }
 $("go").addEventListener("click", () => conv ? end(false) : start());
 $("stage").addEventListener("click", () => conv ? null : start());
+document.querySelectorAll(".q").forEach(b => b.addEventListener("click", () => ask(b.dataset.say)));
 $("mute").addEventListener("click", () => {
   if (!conv) return; muted = !muted;
   try { conv.setMicMuted(muted); } catch {}
@@ -191,42 +333,68 @@ $("mute").addEventListener("click", () => {
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && conv) grabWake(); });
 async function grabWake(){ try { wake = await navigator.wakeLock?.request("screen"); } catch {} }
 function releaseWake(){ try { wake?.release(); } catch {} wake = null; }
+function buzz(ms){ try { navigator.vibrate?.(ms); } catch {} }
 
-/* ---------- Stern ---------- */
+/* ---------- Stern, Follower-Ring, Legion ---------- */
 const cv = $("c"), cx = cv.getContext("2d");
 let W = 0, H = 0;
 function size(){ const r = cv.getBoundingClientRect(), d = Math.min(2, devicePixelRatio || 1); W = r.width; H = r.height; cv.width = W*d; cv.height = H*d; cx.setTransform(d,0,0,d,0,0); }
-addEventListener("resize", size); size();
-const motes = Array.from({length: 90}, () => ({ a: Math.random()*6.283, r: .3 + Math.random()*1.2, s: (Math.random()*.5+.1)*(Math.random()<.5?-1:1), z: Math.random() }));
+addEventListener("resize", size); new ResizeObserver(size).observe(cv); size();
+const motes = Array.from({length: 80}, () => ({ a: Math.random()*6.283, r: .3 + Math.random()*1.3, s: (Math.random()*.5+.1)*(Math.random()<.5?-1:1), z: Math.random() }));
+const COL = { ok: "#93c79e", warn: "#e6a55c", error: "#e47560" };
 function star(x, y, R, rot, inner){ cx.beginPath(); for (let i = 0; i < 8; i++){ const a = rot + i*Math.PI/4, rr = i%2 ? R*inner : R; const px = x + Math.cos(a)*rr, py = y + Math.sin(a)*rr; i ? cx.lineTo(px,py) : cx.moveTo(px,py); } cx.closePath(); }
 function frame(t){
   const T = reduced ? 0 : t/1000;
   if (conv){ try { outV = outV*.7 + (conv.getOutputVolume() || 0)*.3; inV = inV*.7 + (muted ? 0 : (conv.getInputVolume() || 0))*.3; } catch {} }
   else { outV *= .9; inV *= .9; }
   cx.clearRect(0,0,W,H);
-  const X = W/2, Y = H/2 - 30, R = Math.min(W, H)*.25;
-  for (const m of motes){ const a = m.a + T*m.s*.05, rr = R*(.6 + m.r); cx.fillStyle = `rgba(214,178,106,${.06 + .2*m.z})`; cx.fillRect(X + Math.cos(a)*rr, Y + Math.sin(a)*rr*.86, 1.2, 1.2); }
-  // Ringe
-  [1.5, 1.18, .9].forEach((k, i) => {
-    const rr = R*k*(1 + inV*.06*(i === 2 ? 1 : 0));
-    cx.strokeStyle = `rgba(214,178,106,${i === 0 ? .26 : .14 + inV*.5})`; cx.lineWidth = 1;
+  const X = W/2, Y = H*.44, R = Math.min(W*.5, H*.44) * .62;
+  for (const m of motes){ const a = m.a + T*m.s*.05, rr = R*(.5 + m.r); cx.fillStyle = `rgba(214,178,106,${.05 + .2*m.z})`; cx.fillRect(X + Math.cos(a)*rr, Y + Math.sin(a)*rr*.86, 1.2, 1.2); }
+  // Ringe mit Teilung
+  [1.18, .9].forEach((k, i) => {
+    const rr = R*k*(1 + inV*.05*i);
+    cx.strokeStyle = `rgba(214,178,106,${.15 + inV*.5})`; cx.lineWidth = 1;
     cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke();
-    const n = i === 0 ? 120 : i === 1 ? 60 : 24, rot = T*(i % 2 ? -.02 : .015)*(i+1);
-    for (let q = 0; q < n; q++){ const a = rot + q/n*6.283, L = q % (n/12) === 0 ? 9 : 3; cx.beginPath(); cx.moveTo(X + Math.cos(a)*rr, Y + Math.sin(a)*rr); cx.lineTo(X + Math.cos(a)*(rr - L), Y + Math.sin(a)*(rr - L)); cx.stroke(); }
+    const n = i ? 24 : 72, rot = T*(i ? -.03 : .02);
+    for (let q = 0; q < n; q++){ const a = rot + q/n*6.283, Lq = q % (n/12) === 0 ? 8 : 3; cx.beginPath(); cx.moveTo(X + Math.cos(a)*rr, Y + Math.sin(a)*rr); cx.lineTo(X + Math.cos(a)*(rr - Lq), Y + Math.sin(a)*(rr - Lq)); cx.stroke(); }
+  });
+  // Follower-Ring bis 1000
+  const fr = R*1.42, a0 = -Math.PI/2;
+  cx.lineCap = "round"; cx.lineWidth = 4; cx.strokeStyle = "rgba(124,99,55,.35)"; cx.beginPath(); cx.arc(X, Y, fr, 0, 6.283); cx.stroke();
+  if (L?.followers != null){
+    const p = Math.max(.012, Math.min(1, L.followers / (L.ziel || 1000)));
+    const g = cx.createLinearGradient(X - fr, Y - fr, X + fr, Y + fr); g.addColorStop(0, "#7c6337"); g.addColorStop(1, "#f6dfa6");
+    cx.strokeStyle = g; cx.shadowColor = "#d6b26a"; cx.shadowBlur = 12; cx.beginPath(); cx.arc(X, Y, fr, a0, a0 + p*6.283); cx.stroke(); cx.shadowBlur = 0;
+    const ea = a0 + p*6.283; cx.fillStyle = "#f6dfa6"; cx.beginPath(); cx.arc(X + Math.cos(ea)*fr, Y + Math.sin(ea)*fr, 4 + Math.sin(T*3)*1, 0, 6.283); cx.fill();
+    cx.fillStyle = "rgba(158,147,125,.9)"; cx.font = "500 10px 'JetBrains Mono', monospace"; cx.textAlign = "center"; cx.fillText(((L.followers / (L.ziel || 1000))*100).toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " % BIS " + fmt(L.ziel || 1000), X, Y - fr - 12);
+    [.1, .25, .5, .75].forEach(m => { const a = a0 + m*6.283; cx.fillStyle = p >= m ? "#f6dfa6" : "#4a3e2c"; cx.beginPath(); cx.arc(X + Math.cos(a)*fr, Y + Math.sin(a)*fr, 2.4, 0, 6.283); cx.fill(); });
+  }
+  // Legion auf der Umlaufbahn
+  const lg = L?.legion || [];
+  const lr = R*1.18;
+  lg.forEach((ag, i) => {
+    const a = (i / lg.length)*6.283 + T*.06 - Math.PI/2;
+    const ax = X + Math.cos(a)*lr, ay = Y + Math.sin(a)*lr;
+    const col = COL[ag.status] || "#6d6455";
+    const fresh = ag.zuletzt && (Date.now() - Date.parse(ag.zuletzt)) < 3*3600e3;
+    const pulse = fresh ? 1.5 + Math.sin(T*3 + i)*1.2 : 0;
+    cx.fillStyle = col; cx.shadowColor = col; cx.shadowBlur = 8 + pulse*3;
+    cx.beginPath(); cx.arc(ax, ay, 3.6 + pulse*.4, 0, 6.283); cx.fill(); cx.shadowBlur = 0;
+    if (W > 600){ cx.fillStyle = "rgba(240,231,212,.6)"; cx.font = "500 9.5px 'JetBrains Mono', monospace"; cx.textAlign = Math.cos(a) >= 0 ? "left" : "right"; cx.fillText((ROM[i] || "") + " " + (ag.name || "").toUpperCase(), ax + Math.cos(a)*9, ay + Math.sin(a)*9 + 3); }
   });
   // Stimme als Wellen
   const speak = Math.min(1, outV*2.2);
-  if (speak > .02){ for (let k = 0; k < 4; k++){ const p = (T*.7 + k/4) % 1, rr = R*(.7 + p*1.1); cx.strokeStyle = `rgba(246,223,166,${(1 - p)*.45*speak})`; cx.lineWidth = 1.4; cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke(); } }
-  // Ohr: wenn er zuhört, ein Bogen, der mit deiner Stimme wächst
-  if (conv && mode !== "speaking" && !muted){ const a = .3 + inV*2.2; cx.strokeStyle = "rgba(147,199,158,.75)"; cx.lineWidth = 3; cx.lineCap = "round"; cx.beginPath(); cx.arc(X, Y, R*1.32, -Math.PI/2 - a, -Math.PI/2 + a); cx.stroke(); }
+  if (speak > .02){ for (let k = 0; k < 4; k++){ const p = (T*.7 + k/4) % 1, rr = R*(.6 + p*1.0); cx.strokeStyle = `rgba(246,223,166,${(1 - p)*.45*speak})`; cx.lineWidth = 1.4; cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke(); } }
+  // Zuhören
+  if (conv && mode !== "speaking" && !muted){ const a = .25 + inV*2.2; cx.strokeStyle = "rgba(147,199,158,.8)"; cx.lineWidth = 3; cx.lineCap = "round"; cx.beginPath(); cx.arc(X, Y, R*1.3, -Math.PI/2 - a, -Math.PI/2 + a); cx.stroke(); }
   // Stern
   const live = conv ? 1 : 0;
   const breathe = 1 + Math.sin(T*1.1)*.03 + speak*.16 + inV*.05;
-  const sR = R*.62*breathe;
+  const sR = R*.6*breathe;
   const glow = cx.createRadialGradient(X, Y, 0, X, Y, sR*2.3); glow.addColorStop(0, `rgba(246,223,166,${.22 + speak*.3 + live*.06})`); glow.addColorStop(1, "rgba(214,178,106,0)");
   cx.fillStyle = glow; cx.beginPath(); cx.arc(X, Y, sR*2.3, 0, 6.283); cx.fill();
-  const g = cx.createLinearGradient(X - sR, Y - sR, X + sR, Y + sR); g.addColorStop(0, "#f6dfa6"); g.addColorStop(.55, "#d6b26a"); g.addColorStop(1, "#9c7d43");
-  cx.fillStyle = g; cx.shadowColor = "#d6b26a"; cx.shadowBlur = 26 + speak*40; star(X, Y, sR, T*.035, .24); cx.fill(); cx.shadowBlur = 0;
+  const g2 = cx.createLinearGradient(X - sR, Y - sR, X + sR, Y + sR); g2.addColorStop(0, "#f6dfa6"); g2.addColorStop(.55, "#d6b26a"); g2.addColorStop(1, "#9c7d43");
+  cx.fillStyle = g2; cx.shadowColor = "#d6b26a"; cx.shadowBlur = 26 + speak*40; star(X, Y, sR, T*.035, .24); cx.fill(); cx.shadowBlur = 0;
   cx.strokeStyle = "rgba(246,223,166,.45)"; cx.lineWidth = 1; star(X, Y, sR*1.34, -T*.025 + Math.PI/8, .3); cx.stroke();
   requestAnimationFrame(frame);
 }
@@ -246,6 +414,7 @@ if (!standalone && !dismissed){
 }
 $("installClose").addEventListener("click", () => { $("install").hidden = true; try { localStorage.setItem("z-install", "1"); } catch {} });
 if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+greet();
 })();
 </script>
 </body>
