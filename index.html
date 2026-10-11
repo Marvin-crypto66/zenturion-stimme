@@ -312,6 +312,7 @@ async function start(){
       connectionType: "websocket",
       onConnect: () => {
         status = "live"; setChip("live", "live"); setState("Ich höre", "Sprich einfach. Sag „danke, das wars“, wenn du fertig bist."); grabWake(); buzz(18);
+        unlockOutput(); setTimeout(soundCheck, 700); clearInterval(sndT); sndT = setInterval(soundCheck, 2000);
         setTimeout(dropHeld, 1500);
         setTimeout(() => {
           try { const t = lageText(); if (t && conv) conv.sendContextualUpdate(t); } catch {}
@@ -320,7 +321,7 @@ async function start(){
       },
       onDisconnect: () => { end(true); },
       onError: (msg) => { setChip("Fehler", "err"); setState("Verbindung gestört", String(msg || "Versuch es gleich noch einmal.").slice(0, 140)); },
-      onModeChange: ({ mode: m }) => { mode = m; if (status === "live" && !muted) setState(m === "speaking" ? "Zenturion spricht" : "Ich höre", ""); },
+      onModeChange: ({ mode: m }) => { mode = m; if (status === "live" && !muted && !needSound) setState(m === "speaking" ? "Zenturion spricht" : "Ich höre", ""); },
       onMessage: (p) => { const role = p.role || (p.source === "user" ? "user" : "agent"); addLine(role === "user" ? "user" : "agent", p.message); }
     });
     $("go").disabled = false; $("go").textContent = "Beenden"; $("go").classList.add("end"); $("mute").disabled = false;
@@ -333,7 +334,7 @@ async function start(){
 async function end(fromServer){
   const c = conv; conv = null;
   if (c && !fromServer){ try { await c.endSession(); } catch {} }
-  status = "idle"; mode = "listening"; muted = false;
+  status = "idle"; mode = "listening"; muted = false; clearInterval(sndT); sndT = null; needSound = false;
   $("mute").setAttribute("aria-pressed", "false"); $("mute").disabled = true;
   $("go").disabled = false; $("go").textContent = "Rufen"; $("go").classList.remove("end");
   setChip("bereit", ""); setState("Wegtreten", wOn ? "Gleich wieder auf Wache." : (L?.lagesatz || "Ich bin da, wenn du mich rufst."));
@@ -359,6 +360,33 @@ function releaseWake(){ try { wake?.release(); } catch {} wake = null; }
 function buzz(ms){ try { navigator.vibrate?.(ms); } catch {} }
 // iPhone: Ton über den Lautsprecher, auch wenn der Stumm-Schalter an ist
 function audioMode(t){ try { if (navigator.audioSession) navigator.audioSession.type = t; } catch {} }
+// Ton: alle Audio-Kontexte merken, damit Zenturions Stimme nicht stumm haengen bleibt (Safari auf dem Mac)
+const ACTXS = [];
+(function(){
+  const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+  function ZAC(...a){ const c = new AC(...a); try { ACTXS.push(c); } catch {} return c; }
+  ZAC.prototype = AC.prototype; try { Object.setPrototypeOf(ZAC, AC); } catch {}
+  window.AudioContext = ZAC; if (window.webkitAudioContext) window.webkitAudioContext = ZAC;
+})();
+let needSound = false, sndT = null;
+function outAudios(){ return Array.from(document.querySelectorAll("audio")).filter((a) => a.srcObject); }
+async function soundCheck(){
+  if (!conv || status !== "live") return;
+  let ok = true;
+  for (const c of ACTXS){
+    if (c.state === "closed" || c.state === "running") continue;
+    try { await Promise.race([c.resume(), new Promise((r) => setTimeout(r, 400))]); } catch {}
+    if (c.state !== "running") ok = false;
+  }
+  for (const a of outAudios()){ if (a.paused){ try { await a.play(); } catch { ok = false; } } }
+  needSound = !ok;
+  if (needSound && !muted) setState("Tippe einmal für Ton", "Dein Gerät lässt Zenturion erst nach einem Tipp laut sprechen.");
+}
+function unlockOutput(){
+  for (const c of ACTXS){ if (c.state !== "running" && c.state !== "closed"){ try { c.resume(); } catch {} } }
+  for (const a of outAudios()){ if (a.paused){ try { a.play().catch(() => {}); } catch {} } }
+  if (needSound){ needSound = false; if (!muted) setState(mode === "speaking" ? "Zenturion spricht" : "Ich höre", ""); setTimeout(soundCheck, 500); }
+}
 
 /* ---------- Wache: zweimal klatschen oder „Zenturion, melde dich“ ---------- */
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -524,6 +552,7 @@ $("wache").addEventListener("click", () => {
 });
 document.addEventListener("pointerdown", (e) => {
   unlockAudio();
+  if (conv) unlockOutput();
   if (e.target.closest("#go, #stage, .q, #wache, #hq, #mute")) return;
   if (wOn && status === "idle" && (!wArmed || needTap)) { if (wArmed) disarm(false); micBlocked = false; arm(true); }
 }, true);
