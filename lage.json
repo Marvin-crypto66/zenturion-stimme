@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-11T19:18:36Z",
+  "stand": "2026-10-11T20:50:53Z",
   "lagesatz": "94 Follower, alles ruhig. Nächster Post am Dienstag, 13.10., um 19 Uhr: „ein buchstabe“.",
-  "parole": "Geduld ist die Tinte, die am längsten hält.",
+  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
@@ -30,8 +30,8 @@
   "legion": [
     {
       "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-10-11T11:17:32Z"
+      "status": "warn",
+      "zuletzt": "2026-10-11T20:50:53Z"
     },
     {
       "name": "Tagesrunde",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-11T04:52:01Z"
+      "zuletzt": "2026-10-11T19:54:00Z"
     }
   ]
 }
