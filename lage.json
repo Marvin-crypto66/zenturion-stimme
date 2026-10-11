@@ -1,12 +1,12 @@
 {
-  "stand": "2026-10-11T05:16:31Z",
-  "lagesatz": "94 Follower, der Autopilot läuft. Heute um 19 Uhr kommt das Reel „manchmal vergisst du, dass es da ist“.",
-  "parole": "Eine ruhige Linie braucht keinen lauten Tag.",
+  "stand": "2026-10-11T11:16:24Z",
+  "lagesatz": "94 Follower, alles ruhig. Heute um 19 Uhr kommt das Reel „manchmal vergisst du, dass es da ist“.",
+  "parole": "Die feinste Linie entsteht in der ruhigsten Minute.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
   "reach_30d": 457,
-  "views_30d": 2777,
+  "views_30d": 2855,
   "naechste_posts": [
     {
       "slot_at": "2026-10-11T17:00:00Z",
@@ -31,7 +31,7 @@
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-10T15:56:05Z"
+      "zuletzt": "2026-10-11T05:54:30Z"
     },
     {
       "name": "Kommandant",
@@ -39,14 +39,14 @@
       "zuletzt": "2026-10-11T05:16:31Z"
     },
     {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-10-08T09:52:30Z"
-    },
-    {
       "name": "Chronist",
       "status": null,
       "zuletzt": null
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-10-11T09:55:37Z"
     },
     {
       "name": "Veröffentlicher",
@@ -71,7 +71,7 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-10T18:36:50Z"
+      "zuletzt": "2026-10-11T10:36:37Z"
     },
     {
       "name": "Stories",
