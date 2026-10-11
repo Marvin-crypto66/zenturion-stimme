@@ -1175,8 +1175,10 @@ async function load(){
     S.unlocked = ok > 0; S.keyBad = bad > 0 && ok === 0;
     $("offline").hidden = !!(PUB || T);
     if (T){
-      S.lage = T.lage || (PUB ? fromPublic(PUB) : null);
+      const pubNewer = !!PUB && (!T.lage || String(PUB.stand || "") > String(T.lage.updated_at || ""));
+      S.lage = pubNewer ? fromPublic(PUB) : (T.lage || (PUB ? fromPublic(PUB) : null));
       S.legion = (T.legion || []).slice().sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0));
+      if (pubNewer) for (const a of (PUB.legion || [])) { const L = S.legion.find((x) => x.label === a.name); if (L && String(a.zuletzt || "") > String(L.last_run_at || "")) { L.last_status = a.status; L.last_run_at = a.zuletzt; L.last_note = ""; } }
       S.mem = (T.gedaechtnis || []).slice().sort((a, b) => String(b.at || "").localeCompare(String(a.at || "")));
       S.chronik = (T.chronik || []).slice().sort((a, b) => String(b.datum || "").localeCompare(String(a.datum || "")));
       S.intel = (T.intel || []).slice().sort((a, b) => String(b.at || "").localeCompare(String(a.at || "")));
