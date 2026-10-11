@@ -1,17 +1,13 @@
 {
-  "stand": "2026-10-11T11:16:24Z",
-  "lagesatz": "94 Follower, alles ruhig. Heute um 19 Uhr kommt das Reel „manchmal vergisst du, dass es da ist“.",
-  "parole": "Die feinste Linie entsteht in der ruhigsten Minute.",
+  "stand": "2026-10-11T19:18:36Z",
+  "lagesatz": "94 Follower, alles ruhig. Nächster Post am Dienstag, 13.10., um 19 Uhr: „ein buchstabe“.",
+  "parole": "Geduld ist die Tinte, die am längsten hält.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 457,
-  "views_30d": 2855,
+  "reach_30d": 459,
+  "views_30d": 2865,
   "naechste_posts": [
-    {
-      "slot_at": "2026-10-11T17:00:00Z",
-      "titel": "manchmal vergisst du, dass es da ist"
-    },
     {
       "slot_at": "2026-10-13T17:00:00Z",
       "titel": "ein buchstabe"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-10-15T17:00:00Z",
       "titel": "wo am körper soll es hin"
+    },
+    {
+      "slot_at": "2026-10-17T17:00:00Z",
+      "titel": "referenzbild"
     }
   ],
   "jubilaeum": {
@@ -29,19 +29,14 @@
   },
   "legion": [
     {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-10-11T05:54:30Z"
-    },
-    {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-11T05:16:31Z"
+      "zuletzt": "2026-10-11T11:17:32Z"
     },
     {
-      "name": "Chronist",
-      "status": null,
-      "zuletzt": null
+      "name": "Tagesrunde",
+      "status": "ok",
+      "zuletzt": "2026-10-11T15:55:22Z"
     },
     {
       "name": "Content-Planer",
@@ -49,9 +44,14 @@
       "zuletzt": "2026-10-11T09:55:37Z"
     },
     {
+      "name": "Chronist",
+      "status": null,
+      "zuletzt": null
+    },
+    {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-10-10T18:52:00Z"
+      "zuletzt": "2026-10-11T18:51:00Z"
     },
     {
       "name": "Späher",
@@ -61,17 +61,17 @@
     {
       "name": "Wochenbericht",
       "status": "ok",
-      "zuletzt": "2026-10-04T17:45:25Z"
+      "zuletzt": "2026-10-11T17:51:30Z"
     },
     {
       "name": "Schatzmeister",
-      "status": null,
-      "zuletzt": null
+      "status": "ok",
+      "zuletzt": "2026-10-11T16:13:14Z"
     },
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-11T10:36:37Z"
+      "zuletzt": "2026-10-11T18:36:44Z"
     },
     {
       "name": "Stories",
