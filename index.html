@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Zenturion</title>
 <meta name="description" content="Zenturion, die Kommandozentrale von mrvn.lines. Live per Stimme.">
-<meta name="theme-color" content="#060507">
+<meta name="theme-color" content="#14113A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F2F8" media="(prefers-color-scheme: light)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -15,27 +16,34 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
 <style>
 /* Kommandobrücke im Taschenformat: Kopf mit Gruß und Parole, in der Mitte der Stern mit Follower-Ring und kreisender Legion, darunter Lagekarten, Schnellbefehle, Gesprächszeilen und der eine Knopf. */
 :root{
-  --void:#060507; --hull:#0d0b0e; --plate:#141116; --seam:#2b2520; --seam-2:#4a3e2c;
-  --bone:#f0e7d4; --dust:#9e937d; --dim:#6d6455;
-  --gold:#d6b26a; --gold-hi:#f6dfa6; --gold-lo:#7c6337; --on-gold:#150f06;
-  --ok:#93c79e; --warn:#e6a55c; --bad:#e47560;
-  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
-  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --void:#14113A; --hull:#1B1747; --plate:#221D55; --seam:#2D2766; --seam-2:#463E8E;
+  --bone:#ECE9FF; --dust:#B9B2EA; --dim:#938DCB;
+  --gold:#8F7BFF; --gold-hi:#C9BEFF; --gold-lo:#4A3FA8; --on-gold:#120F33;
+  --ok:#4FD1A5; --warn:#F2B04E; --bad:#FF6B78;
+  --f-display:"Josefin Sans","Futura","Century Gothic",sans-serif;
+  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
   color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --void:#F3F2F8; --hull:#FBFBFE; --plate:#EEECF7; --seam:#DAD7EE; --seam-2:#BBB5DF;
+    --bone:#1F1760; --dust:#4A4389; --dim:#655EA0;
+    --gold:#5B3DF5; --gold-hi:#3A22C9; --gold-lo:#C9C0F7; --on-gold:#FFFFFF;
+    --ok:#13866F; --warn:#A35F00; --bad:#C92A3A;
+    color-scheme:light;
+  }
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;margin:0;background:var(--void);color:var(--bone);font-family:var(--f-body);overflow:hidden;overscroll-behavior:none}
 body{height:100dvh;display:flex;flex-direction:column;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(env(safe-area-inset-bottom,0px) + 14px);user-select:none;-webkit-user-select:none}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background:
-  radial-gradient(70% 40% at 50% 38%,rgba(214,178,106,.13),transparent 70%),
-  repeating-linear-gradient(90deg,rgba(240,231,212,.02) 0 1px,transparent 1px 64px),
-  repeating-linear-gradient(0deg,rgba(240,231,212,.016) 0 1px,transparent 1px 64px)}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);mix-blend-mode:multiply;opacity:.5}
+  radial-gradient(70% 40% at 50% 40%,color-mix(in srgb,var(--gold) 14%,transparent),transparent 70%),
+  radial-gradient(circle at 1px 1px,color-mix(in srgb,var(--seam-2) 55%,transparent) 1px,transparent 1.3px) 0 0/22px 22px}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 a{color:inherit}
@@ -45,37 +53,37 @@ a{color:inherit}
 header{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .mark{display:flex;align-items:center;gap:10px}
 .mark svg{width:18px;height:18px}
-.mark b{font-family:var(--f-display);font-weight:900;font-size:17px;letter-spacing:.42em}
-.chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dust);border:1px solid var(--seam-2);border-radius:99px;padding:5px 11px;white-space:nowrap}
+.mark b{font-family:var(--f-display);font-weight:300;font-size:20px;letter-spacing:.22em}
+.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-body);font-size:12.5px;font-weight:500;color:var(--dust);border:1px solid var(--seam-2);border-radius:99px;padding:5px 11px;white-space:nowrap;background:var(--hull)}
 .chip i{width:7px;height:7px;border-radius:50%;background:var(--dim)}
 .chip.live i{background:var(--ok);box-shadow:0 0 10px var(--ok)}
 .chip.err i{background:var(--bad)}
 .hr{display:flex;gap:6px;align-items:center}
-button.chip{cursor:pointer;background:rgba(13,11,14,.75)}
+button.chip{cursor:pointer;background:var(--hull)}
 .chip.wach{border-color:var(--gold-lo);color:var(--gold-hi)}
 .chip.wach i{background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2.2s ease-in-out infinite}
 .chip.tap i{background:var(--warn)}
 @keyframes pulse{50%{opacity:.3}}
 @media (max-width:390px){.mark b{letter-spacing:.22em}}
 .greet{display:flex;flex-direction:column;gap:2px}
-.greet h1{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(26px,7vw,36px);letter-spacing:.04em;line-height:1}
+.greet h1{margin:0;font-family:var(--f-display);font-weight:300;font-size:clamp(28px,7.4vw,38px);letter-spacing:.01em;line-height:1.05}
 .greet h1 em{font-style:normal;color:var(--gold)}
-.meta{font-family:var(--f-mono);font-size:11px;color:var(--dust);letter-spacing:.06em}
-.parole{font-style:italic;font-size:13.5px;color:var(--gold-hi);opacity:.85;margin-top:4px;min-height:1em}
+.meta{font-size:13px;color:var(--dust);font-variant-numeric:tabular-nums}
+.parole{font-family:var(--f-display);font-weight:300;font-size:16px;line-height:1.35;color:var(--gold-hi);margin-top:6px;min-height:1em;border-left:1.5px solid var(--gold);padding-left:10px}
 
 /* Bühne */
 main{position:relative;z-index:1;flex:1 1 auto;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
 canvas{position:absolute;inset:0;width:100%;height:100%}
 .stage-btn{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:min(46vmin,260px);aspect-ratio:1;border-radius:50%;z-index:2}
-.state{position:relative;z-index:2;font-family:var(--f-display);font-weight:800;font-size:clamp(24px,6vw,34px);letter-spacing:.06em;text-transform:uppercase;text-align:center;line-height:1.05}
+.state{position:relative;z-index:2;font-family:var(--f-display);font-weight:400;font-size:clamp(25px,6.4vw,34px);letter-spacing:.01em;text-align:center;line-height:1.1}
 .sub{position:relative;z-index:2;margin-top:4px;font-size:13px;color:var(--dust);text-align:center;min-height:1.3em;max-width:46ch;text-wrap:balance}
 
 /* Karten */
 .cards{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
 .cards::-webkit-scrollbar{display:none}
-.card{flex:0 0 auto;min-width:132px;max-width:190px;scroll-snap-align:start;border:1px solid var(--seam);background:linear-gradient(180deg,rgba(214,178,106,.05),transparent 60%),var(--hull);border-radius:5px;padding:9px 12px;display:flex;flex-direction:column;gap:2px}
-.card .k{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dust)}
-.card .v{font-family:var(--f-display);font-weight:800;font-size:clamp(20px,2.4vw,25px);line-height:1.05;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card{flex:0 0 auto;min-width:132px;max-width:190px;scroll-snap-align:start;border:1px solid var(--seam);background:var(--hull);border-radius:12px;padding:9px 12px;display:flex;flex-direction:column;gap:2px}
+.card .k{font-size:12px;color:var(--dust)}
+.card .v{font-family:var(--f-display);font-weight:400;font-size:clamp(20px,2.4vw,25px);line-height:1.05;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .v small{font-size:13px;color:var(--dust);font-weight:600}
 .card .d{font-size:11.5px;color:var(--dust);line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .card .d.up{color:var(--ok)}
@@ -85,7 +93,7 @@ canvas{position:absolute;inset:0;width:100%;height:100%}
 /* Schnellbefehle */
 .quick{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 .quick::-webkit-scrollbar{display:none}
-.q{flex:0 0 auto;border:1px solid var(--seam-2);border-radius:99px;padding:7px 13px;font-size:13px;color:var(--bone);background:rgba(13,11,14,.75);white-space:nowrap}
+.q{flex:0 0 auto;border:1px solid var(--seam-2);border-radius:99px;padding:7px 13px;font-size:13.5px;color:var(--bone);background:var(--hull);white-space:nowrap}
 .q:active{border-color:var(--gold);color:var(--gold-hi)}
 @media (min-width:760px){.quick{justify-content:center}}
 
@@ -94,14 +102,14 @@ canvas{position:absolute;inset:0;width:100%;height:100%}
 .line{font-size:14px;line-height:1.4;color:var(--bone);transition:opacity .6s;overflow-wrap:anywhere}
 .line.me{color:var(--dust);text-align:right}
 .line:nth-last-child(2){opacity:.45}
-.line b{font-family:var(--f-mono);font-weight:500;font-size:10px;letter-spacing:.16em;color:var(--gold);margin-right:8px}
+.line b{font-family:var(--f-display);font-weight:600;font-size:12.5px;letter-spacing:.05em;color:var(--gold);margin-right:8px;text-transform:lowercase}
 
 footer{display:flex;align-items:center;justify-content:center;gap:16px}
-.side{width:50px;height:50px;border-radius:50%;border:1px solid var(--seam-2);display:grid;place-items:center;color:var(--dust);background:rgba(13,11,14,.75);flex:none}
+.side{width:50px;height:50px;border-radius:50%;border:1px solid var(--seam-2);display:grid;place-items:center;color:var(--dust);background:var(--hull);flex:none}
 .side svg{width:21px;height:21px}
 .side[aria-pressed="true"]{color:var(--bad);border-color:var(--bad)}
 .side:disabled{opacity:.35}
-.go{min-width:190px;height:58px;padding-inline:26px;border-radius:99px;background:var(--gold);color:var(--on-gold);font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 40px -10px rgba(214,178,106,.7);transition:transform .15s}
+.go{min-width:190px;height:58px;padding-inline:26px;border-radius:99px;background:var(--gold);color:var(--on-gold);font-family:var(--f-display);font-weight:600;font-size:21px;letter-spacing:.04em;box-shadow:0 10px 40px -12px color-mix(in srgb,var(--gold) 70%,transparent);transition:transform .15s}
 .go:active{transform:scale(.97)}
 .go.end{background:transparent;color:var(--bone);border:1px solid var(--bad);box-shadow:none}
 .go:disabled{opacity:.6}
@@ -109,9 +117,9 @@ footer{display:flex;align-items:center;justify-content:center;gap:16px}
 /* Boot */
 .boot{position:fixed;inset:0;z-index:20;background:var(--void);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .6s}
 .boot.off{opacity:0;pointer-events:none}
-.boot svg{width:64px;height:64px;filter:drop-shadow(0 0 18px rgba(214,178,106,.6));animation:spin 2.4s cubic-bezier(.5,0,.2,1) both}
+.boot svg{width:72px;height:72px;animation:spin 2.4s cubic-bezier(.5,0,.2,1) both}
 @keyframes spin{from{transform:rotate(-90deg) scale(.4);opacity:0}to{transform:rotate(0) scale(1);opacity:1}}
-.boot pre{margin:0;font-family:var(--f-mono);font-size:12px;line-height:1.8;color:var(--dust);min-height:7.2em;white-space:pre}
+.boot pre{margin:0;font-family:var(--f-body);font-size:13.5px;line-height:1.8;color:var(--dust);min-height:7.2em;white-space:pre;text-align:center}
 .boot pre b{color:var(--gold-hi);font-weight:500}
 
 .install{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 54px);z-index:15;max-width:calc(100vw - 32px);width:420px;background:var(--hull);border:1px solid var(--gold-lo);border-radius:6px;padding:12px 14px;font-size:13.5px;line-height:1.45;display:flex;gap:12px;align-items:flex-start}
@@ -124,14 +132,14 @@ footer{display:flex;align-items:center;justify-content:center;gap:16px}
 </head>
 <body>
 <div class="boot" id="boot" aria-hidden="true">
-  <svg viewBox="0 0 32 32"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="#d6b26a"/></svg>
+  <svg viewBox="0 0 32 32"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="none" stroke="var(--gold)" stroke-width="1.1" stroke-linejoin="round"/><circle cx="16" cy="16" r="1.6" fill="var(--gold)"/></svg>
   <pre id="bootText"></pre>
 </div>
 
 <header class="wrap">
   <div class="mark">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="#d6b26a"/></svg>
-    <b>ZENTURION</b>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="none" stroke="var(--gold)" stroke-width="1.1" stroke-linejoin="round"/><circle cx="16" cy="16" r="1.6" fill="var(--gold)"/></svg>
+    <b>zenturion</b>
   </div>
   <div class="hr">
     <button class="chip" id="wache" aria-pressed="true" aria-label="Wache an oder aus"><i></i><span id="wacheText">Wache</span></button>
@@ -207,7 +215,7 @@ async function loadLage(){
   } catch {}
 }
 function greet(){
-  const h = Number(dtf(new Date(), { hour: "2-digit", hour12: false }));
+  const h = parseInt(dtf(new Date(), { hour: "2-digit", hourCycle: "h23" }), 10);
   const g = h < 5 ? "Gute Nacht" : h < 11 ? "Guten Morgen" : h < 17 ? "Guten Tag" : h < 22 ? "Guten Abend" : "Gute Nacht";
   $("hello").innerHTML = g + ", <em>Marvin</em>";
   const now = new Date();
@@ -258,12 +266,12 @@ document.addEventListener("visibilitychange", () => { if (document.visibilitySta
   const el = $("boot");
   if (seen || reduced){ el.remove(); return; }
   try { sessionStorage.setItem("z-boot", "1"); } catch {}
-  const lines = ["ZENTURION · KOMMANDO MRVN.LINES", "Wache ............ <b>besetzt</b>", "Legion ........... <b>wird gezählt</b>", "Gedächtnis ....... <b>geladen</b>", "Stimme ........... <b>bereit</b>"];
+  const lines = ["zenturion, zentrale von mrvn.lines", "Wache <b>besetzt</b>", "Legion <b>wird gezählt</b>", "Gedächtnis <b>geladen</b>", "Stimme <b>bereit</b>"];
   let i = 0; const pre = $("bootText");
   const t = setInterval(() => {
     if (i < lines.length){
       let s = lines[i];
-      if (i === 2 && L?.legion) s = "Legion ........... <b>" + L.legion.length + " Agenten</b>";
+      if (i === 2 && L?.legion) s = "Legion <b>" + L.legion.length + " Agenten</b>";
       pre.innerHTML += (i ? "\n" : "") + s; i++;
     } else { clearInterval(t); el.classList.add("off"); setTimeout(() => el.remove(), 700); }
   }, 280);
@@ -524,11 +532,15 @@ arm(false);
 
 /* ---------- Stern, Follower-Ring, Legion ---------- */
 const cv = $("c"), cx = cv.getContext("2d");
+let K = {};
+function hexA(h, a){ h = String(h || "#000").trim().replace("#", ""); if (h.length === 3) h = h.split("").map(x => x + x).join(""); const n = parseInt(h, 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; }
+function readK(){ const cs = getComputedStyle(document.documentElement), g = (v) => cs.getPropertyValue(v).trim(); K = { gold: g("--gold"), hi: g("--gold-hi"), bone: g("--bone"), dust: g("--dust"), dim: g("--dim"), ok: g("--ok"), warn: g("--warn"), bad: g("--bad"), hull: g("--hull"), seam: g("--seam-2") }; }
+readK(); try { matchMedia("(prefers-color-scheme: light)").addEventListener("change", readK); } catch {}
 let W = 0, H = 0;
 function size(){ const r = cv.getBoundingClientRect(), d = Math.min(2, devicePixelRatio || 1); W = r.width; H = r.height; cv.width = W*d; cv.height = H*d; cx.setTransform(d,0,0,d,0,0); }
 addEventListener("resize", size); new ResizeObserver(size).observe(cv); size();
 const motes = Array.from({length: 80}, () => ({ a: Math.random()*6.283, r: .3 + Math.random()*1.3, s: (Math.random()*.5+.1)*(Math.random()<.5?-1:1), z: Math.random() }));
-const COL = { ok: "#93c79e", warn: "#e6a55c", error: "#e47560" };
+const COL = { get ok(){ return K.ok; }, get warn(){ return K.warn; }, get error(){ return K.bad; } };
 function star(x, y, R, rot, inner){ cx.beginPath(); for (let i = 0; i < 8; i++){ const a = rot + i*Math.PI/4, rr = i%2 ? R*inner : R; const px = x + Math.cos(a)*rr, py = y + Math.sin(a)*rr; i ? cx.lineTo(px,py) : cx.moveTo(px,py); } cx.closePath(); }
 function frame(t){
   const T = reduced ? 0 : t/1000;
@@ -536,25 +548,25 @@ function frame(t){
   else { outV *= .9; inV *= .9; }
   cx.clearRect(0,0,W,H);
   const X = W/2, Y = H*.44, R = Math.min(W*.5, H*.44) * .62;
-  for (const m of motes){ const a = m.a + T*m.s*.05, rr = R*(.5 + m.r); cx.fillStyle = `rgba(214,178,106,${.05 + .2*m.z})`; cx.fillRect(X + Math.cos(a)*rr, Y + Math.sin(a)*rr*.86, 1.2, 1.2); }
+  for (const m of motes){ const a = m.a + T*m.s*.05, rr = R*(.5 + m.r); cx.fillStyle = hexA(K.gold, .06 + .22*m.z); cx.fillRect(X + Math.cos(a)*rr, Y + Math.sin(a)*rr*.86, 1.2, 1.2); }
   // Ringe mit Teilung
   [1.18, .9].forEach((k, i) => {
     const rr = R*k*(1 + inV*.05*i);
-    cx.strokeStyle = `rgba(214,178,106,${.15 + inV*.5})`; cx.lineWidth = 1;
+    cx.strokeStyle = hexA(K.gold, .2 + inV*.5); cx.lineWidth = 1;
     cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke();
     const n = i ? 24 : 72, rot = T*(i ? -.03 : .02);
     for (let q = 0; q < n; q++){ const a = rot + q/n*6.283, Lq = q % (n/12) === 0 ? 8 : 3; cx.beginPath(); cx.moveTo(X + Math.cos(a)*rr, Y + Math.sin(a)*rr); cx.lineTo(X + Math.cos(a)*(rr - Lq), Y + Math.sin(a)*(rr - Lq)); cx.stroke(); }
   });
   // Follower-Ring bis 1000
   const fr = R*1.42, a0 = -Math.PI/2;
-  cx.lineCap = "round"; cx.lineWidth = 4; cx.strokeStyle = "rgba(124,99,55,.35)"; cx.beginPath(); cx.arc(X, Y, fr, 0, 6.283); cx.stroke();
+  cx.lineCap = "round"; cx.lineWidth = 3; cx.strokeStyle = hexA(K.seam, .7); cx.beginPath(); cx.arc(X, Y, fr, 0, 6.283); cx.stroke();
   if (L?.followers != null){
     const p = Math.max(.012, Math.min(1, L.followers / (L.ziel || 1000)));
-    const g = cx.createLinearGradient(X - fr, Y - fr, X + fr, Y + fr); g.addColorStop(0, "#7c6337"); g.addColorStop(1, "#f6dfa6");
-    cx.strokeStyle = g; cx.shadowColor = "#d6b26a"; cx.shadowBlur = 12; cx.beginPath(); cx.arc(X, Y, fr, a0, a0 + p*6.283); cx.stroke(); cx.shadowBlur = 0;
-    const ea = a0 + p*6.283; cx.fillStyle = "#f6dfa6"; cx.beginPath(); cx.arc(X + Math.cos(ea)*fr, Y + Math.sin(ea)*fr, 4 + Math.sin(T*3)*1, 0, 6.283); cx.fill();
-    cx.fillStyle = "rgba(158,147,125,.9)"; cx.font = "500 10px 'JetBrains Mono', monospace"; cx.textAlign = "center"; cx.fillText(((L.followers / (L.ziel || 1000))*100).toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " % BIS " + fmt(L.ziel || 1000), X, Y - fr - 12);
-    [.1, .25, .5, .75].forEach(m => { const a = a0 + m*6.283; cx.fillStyle = p >= m ? "#f6dfa6" : "#4a3e2c"; cx.beginPath(); cx.arc(X + Math.cos(a)*fr, Y + Math.sin(a)*fr, 2.4, 0, 6.283); cx.fill(); });
+    const g = K.gold;
+    cx.strokeStyle = g; cx.shadowColor = K.gold; cx.shadowBlur = 8; cx.beginPath(); cx.arc(X, Y, fr, a0, a0 + p*6.283); cx.stroke(); cx.shadowBlur = 0;
+    const ea = a0 + p*6.283; cx.fillStyle = K.gold; cx.beginPath(); cx.arc(X + Math.cos(ea)*fr, Y + Math.sin(ea)*fr, 4 + Math.sin(T*3)*1, 0, 6.283); cx.fill();
+    cx.fillStyle = K.dust; cx.font = "500 11px 'Hanken Grotesk', sans-serif"; cx.textAlign = "center"; cx.fillText(((L.followers / (L.ziel || 1000))*100).toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " % bis " + fmt(L.ziel || 1000), X, Y - fr - 12);
+    [.1, .25, .5, .75].forEach(m => { const a = a0 + m*6.283; cx.fillStyle = p >= m ? K.gold : K.seam; cx.beginPath(); cx.arc(X + Math.cos(a)*fr, Y + Math.sin(a)*fr, 2.4, 0, 6.283); cx.fill(); });
   }
   // Legion auf der Umlaufbahn
   const lg = L?.legion || [];
@@ -562,39 +574,41 @@ function frame(t){
   lg.forEach((ag, i) => {
     const a = (i / lg.length)*6.283 + T*.06 - Math.PI/2;
     const ax = X + Math.cos(a)*lr, ay = Y + Math.sin(a)*lr;
-    const col = COL[ag.status] || "#6d6455";
+    const col = COL[ag.status] || K.dim;
     const fresh = ag.zuletzt && (Date.now() - Date.parse(ag.zuletzt)) < 3*3600e3;
     const pulse = fresh ? 1.5 + Math.sin(T*3 + i)*1.2 : 0;
     cx.fillStyle = col; cx.shadowColor = col; cx.shadowBlur = 8 + pulse*3;
     cx.beginPath(); cx.arc(ax, ay, 3.6 + pulse*.4, 0, 6.283); cx.fill(); cx.shadowBlur = 0;
-    if (W > 600){ cx.fillStyle = "rgba(240,231,212,.6)"; cx.font = "500 9.5px 'JetBrains Mono', monospace"; cx.textAlign = Math.cos(a) >= 0 ? "left" : "right"; cx.fillText((ROM[i] || "") + " " + (ag.name || "").toUpperCase(), ax + Math.cos(a)*9, ay + Math.sin(a)*9 + 3); }
+    if (W > 600){ cx.fillStyle = hexA(K.bone, .72); cx.font = "500 10.5px 'Hanken Grotesk', sans-serif"; cx.textAlign = Math.cos(a) >= 0 ? "left" : "right"; cx.fillText(ag.name || "", ax + Math.cos(a)*9, ay + Math.sin(a)*9 + 3); }
   });
   // Stimme als Wellen
   const speak = Math.min(1, outV*2.2);
-  if (speak > .02){ for (let k = 0; k < 4; k++){ const p = (T*.7 + k/4) % 1, rr = R*(.6 + p*1.0); cx.strokeStyle = `rgba(246,223,166,${(1 - p)*.45*speak})`; cx.lineWidth = 1.4; cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke(); } }
+  if (speak > .02){ for (let k = 0; k < 4; k++){ const p = (T*.7 + k/4) % 1, rr = R*(.6 + p*1.0); cx.strokeStyle = hexA(K.gold, (1 - p)*.5*speak); cx.lineWidth = 1.4; cx.beginPath(); cx.arc(X, Y, rr, 0, 6.283); cx.stroke(); } }
   // Zuhören
-  if (conv && mode !== "speaking" && !muted){ const a = .25 + inV*2.2; cx.strokeStyle = "rgba(147,199,158,.8)"; cx.lineWidth = 3; cx.lineCap = "round"; cx.beginPath(); cx.arc(X, Y, R*1.3, -Math.PI/2 - a, -Math.PI/2 + a); cx.stroke(); }
+  if (conv && mode !== "speaking" && !muted){ const a = .25 + inV*2.2; cx.strokeStyle = hexA(K.ok, .85); cx.lineWidth = 3; cx.lineCap = "round"; cx.beginPath(); cx.arc(X, Y, R*1.3, -Math.PI/2 - a, -Math.PI/2 + a); cx.stroke(); }
   // Wache: kreisender Späherbogen, Pegel und Aufblitzen bei jedem Klatschen
   if (wArmed && !conv){
     const wr = R*1.56, sw = T*.8;
     cx.lineCap = "round"; cx.setLineDash([2, 7]); cx.lineWidth = 1.3;
-    cx.strokeStyle = "rgba(214,178,106,.42)"; cx.beginPath(); cx.arc(X, Y, wr, sw, sw + 1.1); cx.stroke();
-    cx.strokeStyle = "rgba(214,178,106,.22)"; cx.beginPath(); cx.arc(X, Y, wr, sw + Math.PI, sw + Math.PI + .6); cx.stroke();
+    cx.strokeStyle = hexA(K.gold, .5); cx.beginPath(); cx.arc(X, Y, wr, sw, sw + 1.1); cx.stroke();
+    cx.strokeStyle = hexA(K.gold, .25); cx.beginPath(); cx.arc(X, Y, wr, sw + Math.PI, sw + Math.PI + .6); cx.stroke();
     cx.setLineDash([]);
     const lv = Math.min(1, wLevel*30);
-    if (lv > .03){ cx.strokeStyle = `rgba(147,199,158,${.25 + lv*.5})`; cx.lineWidth = 2.2; cx.beginPath(); cx.arc(X, Y, wr, Math.PI/2 - lv*.5, Math.PI/2 + lv*.5); cx.stroke(); }
+    if (lv > .03){ cx.strokeStyle = hexA(K.ok, .25 + lv*.5); cx.lineWidth = 2.2; cx.beginPath(); cx.arc(X, Y, wr, Math.PI/2 - lv*.5, Math.PI/2 + lv*.5); cx.stroke(); }
   }
-  if (clapFlash > .02){ cx.strokeStyle = `rgba(246,223,166,${clapFlash*.7})`; cx.lineWidth = 2; cx.beginPath(); cx.arc(X, Y, R*(1.05 + (1 - clapFlash)*.6), 0, 6.283); cx.stroke(); clapFlash *= .9; }
-  if (hearFlash > .02){ cx.strokeStyle = `rgba(147,199,158,${hearFlash*.7})`; cx.lineWidth = 2; cx.beginPath(); cx.arc(X, Y, R*(1.05 + (1 - hearFlash)*.6), 0, 6.283); cx.stroke(); hearFlash *= .92; }
+  if (clapFlash > .02){ cx.strokeStyle = hexA(K.gold, clapFlash*.7); cx.lineWidth = 2; cx.beginPath(); cx.arc(X, Y, R*(1.05 + (1 - clapFlash)*.6), 0, 6.283); cx.stroke(); clapFlash *= .9; }
+  if (hearFlash > .02){ cx.strokeStyle = hexA(K.ok, hearFlash*.7); cx.lineWidth = 2; cx.beginPath(); cx.arc(X, Y, R*(1.05 + (1 - hearFlash)*.6), 0, 6.283); cx.stroke(); hearFlash *= .92; }
   // Stern
   const live = conv ? 1 : 0;
   const breathe = 1 + Math.sin(T*1.1)*.03 + speak*.16 + inV*.05;
   const sR = R*.6*breathe;
-  const glow = cx.createRadialGradient(X, Y, 0, X, Y, sR*2.3); glow.addColorStop(0, `rgba(246,223,166,${.22 + speak*.3 + live*.06})`); glow.addColorStop(1, "rgba(214,178,106,0)");
+  const glow = cx.createRadialGradient(X, Y, 0, X, Y, sR*2.3); glow.addColorStop(0, hexA(K.gold, .16 + speak*.3 + live*.06)); glow.addColorStop(1, hexA(K.gold, 0));
   cx.fillStyle = glow; cx.beginPath(); cx.arc(X, Y, sR*2.3, 0, 6.283); cx.fill();
-  const g2 = cx.createLinearGradient(X - sR, Y - sR, X + sR, Y + sR); g2.addColorStop(0, "#f6dfa6"); g2.addColorStop(.55, "#d6b26a"); g2.addColorStop(1, "#9c7d43");
-  cx.fillStyle = g2; cx.shadowColor = "#d6b26a"; cx.shadowBlur = 26 + speak*40; star(X, Y, sR, T*.035, .24); cx.fill(); cx.shadowBlur = 0;
-  cx.strokeStyle = "rgba(246,223,166,.45)"; cx.lineWidth = 1; star(X, Y, sR*1.34, -T*.025 + Math.PI/8, .3); cx.stroke();
+  cx.fillStyle = K.hull; star(X, Y, sR, T*.035, .26); cx.fill();
+  cx.strokeStyle = K.gold; cx.lineWidth = 1.8 + speak*1.5; cx.shadowColor = K.gold; cx.shadowBlur = 6 + speak*24; star(X, Y, sR, T*.035, .26); cx.stroke(); cx.shadowBlur = 0;
+  cx.strokeStyle = hexA(K.gold, .55); cx.lineWidth = 1; star(X, Y, sR*.58, -T*.05 + Math.PI/8, .3); cx.stroke();
+  cx.fillStyle = K.gold; cx.beginPath(); cx.arc(X, Y, 3, 0, 6.283); cx.fill();
+  cx.strokeStyle = hexA(K.gold, .4); cx.lineWidth = 1; star(X, Y, sR*1.34, -T*.025 + Math.PI/8, .3); cx.stroke();
   requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
