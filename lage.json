@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-11T20:50:53Z",
-  "lagesatz": "94 Follower, alles ruhig. Nächster Post am Dienstag, 13.10., um 19 Uhr: „ein buchstabe“.",
-  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
+  "stand": "2026-10-11T20:53:05Z",
+  "lagesatz": "94 Follower, alles ruhig, der Autopilot läuft. Nächster Post am Dienstag, 13.10., um 19 Uhr: „ein buchstabe“.",
+  "parole": "Geduld ist die Linie, die man erst später sieht.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
@@ -30,8 +30,8 @@
   "legion": [
     {
       "name": "Kommandant",
-      "status": "warn",
-      "zuletzt": "2026-10-11T20:50:53Z"
+      "status": "ok",
+      "zuletzt": "2026-10-11T20:53:05Z"
     },
     {
       "name": "Tagesrunde",
