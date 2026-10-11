@@ -298,7 +298,8 @@ function lageText(){
 }
 async function start(){
   if (conv || status === "connecting") return;
-  if (wArmed) disarm(true);
+  if (wArmed) disarm(false);
+  dropHeld(); audioMode("play-and-record");
   const lib = window.ElevenLabsClient;
   if (!lib || !lib.Conversation){ dropHeld(); pending = null; setChip("offline", "err"); setState("Keine Verbindung", "Prüfe dein Internet und lade die App neu."); setTimeout(() => arm(false), 6000); return; }
   status = "connecting"; $("go").disabled = true;
@@ -356,6 +357,8 @@ document.addEventListener("visibilitychange", () => { if (document.visibilitySta
 async function grabWake(){ if (wake && !wake.released) return; try { wake = await navigator.wakeLock?.request("screen"); } catch {} }
 function releaseWake(){ try { wake?.release(); } catch {} wake = null; }
 function buzz(ms){ try { navigator.vibrate?.(ms); } catch {} }
+// iPhone: Ton über den Lautsprecher, auch wenn der Stumm-Schalter an ist
+function audioMode(t){ try { if (navigator.audioSession) navigator.audioSession.type = t; } catch {} }
 
 /* ---------- Wache: zweimal klatschen oder „Zenturion, melde dich“ ---------- */
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -400,7 +403,7 @@ async function arm(gesture){
     if (!clapReady && !recOk) { needTap = true; return; }
     needTap = !clapReady;
     if (clapReady){
-      wStream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+      wStream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: false, autoGainControl: false } });
       micBlocked = false;
       if (!wOn || conv || status !== "idle") { wStream.getTracks().forEach(t => t.stop()); wStream = null; return; }
       wSrc = actx.createMediaStreamSource(wStream);
@@ -496,7 +499,7 @@ function stopRec(){ const r = rec; rec = null; if (r){ r.onend = null; r.onresul
 function fire(question){
   if (!wArmed || conv || status !== "idle") return;
   clearTimeout(wakeT);
-  disarm(true);
+  disarm(false);
   chime(); buzz([20, 50, 20]);
   if (question) pending = question;
   start();
