@@ -1,12 +1,12 @@
 {
-  "stand": "2026-10-12T11:15:47Z",
-  "lagesatz": "94 Follower, Reichweite 30 Tage auf 557 gestiegen. Nächster Post morgen, Dienstag 13.10., 19 Uhr: „ein buchstabe“.",
-  "parole": "Eine feine Linie braucht mehr Geduld als Kraft.",
+  "stand": "2026-10-12T19:15:40Z",
+  "lagesatz": "94 Follower, Reichweite der letzten 30 Tage bei 530. Nächster Post morgen, Dienstag 13.10., 19 Uhr: „ein buchstabe“.",
+  "parole": "Wer langsam zieht, zieht die Linie gerade.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 557,
-  "views_30d": 3042,
+  "reach_30d": 530,
+  "views_30d": 2704,
   "naechste_posts": [
     {
       "slot_at": "2026-10-13T17:00:00Z",
@@ -31,17 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-12T11:15:47Z"
-    },
-    {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-10-12T05:55:02Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-10-11T09:55:37Z"
+      "zuletzt": "2026-10-12T19:15:40Z"
     },
     {
       "name": "Chronist",
@@ -49,19 +39,9 @@
       "zuletzt": "2026-10-11T21:18:00Z"
     },
     {
-      "name": "Veröffentlicher",
-      "status": "ok",
-      "zuletzt": "2026-10-11T18:51:00Z"
-    },
-    {
       "name": "Späher",
       "status": "ok",
       "zuletzt": "2026-10-12T08:17:30Z"
-    },
-    {
-      "name": "Wochenbericht",
-      "status": "ok",
-      "zuletzt": "2026-10-11T17:51:30Z"
     },
     {
       "name": "Schatzmeister",
@@ -69,9 +49,29 @@
       "zuletzt": "2026-10-11T16:13:14Z"
     },
     {
+      "name": "Tagesrunde",
+      "status": "ok",
+      "zuletzt": "2026-10-12T15:55:20Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-10-11T09:55:37Z"
+    },
+    {
+      "name": "Veröffentlicher",
+      "status": "ok",
+      "zuletzt": "2026-10-11T18:51:00Z"
+    },
+    {
+      "name": "Wochenbericht",
+      "status": "ok",
+      "zuletzt": "2026-10-11T17:51:30Z"
+    },
+    {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-12T10:36:41Z"
+      "zuletzt": "2026-10-12T18:36:34Z"
     },
     {
       "name": "Stories",
