@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-11T20:59:39Z",
-  "lagesatz": "94 Follower, alles ruhig, der Autopilot läuft. Nächster Post am Dienstag, 13.10., um 19 Uhr: „ein buchstabe“.",
-  "parole": "Jede feine Linie beginnt mit einem ruhigen Atemzug.",
+  "stand": "2026-10-12T05:17:03Z",
+  "lagesatz": "94 Follower, alles ruhig, der Autopilot läuft. Nächster Post morgen, Dienstag 13.10., um 19 Uhr: „ein buchstabe“.",
+  "parole": "Ruhige Hände ziehen die Linie, die bleibt.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-10-11T20:59:39Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-10-11T15:55:22Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-11T09:55:37Z"
+      "zuletzt": "2026-10-12T05:17:03Z"
     },
     {
       "name": "Chronist",
-      "status": null,
-      "zuletzt": null
+      "status": "ok",
+      "zuletzt": "2026-10-11T21:18:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-10-11T09:55:37Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-11T19:54:00Z"
+      "zuletzt": "2026-10-12T04:55:05Z"
     }
   ]
 }
