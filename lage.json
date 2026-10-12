@@ -1,12 +1,12 @@
 {
-  "stand": "2026-10-12T05:17:03Z",
-  "lagesatz": "94 Follower, alles ruhig, der Autopilot läuft. Nächster Post morgen, Dienstag 13.10., um 19 Uhr: „ein buchstabe“.",
-  "parole": "Ruhige Hände ziehen die Linie, die bleibt.",
+  "stand": "2026-10-12T11:15:47Z",
+  "lagesatz": "94 Follower, Reichweite 30 Tage auf 557 gestiegen. Nächster Post morgen, Dienstag 13.10., 19 Uhr: „ein buchstabe“.",
+  "parole": "Eine feine Linie braucht mehr Geduld als Kraft.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 459,
-  "views_30d": 2865,
+  "reach_30d": 557,
+  "views_30d": 3042,
   "naechste_posts": [
     {
       "slot_at": "2026-10-13T17:00:00Z",
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-10-11T15:55:22Z"
-    },
-    {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-12T05:17:03Z"
+      "zuletzt": "2026-10-12T11:15:47Z"
     },
     {
-      "name": "Chronist",
+      "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-11T21:18:00Z"
+      "zuletzt": "2026-10-12T05:55:02Z"
     },
     {
       "name": "Content-Planer",
       "status": "ok",
       "zuletzt": "2026-10-11T09:55:37Z"
+    },
+    {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-10-11T21:18:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -55,8 +55,8 @@
     },
     {
       "name": "Späher",
-      "status": null,
-      "zuletzt": null
+      "status": "ok",
+      "zuletzt": "2026-10-12T08:17:30Z"
     },
     {
       "name": "Wochenbericht",
@@ -71,7 +71,7 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-11T18:36:44Z"
+      "zuletzt": "2026-10-12T10:36:41Z"
     },
     {
       "name": "Stories",
@@ -80,8 +80,8 @@
     },
     {
       "name": "Wachstums-Check",
-      "status": null,
-      "zuletzt": null
+      "status": "ok",
+      "zuletzt": "2026-10-12T06:45:45Z"
     },
     {
       "name": "Gehirn-Ansicht",
