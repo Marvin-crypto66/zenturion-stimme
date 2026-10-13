@@ -1,12 +1,12 @@
 {
-  "stand": "2026-10-12T19:15:40Z",
-  "lagesatz": "94 Follower, Reichweite der letzten 30 Tage bei 530. Nächster Post morgen, Dienstag 13.10., 19 Uhr: „ein buchstabe“.",
-  "parole": "Wer langsam zieht, zieht die Linie gerade.",
+  "stand": "2026-10-13T11:18:00Z",
+  "lagesatz": "94 Follower, Reichweite der letzten 30 Tage bei 531. Nächster Post heute, Dienstag 13.10., 19 Uhr: „ein buchstabe“.",
+  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 530,
-  "views_30d": 2704,
+  "reach_30d": 531,
+  "views_30d": 2711,
   "naechste_posts": [
     {
       "slot_at": "2026-10-13T17:00:00Z",
@@ -31,27 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-12T19:15:40Z"
-    },
-    {
-      "name": "Chronist",
-      "status": "ok",
-      "zuletzt": "2026-10-11T21:18:00Z"
-    },
-    {
-      "name": "Späher",
-      "status": "ok",
-      "zuletzt": "2026-10-12T08:17:30Z"
-    },
-    {
-      "name": "Schatzmeister",
-      "status": "ok",
-      "zuletzt": "2026-10-11T16:13:14Z"
+      "zuletzt": "2026-10-13T11:18:00Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-12T15:55:20Z"
+      "zuletzt": "2026-10-13T05:54:45Z"
     },
     {
       "name": "Content-Planer",
@@ -59,9 +44,19 @@
       "zuletzt": "2026-10-11T09:55:37Z"
     },
     {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-10-12T21:17:00Z"
+    },
+    {
       "name": "Veröffentlicher",
       "status": "ok",
       "zuletzt": "2026-10-11T18:51:00Z"
+    },
+    {
+      "name": "Späher",
+      "status": "ok",
+      "zuletzt": "2026-10-12T08:17:30Z"
     },
     {
       "name": "Wochenbericht",
@@ -69,9 +64,14 @@
       "zuletzt": "2026-10-11T17:51:30Z"
     },
     {
+      "name": "Schatzmeister",
+      "status": "ok",
+      "zuletzt": "2026-10-11T16:13:14Z"
+    },
+    {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-12T18:36:34Z"
+      "zuletzt": "2026-10-13T10:36:20Z"
     },
     {
       "name": "Stories",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-12T04:55:05Z"
+      "zuletzt": "2026-10-13T04:53:15Z"
     }
   ]
 }
