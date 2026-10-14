@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-13T19:17:48Z",
-  "lagesatz": "94 Follower, Reichweite der letzten 30 Tage bei 497. Heute ist „ein buchstabe“ erschienen, nächster Post Donnerstag 15.10., 19 Uhr.",
-  "parole": "Feine Linien brauchen Zeit, nicht Eile.",
+  "stand": "2026-10-14T05:15:18Z",
+  "lagesatz": "94 Follower, Reichweite der letzten 30 Tage bei 497. Nächster Post Donnerstag 15.10., 19 Uhr, die Stories starten heute.",
+  "parole": "Eine ruhige Hand zieht die Linie nur einmal.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
@@ -30,8 +30,8 @@
   "legion": [
     {
       "name": "Kommandant",
-      "status": "warn",
-      "zuletzt": "2026-10-13T11:24:00Z"
+      "status": "ok",
+      "zuletzt": "2026-10-14T05:15:18Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-10-12T21:17:00Z"
+      "zuletzt": "2026-10-13T21:14:41Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-13T04:53:15Z"
+      "zuletzt": "2026-10-14T04:53:12Z"
     }
   ]
 }
