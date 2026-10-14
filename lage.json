@@ -1,12 +1,12 @@
 {
-  "stand": "2026-10-14T11:17:38Z",
-  "lagesatz": "94 Follower, Reichweite der letzten 30 Tage bei 518. Nächster Post Donnerstag 15.10., 19 Uhr, am Abend kommt die erste Jubiläums-Story.",
-  "parole": "Feine Linien brauchen Zeit, nicht Eile.",
+  "stand": "2026-10-14T19:14:42Z",
+  "lagesatz": "94 Follower, Reichweite der letzten 30 Tage bei 518. Morgen um 19 Uhr kommt das Reel „wo am körper soll es hin“, abends die erste Jubiläums-Story.",
+  "parole": "Eine ruhige Hand zieht jede Linie nur einmal.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
   "reach_30d": 518,
-  "views_30d": 2560,
+  "views_30d": 2520,
   "naechste_posts": [
     {
       "slot_at": "2026-10-15T17:00:00Z",
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-10-14T05:54:45Z"
-    },
-    {
       "name": "Kommandant",
       "status": "ok",
       "zuletzt": "2026-10-14T11:17:38Z"
     },
     {
-      "name": "Chronist",
+      "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-13T21:14:41Z"
+      "zuletzt": "2026-10-14T15:54:30Z"
     },
     {
       "name": "Content-Planer",
       "status": "ok",
       "zuletzt": "2026-10-11T09:55:37Z"
+    },
+    {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-10-13T21:14:41Z"
     },
     {
       "name": "Veröffentlicher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-14T10:36:25Z"
+      "zuletzt": "2026-10-14T18:36:44Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-14T10:07:34Z"
+      "zuletzt": "2026-10-14T18:06:40Z"
     },
     {
       "name": "Wachstums-Check",
