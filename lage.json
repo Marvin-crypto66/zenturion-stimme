@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-14T19:14:42Z",
-  "lagesatz": "94 Follower, Reichweite der letzten 30 Tage bei 518. Morgen um 19 Uhr kommt das Reel „wo am körper soll es hin“, abends die erste Jubiläums-Story.",
-  "parole": "Eine ruhige Hand zieht jede Linie nur einmal.",
+  "stand": "2026-10-15T05:16:28Z",
+  "lagesatz": "94 Follower, Ziel 1000. Heute um 19 Uhr kommt das Reel „wo am körper soll es hin“, um 20 Uhr die erste Jubiläums-Story.",
+  "parole": "Wer langsam sticht, muss nichts nachziehen.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-14T11:17:38Z"
+      "zuletzt": "2026-10-15T05:16:28Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-10-13T21:14:41Z"
+      "zuletzt": "2026-10-14T21:17:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-14T18:06:40Z"
+      "zuletzt": "2026-10-14T20:06:12Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-14T04:53:12Z"
+      "zuletzt": "2026-10-15T04:54:06Z"
     }
   ]
 }
