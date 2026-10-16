@@ -1,12 +1,12 @@
 {
-  "stand": "2026-10-15T19:16:09Z",
-  "lagesatz": "94 Follower, Ziel 1000. Am Samstag um 19 Uhr kommt das Reel „referenzbild“, am Dienstag startet der Jubiläums-Flash.",
-  "parole": "Eine Linie wird nicht schneller, wenn man sie drängt.",
+  "stand": "2026-10-16T19:15:14Z",
+  "lagesatz": "94 Follower, Ziel 1000. Morgen um 19 Uhr kommt das Reel „referenzbild“, Dienstag startet der Jubiläums-Flash.",
+  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 0,
-  "reach_30d": 515,
-  "views_30d": 2532,
+  "reach_30d": 548,
+  "views_30d": 2695,
   "naechste_posts": [
     {
       "slot_at": "2026-10-17T17:00:00Z",
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-10-15T05:19:00Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-15T15:55:46Z"
+      "zuletzt": "2026-10-16T15:55:10Z"
+    },
+    {
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-10-15T19:18:59Z"
+    },
+    {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-10-15T21:15:03Z"
     },
     {
       "name": "Content-Planer",
       "status": "ok",
       "zuletzt": "2026-10-15T09:56:30Z"
-    },
-    {
-      "name": "Chronist",
-      "status": "ok",
-      "zuletzt": "2026-10-14T21:17:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-15T18:36:09Z"
+      "zuletzt": "2026-10-16T18:36:30Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-15T18:11:04Z"
+      "zuletzt": "2026-10-16T18:06:21Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-15T04:54:06Z"
+      "zuletzt": "2026-10-16T04:53:33Z"
     }
   ]
 }
