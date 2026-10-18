@@ -1,17 +1,13 @@
 {
-  "stand": "2026-10-18T05:15:00Z",
-  "lagesatz": "94 Follower, seit einer Woche unverändert. Heute um 19 Uhr kommt das nächste Reel, am 20.10. startet der Jubiläums-Flash.",
-  "parole": "Geduld ist die Linie zwischen zwei Punkten.",
+  "stand": "2026-10-18T19:16:00Z",
+  "lagesatz": "94 Follower, seit über einer Woche unverändert. Am Dienstag um 19 Uhr startet der Jubiläums-Flash. Nichts wartet auf dich.",
+  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 0,
-  "reach_30d": 550,
-  "views_30d": 2757,
+  "reach_30d": 571,
+  "views_30d": 2961,
   "naechste_posts": [
-    {
-      "slot_at": "2026-10-18T17:00:00Z",
-      "titel": "welche pflanze erinnert dich"
-    },
     {
       "slot_at": "2026-10-20T17:00:00Z",
       "titel": "1 Jahr Jubiläums-Flash"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-10-22T17:00:00Z",
       "titel": "größe mit papier testen"
+    },
+    {
+      "slot_at": "2026-10-24T17:00:00Z",
+      "titel": "eine stimme als linie"
     }
   ],
   "jubilaeum": {
@@ -29,19 +29,14 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-10-17T19:20:00Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-17T15:56:05Z"
+      "zuletzt": "2026-10-18T15:55:05Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-15T09:56:30Z"
+      "zuletzt": "2026-10-18T05:20:00Z"
     },
     {
       "name": "Chronist",
@@ -49,9 +44,14 @@
       "zuletzt": "2026-10-17T21:16:00Z"
     },
     {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-10-18T09:55:06Z"
+    },
+    {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-10-17T18:52:00Z"
+      "zuletzt": "2026-10-18T18:52:00Z"
     },
     {
       "name": "Späher",
@@ -61,22 +61,22 @@
     {
       "name": "Wochenbericht",
       "status": "ok",
-      "zuletzt": "2026-10-11T17:51:30Z"
+      "zuletzt": "2026-10-18T17:51:30Z"
     },
     {
       "name": "Schatzmeister",
       "status": "ok",
-      "zuletzt": "2026-10-11T16:13:14Z"
+      "zuletzt": "2026-10-18T16:13:49Z"
     },
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-17T18:36:05Z"
+      "zuletzt": "2026-10-18T18:36:51Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-17T20:06:16Z"
+      "zuletzt": "2026-10-18T18:06:41Z"
     },
     {
       "name": "Wachstums-Check",
