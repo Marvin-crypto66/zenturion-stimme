@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-17T19:15:03Z",
-  "lagesatz": "94 Follower, seit einer Woche unverändert. Morgen um 19 Uhr kommt das nächste Reel, am 20.10. startet der Jubiläums-Flash.",
-  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
+  "stand": "2026-10-18T05:15:00Z",
+  "lagesatz": "94 Follower, seit einer Woche unverändert. Heute um 19 Uhr kommt das nächste Reel, am 20.10. startet der Jubiläums-Flash.",
+  "parole": "Geduld ist die Linie zwischen zwei Punkten.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 0,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-17T05:18:45Z"
+      "zuletzt": "2026-10-17T19:20:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-10-16T21:15:00Z"
+      "zuletzt": "2026-10-17T21:16:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-17T18:10:00Z"
+      "zuletzt": "2026-10-17T20:06:16Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-17T04:53:30Z"
+      "zuletzt": "2026-10-18T04:53:54Z"
     }
   ]
 }
