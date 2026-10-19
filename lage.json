@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-18T19:16:00Z",
-  "lagesatz": "94 Follower, seit über einer Woche unverändert. Am Dienstag um 19 Uhr startet der Jubiläums-Flash. Nichts wartet auf dich.",
-  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
+  "stand": "2026-10-19T05:15:05Z",
+  "lagesatz": "94 Follower, unverändert. Heute Mittag kommt Story 3, morgen um 19 Uhr startet der Jubiläums-Flash.",
+  "parole": "Geduld ist der Teil der Linie, den man nicht sieht.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 0,
@@ -28,65 +28,17 @@
     "vergeben": []
   },
   "legion": [
-    {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-10-18T15:55:05Z"
-    },
-    {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-10-18T05:20:00Z"
-    },
-    {
-      "name": "Chronist",
-      "status": "ok",
-      "zuletzt": "2026-10-17T21:16:00Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-10-18T09:55:06Z"
-    },
-    {
-      "name": "Veröffentlicher",
-      "status": "ok",
-      "zuletzt": "2026-10-18T18:52:00Z"
-    },
-    {
-      "name": "Späher",
-      "status": "ok",
-      "zuletzt": "2026-10-15T08:15:59Z"
-    },
-    {
-      "name": "Wochenbericht",
-      "status": "ok",
-      "zuletzt": "2026-10-18T17:51:30Z"
-    },
-    {
-      "name": "Schatzmeister",
-      "status": "ok",
-      "zuletzt": "2026-10-18T16:13:49Z"
-    },
-    {
-      "name": "Kommentare",
-      "status": "ok",
-      "zuletzt": "2026-10-18T18:36:51Z"
-    },
-    {
-      "name": "Stories",
-      "status": "ok",
-      "zuletzt": "2026-10-18T18:06:41Z"
-    },
-    {
-      "name": "Wachstums-Check",
-      "status": "ok",
-      "zuletzt": "2026-10-12T06:45:45Z"
-    },
-    {
-      "name": "Gehirn-Ansicht",
-      "status": "ok",
-      "zuletzt": "2026-10-18T04:53:54Z"
-    }
+    {"name": "Tagesrunde", "status": "ok", "zuletzt": "2026-10-18T15:55:05Z"},
+    {"name": "Kommandant", "status": "ok", "zuletzt": "2026-10-19T05:15:05Z"},
+    {"name": "Chronist", "status": "ok", "zuletzt": "2026-10-18T21:16:00Z"},
+    {"name": "Content-Planer", "status": "ok", "zuletzt": "2026-10-18T09:55:06Z"},
+    {"name": "Veröffentlicher", "status": "ok", "zuletzt": "2026-10-18T18:52:00Z"},
+    {"name": "Späher", "status": "ok", "zuletzt": "2026-10-15T08:15:59Z"},
+    {"name": "Wochenbericht", "status": "ok", "zuletzt": "2026-10-18T17:51:30Z"},
+    {"name": "Schatzmeister", "status": "ok", "zuletzt": "2026-10-18T16:13:49Z"},
+    {"name": "Kommentare", "status": "ok", "zuletzt": "2026-10-18T18:36:51Z"},
+    {"name": "Stories", "status": "ok", "zuletzt": "2026-10-18T20:06:06Z"},
+    {"name": "Wachstums-Check", "status": "ok", "zuletzt": "2026-10-12T06:45:45Z"},
+    {"name": "Gehirn-Ansicht", "status": "ok", "zuletzt": "2026-10-19T04:54:13Z"}
   ]
 }
