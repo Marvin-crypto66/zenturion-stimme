@@ -1,17 +1,13 @@
 {
-  "stand": "2026-10-19T19:16:00Z",
-  "lagesatz": "94 Follower, unverändert. Morgen um 19 Uhr startet der Jubiläums-Flash mit dem Reel.",
-  "parole": "Eine ruhige Hand zieht jede Linie nur einmal.",
+  "stand": "2026-10-20T19:16:39Z",
+  "lagesatz": "94 Follower, unverändert. Das Jubiläums-Reel ist raus, als Nächstes kommt Do 22.10. um 19 Uhr ein Karussell.",
+  "parole": "Eine Linie wird ruhig, wenn die Hand es ist.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 0,
   "reach_30d": 604,
-  "views_30d": 3055,
+  "views_30d": 3077,
   "naechste_posts": [
-    {
-      "slot_at": "2026-10-20T17:00:00Z",
-      "titel": "1 Jahr Jubiläums-Flash"
-    },
     {
       "slot_at": "2026-10-22T17:00:00Z",
       "titel": "größe mit papier testen"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-10-24T17:00:00Z",
       "titel": "eine stimme als linie"
+    },
+    {
+      "slot_at": "2026-10-25T18:00:00Z",
+      "titel": "nicht jede erinnerung ist ein abschied"
     }
   ],
   "jubilaeum": {
@@ -29,19 +29,14 @@
   },
   "legion": [
     {
+      "name": "Kommandant",
+      "status": "warn",
+      "zuletzt": "2026-10-20T05:15:07Z"
+    },
+    {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-19T15:55:20Z"
-    },
-    {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-10-19T05:15:05Z"
-    },
-    {
-      "name": "Chronist",
-      "status": "ok",
-      "zuletzt": "2026-10-18T21:16:00Z"
+      "zuletzt": "2026-10-20T15:55:15Z"
     },
     {
       "name": "Content-Planer",
@@ -49,9 +44,14 @@
       "zuletzt": "2026-10-18T09:55:06Z"
     },
     {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-10-19T21:16:00Z"
+    },
+    {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-10-18T18:52:00Z"
+      "zuletzt": "2026-10-20T18:51:00Z"
     },
     {
       "name": "Späher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-19T18:36:23Z"
+      "zuletzt": "2026-10-20T18:36:51Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-19T18:07:00Z"
+      "zuletzt": "2026-10-20T18:07:00Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-19T04:54:13Z"
+      "zuletzt": "2026-10-20T04:54:18Z"
     }
   ]
 }
