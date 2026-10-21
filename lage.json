@@ -1,12 +1,12 @@
 {
-  "stand": "2026-10-21T05:16:03Z",
-  "lagesatz": "94 Follower, unverändert. Jubiläums-Flash läuft, noch kein Motiv vergeben. Als Nächstes kommt Do 22.10. um 19 Uhr ein Karussell.",
-  "parole": "Wer langsam zieht, muss nichts nachziehen.",
-  "followers": 94,
+  "stand": "2026-10-21T19:17:04Z",
+  "lagesatz": "95 Follower, einer mehr seit gestern. Morgen, Do 22.10., um 19 Uhr kommt das Karussell zur Größe mit Papier. Nichts wartet auf dich.",
+  "parole": "Eine feine Linie braucht vor allem einen ruhigen Atem.",
+  "followers": 95,
   "ziel": 1000,
-  "delta_7d": 0,
-  "reach_30d": 604,
-  "views_30d": 3077,
+  "delta_7d": 1,
+  "reach_30d": 619,
+  "views_30d": 3222,
   "naechste_posts": [
     {
       "slot_at": "2026-10-22T17:00:00Z",
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-10-20T19:20:00Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-20T15:55:15Z"
+      "zuletzt": "2026-10-21T15:56:01Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-18T09:55:06Z"
+      "zuletzt": "2026-10-21T05:22:56Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
       "zuletzt": "2026-10-20T21:15:34Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-10-18T09:55:06Z"
     },
     {
       "name": "Veröffentlicher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-20T18:36:51Z"
+      "zuletzt": "2026-10-21T18:36:21Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-20T20:07:00Z"
+      "zuletzt": "2026-10-21T18:07:07Z"
     },
     {
       "name": "Wachstums-Check",
