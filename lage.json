@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-20T19:16:39Z",
-  "lagesatz": "94 Follower, unverändert. Das Jubiläums-Reel ist raus, als Nächstes kommt Do 22.10. um 19 Uhr ein Karussell.",
-  "parole": "Eine Linie wird ruhig, wenn die Hand es ist.",
+  "stand": "2026-10-21T05:16:03Z",
+  "lagesatz": "94 Follower, unverändert. Jubiläums-Flash läuft, noch kein Motiv vergeben. Als Nächstes kommt Do 22.10. um 19 Uhr ein Karussell.",
+  "parole": "Wer langsam zieht, muss nichts nachziehen.",
   "followers": 94,
   "ziel": 1000,
   "delta_7d": 0,
@@ -30,8 +30,8 @@
   "legion": [
     {
       "name": "Kommandant",
-      "status": "warn",
-      "zuletzt": "2026-10-20T05:15:07Z"
+      "status": "ok",
+      "zuletzt": "2026-10-20T19:20:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-10-19T21:16:00Z"
+      "zuletzt": "2026-10-20T21:15:34Z"
     },
     {
       "name": "Veröffentlicher",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-20T18:07:00Z"
+      "zuletzt": "2026-10-20T20:07:00Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-20T04:54:18Z"
+      "zuletzt": "2026-10-21T04:54:37Z"
     }
   ]
 }
