@@ -1,17 +1,13 @@
 {
-  "stand": "2026-10-22T05:16:23Z",
-  "lagesatz": "95 Follower (+1 in 7 Tagen), heute um 19 Uhr kommt das Karussell „größe mit papier testen“, vom Jubiläums-Flash ist noch kein Motiv vergeben.",
-  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
-  "followers": 95,
+  "stand": "2026-10-22T19:16:50Z",
+  "lagesatz": "96 Follower (+2 in 7 Tagen), das Karussell von heute ist draußen, Samstag um 19 Uhr folgt „eine stimme als linie“, alles ruhig.",
+  "parole": "Eine feine Linie verzeiht keine Eile, nur Geduld.",
+  "followers": 96,
   "ziel": 1000,
-  "delta_7d": 1,
-  "reach_30d": 619,
-  "views_30d": 3222,
+  "delta_7d": 2,
+  "reach_30d": 617,
+  "views_30d": 3088,
   "naechste_posts": [
-    {
-      "slot_at": "2026-10-22T17:00:00Z",
-      "titel": "größe mit papier testen"
-    },
     {
       "slot_at": "2026-10-24T17:00:00Z",
       "titel": "eine stimme als linie"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-10-25T18:00:00Z",
       "titel": "nicht jede erinnerung ist ein abschied"
+    },
+    {
+      "slot_at": "2026-10-27T18:00:00Z",
+      "titel": "ein paar punkte, ein ganzer abend"
     }
   ],
   "jubilaeum": {
@@ -31,17 +31,17 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-21T19:20:00Z"
+      "zuletzt": "2026-10-22T19:16:50Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-21T15:56:01Z"
+      "zuletzt": "2026-10-22T15:57:40Z"
     },
     {
       "name": "Content-Planer",
       "status": "ok",
-      "zuletzt": "2026-10-18T09:55:06Z"
+      "zuletzt": "2026-10-22T09:57:00Z"
     },
     {
       "name": "Chronist",
@@ -51,12 +51,12 @@
     {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-10-20T18:51:00Z"
+      "zuletzt": "2026-10-22T18:52:00Z"
     },
     {
       "name": "Späher",
       "status": "ok",
-      "zuletzt": "2026-10-19T08:16:30Z"
+      "zuletzt": "2026-10-22T08:16:54Z"
     },
     {
       "name": "Wochenbericht",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-21T18:36:21Z"
+      "zuletzt": "2026-10-22T18:36:54Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-21T20:06:16Z"
+      "zuletzt": "2026-10-22T18:07:00Z"
     },
     {
       "name": "Wachstums-Check",
