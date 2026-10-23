@@ -1,12 +1,12 @@
 {
-  "stand": "2026-10-23T05:16:39Z",
-  "lagesatz": "96 Follower (+2 in 7 Tagen), morgen um 19 Uhr folgt „eine stimme als linie“, alles ruhig.",
-  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
+  "stand": "2026-10-23T19:16:23Z",
+  "lagesatz": "96 Follower (+2 in 7 Tagen), morgen um 19 Uhr folgt „eine stimme als linie“, noch kein Flash-Motiv vergeben.",
+  "parole": "Eine feine Linie verzeiht keine Eile, nur Geduld.",
   "followers": 96,
   "ziel": 1000,
   "delta_7d": 2,
   "reach_30d": 617,
-  "views_30d": 3088,
+  "views_30d": 3124,
   "naechste_posts": [
     {
       "slot_at": "2026-10-24T17:00:00Z",
@@ -31,12 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-22T19:16:50Z"
+      "zuletzt": "2026-10-23T05:18:34Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-22T15:57:40Z"
+      "zuletzt": "2026-10-23T15:55:48Z"
     },
     {
       "name": "Content-Planer",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-22T18:36:54Z"
+      "zuletzt": "2026-10-23T18:36:21Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-22T20:06:08Z"
+      "zuletzt": "2026-10-23T18:07:00Z"
     },
     {
       "name": "Wachstums-Check",
