@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-22T19:16:50Z",
-  "lagesatz": "96 Follower (+2 in 7 Tagen), das Karussell von heute ist draußen, Samstag um 19 Uhr folgt „eine stimme als linie“, alles ruhig.",
-  "parole": "Eine feine Linie verzeiht keine Eile, nur Geduld.",
+  "stand": "2026-10-23T05:16:39Z",
+  "lagesatz": "96 Follower (+2 in 7 Tagen), morgen um 19 Uhr folgt „eine stimme als linie“, alles ruhig.",
+  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
   "followers": 96,
   "ziel": 1000,
   "delta_7d": 2,
@@ -45,8 +45,8 @@
     },
     {
       "name": "Chronist",
-      "status": "ok",
-      "zuletzt": "2026-10-21T21:17:00Z"
+      "status": "warn",
+      "zuletzt": "2026-10-22T21:15:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-22T18:07:00Z"
+      "zuletzt": "2026-10-22T20:06:08Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-22T04:54:02Z"
+      "zuletzt": "2026-10-23T04:53:53Z"
     }
   ]
 }
