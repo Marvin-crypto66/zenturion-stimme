@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-23T19:16:23Z",
-  "lagesatz": "96 Follower (+2 in 7 Tagen), morgen um 19 Uhr folgt „eine stimme als linie“, noch kein Flash-Motiv vergeben.",
-  "parole": "Eine feine Linie verzeiht keine Eile, nur Geduld.",
+  "stand": "2026-10-24T05:14:33Z",
+  "lagesatz": "96 Follower (+2 in 7 Tagen), heute um 19 Uhr folgt „eine stimme als linie“, noch kein Flash-Motiv vergeben.",
+  "parole": "Wer langsam zieht, setzt die Linie sauber.",
   "followers": 96,
   "ziel": 1000,
   "delta_7d": 2,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-23T05:18:34Z"
+      "zuletzt": "2026-10-23T19:16:23Z"
     },
     {
       "name": "Tagesrunde",
@@ -45,8 +45,8 @@
     },
     {
       "name": "Chronist",
-      "status": "warn",
-      "zuletzt": "2026-10-22T21:15:00Z"
+      "status": "ok",
+      "zuletzt": "2026-10-23T21:16:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-23T18:07:00Z"
+      "zuletzt": "2026-10-23T20:07:00Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-23T04:53:53Z"
+      "zuletzt": "2026-10-24T04:54:46Z"
     }
   ]
 }
