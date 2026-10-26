@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-25T20:17:00Z",
-  "lagesatz": "97 Follower (+3 in 7 Tagen). Reels hängen am fehlenden ffmpeg, Karussells laufen; nächster Post Di 27.10. um 19 Uhr ist ein Reel.",
-  "parole": "Feine Linien brauchen Zeit, nicht Eile.",
+  "stand": "2026-10-26T06:24:10Z",
+  "lagesatz": "97 Follower (+3 in 7 Tagen). Reels hängen weiter am fehlenden ffmpeg; nächster Post Di 27.10. um 19 Uhr ist ein Reel.",
+  "parole": "Eine ruhige Hand zieht die Linie nur einmal.",
   "followers": 97,
   "ziel": 1000,
   "delta_7d": 3,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-10-26T06:24:10Z"
+    },
+    {
       "name": "Tagesrunde",
       "status": "warn",
       "zuletzt": "2026-10-25T16:55:20Z"
     },
     {
-      "name": "Kommandant",
+      "name": "Content-Planer",
       "status": "ok",
-      "zuletzt": "2026-10-25T20:17:00Z"
+      "zuletzt": "2026-10-25T10:56:39Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-10-24T21:16:00Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-10-25T10:56:39Z"
+      "zuletzt": "2026-10-25T22:17:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-25T19:06:14Z"
+      "zuletzt": "2026-10-25T21:06:20Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-25T05:54:38Z"
+      "zuletzt": "2026-10-26T05:55:43Z"
     }
   ]
 }
