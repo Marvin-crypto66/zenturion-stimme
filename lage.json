@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-27T20:14:47Z",
-  "lagesatz": "97 Follower (+3 in 7 Tagen). Das Reel von heute ging nicht raus, ffmpeg fehlt weiter; Do 29.10. um 19 Uhr folgt ein Karussell.",
-  "parole": "Jede Linie beginnt mit einem ruhigen Atemzug.",
+  "stand": "2026-10-28T06:19:28Z",
+  "lagesatz": "97 Follower (+3 in 7 Tagen). Das Reel vom 27.10. ging nicht raus, ffmpeg fehlt; Do 29.10. um 19 Uhr folgt ein Karussell.",
+  "parole": "Feine Linien brauchen keine Eile, nur eine ruhige Hand.",
   "followers": 97,
   "ziel": 1000,
   "delta_7d": 3,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-27T06:20:00Z"
+      "zuletzt": "2026-10-27T20:20:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-10-26T22:17:00Z"
+      "zuletzt": "2026-10-27T22:20:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-27T19:07:00Z"
+      "zuletzt": "2026-10-27T21:06:34Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-27T05:55:13Z"
+      "zuletzt": "2026-10-28T05:53:45Z"
     }
   ]
 }
