@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-29T20:16:36Z",
-  "lagesatz": "97 Follower, nächster Post am Samstag um 19 Uhr: „zwei hände, eine linie“. Jubiläums-Flash bis 31.10., alle 8 Motive frei.",
-  "parole": "Wer ruhig zieht, zieht die Linie nur einmal.",
+  "stand": "2026-10-30T06:19:06Z",
+  "lagesatz": "97 Follower, nächster Post morgen um 19 Uhr: „zwei hände, eine linie“. Jubiläums-Flash nur noch bis 31.10., alle 8 Motive frei.",
+  "parole": "Die feinste Linie entsteht, wenn die Hand nicht drängt.",
   "followers": 97,
   "ziel": 1000,
   "delta_7d": 1,
@@ -34,6 +34,21 @@
       "zuletzt": "2026-10-29T20:16:36Z"
     },
     {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-10-29T22:17:14Z"
+    },
+    {
+      "name": "Späher",
+      "status": "ok",
+      "zuletzt": "2026-10-29T09:16:37Z"
+    },
+    {
+      "name": "Schatzmeister",
+      "status": "ok",
+      "zuletzt": "2026-10-25T17:13:18Z"
+    },
+    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-10-29T16:57:00Z"
@@ -44,29 +59,14 @@
       "zuletzt": "2026-10-29T10:59:10Z"
     },
     {
-      "name": "Chronist",
-      "status": "ok",
-      "zuletzt": "2026-10-28T22:15:40Z"
-    },
-    {
       "name": "Veröffentlicher",
       "status": "ok",
       "zuletzt": "2026-10-29T19:52:00Z"
     },
     {
-      "name": "Späher",
-      "status": "ok",
-      "zuletzt": "2026-10-29T09:16:37Z"
-    },
-    {
       "name": "Wochenbericht",
       "status": "warn",
       "zuletzt": "2026-10-25T18:44:38Z"
-    },
-    {
-      "name": "Schatzmeister",
-      "status": "ok",
-      "zuletzt": "2026-10-25T17:13:18Z"
     },
     {
       "name": "Kommentare",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-29T19:11:10Z"
+      "zuletzt": "2026-10-29T21:07:10Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-29T05:54:12Z"
+      "zuletzt": "2026-10-30T05:54:20Z"
     }
   ]
 }
