@@ -1,30 +1,92 @@
 {
-  "stand": "2026-10-30T20:16:00Z",
-  "lagesatz": "97 Follower, morgen um 19 Uhr kommt „zwei hände, eine linie“. Jubiläums-Flash endet morgen, alle 8 Motive frei.",
-  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
+  "stand": "2026-10-31T06:16:22Z",
+  "lagesatz": "97 Follower, heute um 19 Uhr kommt „zwei hände, eine linie“. Der Jubiläums-Flash endet heute Abend, alle 8 Motive sind noch frei.",
+  "parole": "Eine feine Linie verzeiht keine Eile, nur Geduld.",
   "followers": 97,
   "ziel": 1000,
   "delta_7d": 1,
   "reach_30d": 504,
   "views_30d": 2678,
   "naechste_posts": [
-    {"slot_at": "2026-10-31T18:00:00Z", "titel": "zwei hände, eine linie"},
-    {"slot_at": "2026-11-01T18:00:00Z", "titel": "was du im ersten gespräch darfst"},
-    {"slot_at": "2026-11-03T18:00:00Z", "titel": "ein tattoo gemeinsam entscheiden"}
+    {
+      "slot_at": "2026-10-31T18:00:00Z",
+      "titel": "zwei hände, eine linie"
+    },
+    {
+      "slot_at": "2026-11-01T18:00:00Z",
+      "titel": "was du im ersten gespräch darfst"
+    },
+    {
+      "slot_at": "2026-11-03T18:00:00Z",
+      "titel": "ein tattoo gemeinsam entscheiden"
+    }
   ],
-  "jubilaeum": {"start_at": "2026-10-20T17:00:00Z", "ende_at": "2026-10-31T22:59:00Z", "gesamt": 8, "vergeben": []},
+  "jubilaeum": {
+    "start_at": "2026-10-20T17:00:00Z",
+    "ende_at": "2026-10-31T22:59:00Z",
+    "gesamt": 8,
+    "vergeben": []
+  },
   "legion": [
-    {"name": "Tagesrunde", "status": "ok", "zuletzt": "2026-10-30T16:55:18Z"},
-    {"name": "Kommandant", "status": "ok", "zuletzt": "2026-10-30T20:16:00Z"},
-    {"name": "Chronist", "status": "ok", "zuletzt": "2026-10-29T22:17:14Z"},
-    {"name": "Content-Planer", "status": "warn", "zuletzt": "2026-10-29T10:59:10Z"},
-    {"name": "Veröffentlicher", "status": "ok", "zuletzt": "2026-10-29T19:52:00Z"},
-    {"name": "Späher", "status": "ok", "zuletzt": "2026-10-29T09:16:37Z"},
-    {"name": "Wochenbericht", "status": "warn", "zuletzt": "2026-10-25T18:44:38Z"},
-    {"name": "Schatzmeister", "status": "ok", "zuletzt": "2026-10-25T17:13:18Z"},
-    {"name": "Kommentare", "status": "ok", "zuletzt": "2026-10-30T19:37:00Z"},
-    {"name": "Stories", "status": "ok", "zuletzt": "2026-10-30T19:06:30Z"},
-    {"name": "Wachstums-Check", "status": "ok", "zuletzt": "2026-10-26T07:48:50Z"},
-    {"name": "Gehirn-Ansicht", "status": "ok", "zuletzt": "2026-10-30T05:54:20Z"}
+    {
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-10-30T20:16:00Z"
+    },
+    {
+      "name": "Tagesrunde",
+      "status": "ok",
+      "zuletzt": "2026-10-30T16:55:18Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "warn",
+      "zuletzt": "2026-10-29T10:59:10Z"
+    },
+    {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-10-30T22:17:00Z"
+    },
+    {
+      "name": "Veröffentlicher",
+      "status": "ok",
+      "zuletzt": "2026-10-29T19:52:00Z"
+    },
+    {
+      "name": "Späher",
+      "status": "ok",
+      "zuletzt": "2026-10-29T09:16:37Z"
+    },
+    {
+      "name": "Wochenbericht",
+      "status": "warn",
+      "zuletzt": "2026-10-25T18:44:38Z"
+    },
+    {
+      "name": "Schatzmeister",
+      "status": "ok",
+      "zuletzt": "2026-10-25T17:13:18Z"
+    },
+    {
+      "name": "Kommentare",
+      "status": "ok",
+      "zuletzt": "2026-10-30T19:37:00Z"
+    },
+    {
+      "name": "Stories",
+      "status": "ok",
+      "zuletzt": "2026-10-30T21:06:30Z"
+    },
+    {
+      "name": "Wachstums-Check",
+      "status": "ok",
+      "zuletzt": "2026-10-26T07:48:50Z"
+    },
+    {
+      "name": "Gehirn-Ansicht",
+      "status": "ok",
+      "zuletzt": "2026-10-31T05:54:02Z"
+    }
   ]
 }
