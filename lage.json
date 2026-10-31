@@ -1,17 +1,13 @@
 {
-  "stand": "2026-10-31T06:16:22Z",
-  "lagesatz": "97 Follower, heute um 19 Uhr kommt „zwei hände, eine linie“. Der Jubiläums-Flash endet heute Abend, alle 8 Motive sind noch frei.",
-  "parole": "Eine feine Linie verzeiht keine Eile, nur Geduld.",
-  "followers": 97,
+  "stand": "2026-10-31T20:16:04Z",
+  "lagesatz": "98 Follower, der Jubiläums-Flash endet heute Abend ohne vergebenes Motiv. Morgen um 19 Uhr kommt „was du im ersten gespräch darfst“, nichts wartet.",
+  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
+  "followers": 98,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 504,
+  "reach_30d": 503,
   "views_30d": 2678,
   "naechste_posts": [
-    {
-      "slot_at": "2026-10-31T18:00:00Z",
-      "titel": "zwei hände, eine linie"
-    },
     {
       "slot_at": "2026-11-01T18:00:00Z",
       "titel": "was du im ersten gespräch darfst"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-03T18:00:00Z",
       "titel": "ein tattoo gemeinsam entscheiden"
+    },
+    {
+      "slot_at": "2026-11-05T18:00:00Z",
+      "titel": "kleine schrift braucht platz"
     }
   ],
   "jubilaeum": {
@@ -31,12 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-30T20:16:00Z"
+      "zuletzt": "2026-10-31T06:19:00Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-30T16:55:18Z"
+      "zuletzt": "2026-10-31T16:55:05Z"
     },
     {
       "name": "Content-Planer",
@@ -51,7 +51,7 @@
     {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-10-29T19:52:00Z"
+      "zuletzt": "2026-10-31T19:52:00Z"
     },
     {
       "name": "Späher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-30T19:37:00Z"
+      "zuletzt": "2026-10-31T19:36:50Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-30T21:06:30Z"
+      "zuletzt": "2026-10-31T19:06:15Z"
     },
     {
       "name": "Wachstums-Check",
