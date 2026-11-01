@@ -1,7 +1,7 @@
 {
-  "stand": "2026-10-31T20:16:04Z",
-  "lagesatz": "98 Follower, der Jubiläums-Flash endet heute Abend ohne vergebenes Motiv. Morgen um 19 Uhr kommt „was du im ersten gespräch darfst“, nichts wartet.",
-  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
+  "stand": "2026-11-01T06:16:19Z",
+  "lagesatz": "98 Follower, heute um 19 Uhr kommt das Karussell „was du im ersten gespräch darfst“.",
+  "parole": "Die feinste Linie entsteht im ruhigsten Atemzug.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-10-31T06:19:00Z"
+      "zuletzt": "2026-10-31T20:19:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-10-30T22:17:00Z"
+      "zuletzt": "2026-10-31T22:20:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -76,7 +76,7 @@
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-10-31T19:06:15Z"
+      "zuletzt": "2026-10-31T21:06:40Z"
     },
     {
       "name": "Wachstums-Check",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-10-31T05:54:02Z"
+      "zuletzt": "2026-11-01T05:54:00Z"
     }
   ]
 }
