@@ -1,26 +1,13 @@
 {
-  "stand": "2026-11-01T06:16:19Z",
-  "lagesatz": "98 Follower, heute um 19 Uhr kommt das Karussell „was du im ersten gespräch darfst“.",
-  "parole": "Die feinste Linie entsteht im ruhigsten Atemzug.",
+  "stand": "2026-11-02T06:23:48Z",
+  "lagesatz": "98 Follower, noch 2 bis 100. Kein Post geplant: Dienstag kommt dein Reel, Samstag ein Foto-Post.",
+  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 503,
-  "views_30d": 2678,
-  "naechste_posts": [
-    {
-      "slot_at": "2026-11-01T18:00:00Z",
-      "titel": "was du im ersten gespräch darfst"
-    },
-    {
-      "slot_at": "2026-11-03T18:00:00Z",
-      "titel": "ein tattoo gemeinsam entscheiden"
-    },
-    {
-      "slot_at": "2026-11-05T18:00:00Z",
-      "titel": "kleine schrift braucht platz"
-    }
-  ],
+  "reach_30d": 517,
+  "views_30d": 2736,
+  "naechste_posts": [],
   "jubilaeum": {
     "start_at": "2026-10-20T17:00:00Z",
     "ende_at": "2026-10-31T22:59:00Z",
@@ -29,24 +16,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-10-31T20:19:00Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-31T16:55:05Z"
+      "zuletzt": "2026-11-01T16:54:45Z"
     },
     {
-      "name": "Content-Planer",
-      "status": "warn",
-      "zuletzt": "2026-10-29T10:59:10Z"
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-11-02T06:23:48Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
       "zuletzt": "2026-10-31T22:20:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-01T10:51:05Z"
     },
     {
       "name": "Veröffentlicher",
@@ -61,17 +48,17 @@
     {
       "name": "Wochenbericht",
       "status": "warn",
-      "zuletzt": "2026-10-25T18:44:38Z"
+      "zuletzt": "2026-11-01T18:51:10Z"
     },
     {
       "name": "Schatzmeister",
       "status": "ok",
-      "zuletzt": "2026-10-25T17:13:18Z"
+      "zuletzt": "2026-11-01T17:12:54Z"
     },
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-10-31T19:36:50Z"
+      "zuletzt": "2026-11-01T19:36:57Z"
     },
     {
       "name": "Stories",
