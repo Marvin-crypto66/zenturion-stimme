@@ -1,13 +1,26 @@
 {
-  "stand": "2026-11-02T06:23:48Z",
-  "lagesatz": "98 Follower, noch 2 bis 100. Kein Post geplant: Dienstag kommt dein Reel, Samstag ein Foto-Post.",
-  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
+  "stand": "2026-11-03T06:20:00Z",
+  "lagesatz": "98 Follower, noch 2 bis 100. Heute um 19 Uhr geht das Reel „ein tattoo gemeinsam entscheiden“ raus.",
+  "parole": "Feine Linien brauchen Zeit, nicht Eile.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 517,
-  "views_30d": 2736,
-  "naechste_posts": [],
+  "reach_30d": 527,
+  "views_30d": 2996,
+  "naechste_posts": [
+    {
+      "slot_at": "2026-11-03T18:00:00Z",
+      "titel": "ein tattoo gemeinsam entscheiden"
+    },
+    {
+      "slot_at": "2026-11-05T18:00:00Z",
+      "titel": "kleine schrift braucht platz"
+    },
+    {
+      "slot_at": "2026-11-07T18:00:00Z",
+      "titel": "licht im fenster"
+    }
+  ],
   "jubilaeum": {
     "start_at": "2026-10-20T17:00:00Z",
     "ende_at": "2026-10-31T22:59:00Z",
@@ -16,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-11-01T16:54:45Z"
-    },
-    {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-02T06:23:48Z"
+      "zuletzt": "2026-11-03T06:20:00Z"
     },
     {
-      "name": "Chronist",
+      "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-10-31T22:20:00Z"
+      "zuletzt": "2026-11-02T17:14:18Z"
     },
     {
       "name": "Content-Planer",
       "status": "ok",
       "zuletzt": "2026-11-01T10:51:05Z"
+    },
+    {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-11-02T22:20:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -53,12 +66,12 @@
     {
       "name": "Schatzmeister",
       "status": "ok",
-      "zuletzt": "2026-11-01T17:12:54Z"
+      "zuletzt": "2026-11-02T21:14:21Z"
     },
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-01T19:36:57Z"
+      "zuletzt": "2026-11-02T19:36:41Z"
     },
     {
       "name": "Stories",
@@ -73,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-01T05:54:00Z"
+      "zuletzt": "2026-11-03T05:53:57Z"
     }
   ]
 }
