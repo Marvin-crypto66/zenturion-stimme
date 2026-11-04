@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-03T20:16:17Z",
-  "lagesatz": "98 Follower, noch 2 bis 100. Das Reel ist heute raus, nächster Post am Donnerstag. Wachstums-Check und Späher sind überfällig.",
-  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
+  "stand": "2026-11-04T06:16:26Z",
+  "lagesatz": "98 Follower, noch 2 bis 100. Nächster Post am Donnerstag um 19 Uhr. Wachstums-Check und Späher sind weiter überfällig.",
+  "parole": "Geduld ist die Linie, die man erst später sieht.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-03T06:22:00Z"
+      "zuletzt": "2026-11-03T20:19:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-02T22:20:00Z"
+      "zuletzt": "2026-11-03T22:20:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-03T05:53:57Z"
+      "zuletzt": "2026-11-04T05:57:35Z"
     }
   ]
 }
