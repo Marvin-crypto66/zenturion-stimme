@@ -1,12 +1,12 @@
 {
-  "stand": "2026-11-04T06:16:26Z",
-  "lagesatz": "98 Follower, noch 2 bis 100. Nächster Post am Donnerstag um 19 Uhr. Wachstums-Check und Späher sind weiter überfällig.",
-  "parole": "Geduld ist die Linie, die man erst später sieht.",
+  "stand": "2026-11-04T20:16:41Z",
+  "lagesatz": "98 Follower, noch 2 bis 100. Nächster Post morgen, Donnerstag, um 19 Uhr. Wachstums-Check und Späher sind weiter überfällig.",
+  "parole": "Eine feine Linie entsteht aus einer ruhigen Hand.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 520,
-  "views_30d": 3016,
+  "reach_30d": 542,
+  "views_30d": 3035,
   "naechste_posts": [
     {
       "slot_at": "2026-11-05T18:00:00Z",
@@ -31,12 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-03T20:19:00Z"
+      "zuletzt": "2026-11-04T06:19:00Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-03T16:55:16Z"
+      "zuletzt": "2026-11-04T16:59:30Z"
     },
     {
       "name": "Content-Planer",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-03T19:36:54Z"
+      "zuletzt": "2026-11-04T19:36:42Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-03T15:07:03Z"
+      "zuletzt": "2026-11-04T15:06:32Z"
     },
     {
       "name": "Wachstums-Check",
