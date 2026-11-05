@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-04T20:16:41Z",
-  "lagesatz": "98 Follower, noch 2 bis 100. Nächster Post morgen, Donnerstag, um 19 Uhr. Wachstums-Check und Späher sind weiter überfällig.",
-  "parole": "Eine feine Linie entsteht aus einer ruhigen Hand.",
+  "stand": "2026-11-05T06:16:03Z",
+  "lagesatz": "98 Follower, noch 2 bis 100. Heute um 19 Uhr kommt das Karussell „kleine schrift braucht platz“. Wachstums-Check und Späher sind weiter überfällig.",
+  "parole": "Gute Linien brauchen Zeit, nicht Eile.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-04T06:19:00Z"
+      "zuletzt": "2026-11-04T20:19:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -39,19 +39,14 @@
       "zuletzt": "2026-11-04T16:59:30Z"
     },
     {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-11-04T22:18:00Z"
+    },
+    {
       "name": "Content-Planer",
       "status": "ok",
       "zuletzt": "2026-11-01T10:51:05Z"
-    },
-    {
-      "name": "Chronist",
-      "status": "ok",
-      "zuletzt": "2026-11-03T22:20:00Z"
-    },
-    {
-      "name": "Veröffentlicher",
-      "status": "ok",
-      "zuletzt": "2026-11-03T19:51:30Z"
     },
     {
       "name": "Späher",
@@ -59,14 +54,19 @@
       "zuletzt": "2026-10-29T09:16:37Z"
     },
     {
-      "name": "Wochenbericht",
-      "status": "warn",
-      "zuletzt": "2026-11-01T18:51:10Z"
+      "name": "Veröffentlicher",
+      "status": "ok",
+      "zuletzt": "2026-11-03T19:51:30Z"
     },
     {
       "name": "Schatzmeister",
       "status": "ok",
       "zuletzt": "2026-11-02T21:14:21Z"
+    },
+    {
+      "name": "Wochenbericht",
+      "status": "warn",
+      "zuletzt": "2026-11-01T18:51:10Z"
     },
     {
       "name": "Kommentare",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-04T05:57:35Z"
+      "zuletzt": "2026-11-05T05:54:49Z"
     }
   ]
 }
