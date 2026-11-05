@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-05T06:16:03Z",
-  "lagesatz": "98 Follower, noch 2 bis 100. Heute um 19 Uhr kommt das Karussell „kleine schrift braucht platz“. Wachstums-Check und Späher sind weiter überfällig.",
-  "parole": "Gute Linien brauchen Zeit, nicht Eile.",
-  "followers": 98,
+  "stand": "2026-11-05T20:15:39Z",
+  "lagesatz": "99 Follower, noch 1 bis 100. Nächster Post Samstag 19 Uhr („licht im fenster“). Wachstums-Check überfällig.",
+  "parole": "Eine feine Linie verzeiht keine Eile.",
+  "followers": 99,
   "ziel": 1000,
-  "delta_7d": 1,
-  "reach_30d": 542,
-  "views_30d": 3035,
+  "delta_7d": 2,
+  "reach_30d": 457,
+  "views_30d": 2823,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-05T18:00:00Z",
-      "titel": "kleine schrift braucht platz"
-    },
     {
       "slot_at": "2026-11-07T18:00:00Z",
       "titel": "licht im fenster"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-08T18:00:00Z",
       "titel": "dein zeichen darf sich verändern"
+    },
+    {
+      "slot_at": "2026-11-10T18:00:00Z",
+      "titel": "gegenstand als zeichen"
     }
   ],
   "jubilaeum": {
@@ -31,12 +31,17 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-04T20:19:00Z"
+      "zuletzt": "2026-11-05T20:15:39Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-04T16:59:30Z"
+      "zuletzt": "2026-11-05T16:54:40Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "warn",
+      "zuletzt": "2026-11-05T10:56:40Z"
     },
     {
       "name": "Chronist",
@@ -44,24 +49,14 @@
       "zuletzt": "2026-11-04T22:18:00Z"
     },
     {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-11-01T10:51:05Z"
+      "name": "Veröffentlicher",
+      "status": "warn",
+      "zuletzt": "2026-11-05T19:53:00Z"
     },
     {
       "name": "Späher",
       "status": "ok",
-      "zuletzt": "2026-10-29T09:16:37Z"
-    },
-    {
-      "name": "Veröffentlicher",
-      "status": "ok",
-      "zuletzt": "2026-11-03T19:51:30Z"
-    },
-    {
-      "name": "Schatzmeister",
-      "status": "ok",
-      "zuletzt": "2026-11-02T21:14:21Z"
+      "zuletzt": "2026-11-05T09:15:55Z"
     },
     {
       "name": "Wochenbericht",
@@ -69,14 +64,19 @@
       "zuletzt": "2026-11-01T18:51:10Z"
     },
     {
+      "name": "Schatzmeister",
+      "status": "ok",
+      "zuletzt": "2026-11-02T21:14:21Z"
+    },
+    {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-04T19:36:42Z"
+      "zuletzt": "2026-11-05T19:36:12Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-04T15:06:32Z"
+      "zuletzt": "2026-11-05T15:08:02Z"
     },
     {
       "name": "Wachstums-Check",
