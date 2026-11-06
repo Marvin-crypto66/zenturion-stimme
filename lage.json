@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-05T20:15:39Z",
-  "lagesatz": "99 Follower, noch 1 bis 100. Nächster Post Samstag 19 Uhr („licht im fenster“). Wachstums-Check überfällig.",
-  "parole": "Eine feine Linie verzeiht keine Eile.",
+  "stand": "2026-11-06T06:16:47Z",
+  "lagesatz": "99 Follower, 1 fehlt bis 100. Nächster Post Samstag 19 Uhr („licht im fenster“), das Karussell von gestern ist noch offen. Wachstums-Check überfällig.",
+  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 2,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-05T20:15:39Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-05T16:54:40Z"
     },
     {
-      "name": "Content-Planer",
-      "status": "warn",
-      "zuletzt": "2026-11-05T10:56:40Z"
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-11-06T06:16:47Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-04T22:18:00Z"
+      "zuletzt": "2026-11-05T22:20:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "warn",
+      "zuletzt": "2026-11-05T10:56:40Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-05T05:54:49Z"
+      "zuletzt": "2026-11-06T05:54:05Z"
     }
   ]
 }
