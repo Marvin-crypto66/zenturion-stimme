@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-06T20:17:31Z",
-  "lagesatz": "99 Follower, 1 fehlt bis 100. Nächster Post Samstag 19 Uhr („licht im fenster“), das Karussell vom Donnerstag ist noch offen. Wachstums-Check überfällig.",
-  "parole": "Eine ruhige Hand braucht keinen zweiten Versuch.",
+  "stand": "2026-11-07T06:16:27Z",
+  "lagesatz": "99 Follower, 1 fehlt bis 100. Heute 19 Uhr kommt „licht im fenster“, das Karussell vom Donnerstag ist noch offen. Wachstums-Check überfällig.",
+  "parole": "Feine Linien entstehen aus Ruhe, nicht aus Eile.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 2,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-06T06:19:30Z"
+      "zuletzt": "2026-11-06T20:20:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-05T22:20:00Z"
+      "zuletzt": "2026-11-06T22:18:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-06T05:54:05Z"
+      "zuletzt": "2026-11-07T05:54:09Z"
     }
   ]
 }
