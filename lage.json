@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-07T06:16:27Z",
-  "lagesatz": "99 Follower, 1 fehlt bis 100. Heute 19 Uhr kommt „licht im fenster“, das Karussell vom Donnerstag ist noch offen. Wachstums-Check überfällig.",
-  "parole": "Feine Linien entstehen aus Ruhe, nicht aus Eile.",
+  "stand": "2026-11-07T20:17:31Z",
+  "lagesatz": "99 Follower, 1 fehlt bis 100. Morgen 19 Uhr kommt das Karussell „dein zeichen darf sich verändern“. Wachstums-Check seit 26.10. überfällig.",
+  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
   "followers": 99,
   "ziel": 1000,
-  "delta_7d": 2,
-  "reach_30d": 443,
-  "views_30d": 3019,
+  "delta_7d": 1,
+  "reach_30d": 420,
+  "views_30d": 2927,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-07T18:00:00Z",
-      "titel": "licht im fenster"
-    },
     {
       "slot_at": "2026-11-08T18:00:00Z",
       "titel": "dein zeichen darf sich verändern"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-10T18:00:00Z",
       "titel": "gegenstand als zeichen"
+    },
+    {
+      "slot_at": "2026-11-12T18:00:00Z",
+      "titel": "bekanntes symbol, eigene geschichte"
     }
   ],
   "jubilaeum": {
@@ -31,12 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-06T20:20:00Z"
+      "zuletzt": "2026-11-07T20:17:31Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-06T16:57:05Z"
+      "zuletzt": "2026-11-07T16:55:45Z"
     },
     {
       "name": "Content-Planer",
@@ -50,8 +50,8 @@
     },
     {
       "name": "Veröffentlicher",
-      "status": "warn",
-      "zuletzt": "2026-11-05T19:53:00Z"
+      "status": "ok",
+      "zuletzt": "2026-11-07T19:51:00Z"
     },
     {
       "name": "Späher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-06T19:37:02Z"
+      "zuletzt": "2026-11-07T19:36:29Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-06T15:08:00Z"
+      "zuletzt": "2026-11-07T15:06:39Z"
     },
     {
       "name": "Wachstums-Check",
