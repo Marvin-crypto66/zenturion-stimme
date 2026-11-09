@@ -1,12 +1,12 @@
 {
-  "stand": "2026-11-09T06:21:56Z",
-  "lagesatz": "99 Follower, 1 fehlt bis 100. Nächster Post Di 10.11. um 19 Uhr: Karussell „gegenstand als zeichen“. Wachstums-Check seit 26.10. überfällig.",
-  "parole": "Wer langsam sticht, muss nichts zweimal ziehen.",
+  "stand": "2026-11-09T20:15:00Z",
+  "lagesatz": "99 Follower, 1 fehlt bis 100. Nächster Post Di 10.11. um 19 Uhr: Karussell „gegenstand als zeichen“. Alles ruhig.",
+  "parole": "Die ruhigste Hand zieht die längste Linie.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
   "reach_30d": 438,
-  "views_30d": 3046,
+  "views_30d": 3062,
   "naechste_posts": [
     {
       "slot_at": "2026-11-10T18:00:00Z",
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-11-08T16:57:05Z"
-    },
-    {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-08T20:20:00Z"
+      "zuletzt": "2026-11-09T06:25:00Z"
+    },
+    {
+      "name": "Tagesrunde",
+      "status": "ok",
+      "zuletzt": "2026-11-09T16:55:41Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-08T10:56:39Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
       "zuletzt": "2026-11-08T22:20:00Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "warn",
-      "zuletzt": "2026-11-08T10:56:39Z"
     },
     {
       "name": "Veröffentlicher",
@@ -56,7 +56,7 @@
     {
       "name": "Späher",
       "status": "ok",
-      "zuletzt": "2026-11-05T09:15:55Z"
+      "zuletzt": "2026-11-09T09:18:21Z"
     },
     {
       "name": "Wochenbericht",
@@ -71,17 +71,17 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-08T19:36:13Z"
+      "zuletzt": "2026-11-09T19:37:43Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-08T15:06:13Z"
+      "zuletzt": "2026-11-09T15:07:59Z"
     },
     {
       "name": "Wachstums-Check",
       "status": "ok",
-      "zuletzt": "2026-10-26T07:48:50Z"
+      "zuletzt": "2026-11-09T15:04:26Z"
     },
     {
       "name": "Gehirn-Ansicht",
