@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Zenturion</title>
 <meta name="description" content="Zenturion, die Kommandozentrale von mrvn.lines. Live per Stimme.">
-<meta name="theme-color" content="#14113A" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F3F2F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#06080C">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,27 +15,19 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Chakra+Petch:wght@400;500;600&family=Barlow:wght@400;500;600&display=swap">
 <style>
 /* Kommandobrücke im Taschenformat: Kopf mit Gruß und Parole, in der Mitte der Stern mit Follower-Ring und kreisender Legion, darunter Lagekarten, Schnellbefehle, Gesprächszeilen und der eine Knopf. */
 :root{
-  --void:#14113A; --hull:#1B1747; --plate:#221D55; --seam:#2D2766; --seam-2:#463E8E;
-  --bone:#ECE9FF; --dust:#B9B2EA; --dim:#938DCB;
-  --gold:#8F7BFF; --gold-hi:#C9BEFF; --gold-lo:#4A3FA8; --on-gold:#120F33;
-  --ok:#4FD1A5; --warn:#F2B04E; --bad:#FF6B78;
-  --f-display:"Josefin Sans","Futura","Century Gothic",sans-serif;
-  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+  --void:#06080C; --hull:#0B1016; --plate:#101821; --seam:#18222D; --seam-2:#2A3947;
+  --bone:#ECE6D8; --dust:#AEB8C2; --dim:#7F8B98;
+  --gold:#3FE0F0; --gold-hi:#A8F4FA; --gold-lo:#1C5E66; --on-gold:#031015;
+  --bronze:#C9974F; --bronze-hi:#F0C988; --legion:#D84A40;
+  --ok:#4FD1A5; --warn:#F2B04E; --bad:#FF5A55;
+  --f-display:"Cinzel","Trajan Pro","Times New Roman",serif;
+  --f-body:"Barlow","Segoe UI",system-ui,sans-serif;
+  --f-mono:"Chakra Petch","Barlow",ui-monospace,monospace;
   color-scheme:dark;
-}
-@media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]){
-    --void:#F3F2F8; --hull:#FBFBFE; --plate:#EEECF7; --seam:#DAD7EE; --seam-2:#BBB5DF;
-    --bone:#1F1760; --dust:#4A4389; --dim:#655EA0;
-    --gold:#5B3DF5; --gold-hi:#3A22C9; --gold-lo:#C9C0F7; --on-gold:#FFFFFF;
-    --ok:#13866F; --warn:#A35F00; --bad:#C92A3A;
-    color-scheme:light;
-  }
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;margin:0;background:var(--void);color:var(--bone);font-family:var(--f-body);overflow:hidden;overscroll-behavior:none}
@@ -128,6 +119,26 @@ footer{display:flex;align-items:center;justify-content:center;gap:16px}
 [hidden]{display:none!important}
 @media (max-height:700px){.parole{display:none}.cards .card .d{-webkit-line-clamp:1}}
 @media (prefers-reduced-motion:reduce){.boot svg{animation:none}.go{transition:none}}
+
+/* ===== Brücke der Legion: Stein, Bronze, Legionsrot, Cyan ===== */
+body::before{background:
+  radial-gradient(70% 40% at 50% 40%,rgba(63,224,240,.10),transparent 70%),
+  radial-gradient(60% 40% at 100% 100%,rgba(216,74,64,.07),transparent 70%),
+  linear-gradient(rgba(63,224,240,.03) 1px,transparent 1px) 0 0/100% 28px,
+  linear-gradient(90deg,rgba(63,224,240,.03) 1px,transparent 1px) 0 0/28px 100%}
+.mark b{font-family:var(--f-display);font-weight:600;font-size:21px;letter-spacing:.24em;text-transform:uppercase;background:linear-gradient(180deg,var(--bronze-hi),var(--bronze) 65%,#7d5a2a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mark svg{width:22px;height:24px;filter:drop-shadow(0 0 8px rgba(63,224,240,.4))}
+.chip{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.08em;font-size:11.5px;border-radius:3px;background:rgba(63,224,240,.05)}
+.greet h1{font-family:var(--f-display)!important;font-weight:600;letter-spacing:.04em}
+.greet h1 em{font-style:normal;color:var(--bronze-hi)}
+.parole{font-family:var(--f-display);color:var(--bronze-hi);border-left:2px solid var(--legion)}
+.card{border-radius:3px!important;border-top:2px solid var(--bronze)!important;background:linear-gradient(180deg,rgba(201,151,79,.07),transparent 60%),var(--hull)!important}
+.card .k,.card .d,.meta,.sub,.state{font-family:var(--f-mono);letter-spacing:.06em}
+.card .k{text-transform:uppercase}
+.card .v{font-family:var(--f-mono)!important;font-weight:600}
+.card.hot .v{color:var(--gold);text-shadow:0 0 14px rgba(63,224,240,.35)}
+.q{border-radius:3px!important;font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.06em;font-size:12px}
+.state{text-transform:uppercase;color:var(--gold)}
 </style>
 </head>
 <body>
@@ -138,8 +149,8 @@ footer{display:flex;align-items:center;justify-content:center;gap:16px}
 
 <header class="wrap">
   <div class="mark">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1 L19 13 L31 16 L19 19 L16 31 L13 19 L1 16 L13 13 Z" fill="none" stroke="var(--gold)" stroke-width="1.1" stroke-linejoin="round"/><circle cx="16" cy="16" r="1.6" fill="var(--gold)"/></svg>
-    <b>zenturion</b>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1.5 L29 6.5 V17 C29 25 23.5 30 16 33 C8.5 30 3 25 3 17 V6.5 Z" fill="none" stroke="var(--bronze)" stroke-width="1.4" stroke-linejoin="round" transform="scale(.94) translate(1,-.5)"/><path d="M16 8 L18 15 L25 17 L18 19 L16 26 L14 19 L7 17 L14 15 Z" fill="none" stroke="var(--gold)" stroke-width="1.1" stroke-linejoin="round"/><circle cx="16" cy="17" r="1.4" fill="var(--gold)"/></svg>
+    <b>Zenturion</b>
   </div>
   <div class="hr">
     <button class="chip" id="wache" aria-pressed="true" aria-label="Wache an oder aus"><i></i><span id="wacheText">Wache</span></button>
@@ -163,7 +174,7 @@ footer{display:flex;align-items:center;justify-content:center;gap:16px}
 <section class="wrap cards" id="cards" aria-label="Lage">
   <div class="card hot"><span class="k">Follower</span><span class="v" id="cF">–</span><span class="d" id="cFd">–</span></div>
   <div class="card"><span class="k">Nächster Post</span><span class="v" id="cP">–</span><span class="d" id="cPd">–</span></div>
-  <div class="card hot"><span class="k">Jubiläums-Flash</span><span class="v" id="cJ">–</span><span class="d" id="cJd">–</span></div>
+  <div class="card hot"><span class="k">Aufrufe 30 T</span><span class="v" id="cJ">–</span><span class="d" id="cJd">–</span></div>
   <div class="card"><span class="k">Legion</span><span class="v" id="cL">–</span><span class="d" id="cLd">–</span></div>
   <div class="card"><span class="k">Reichweite 30 T</span><span class="v" id="cR">–</span><span class="d" id="cRd">–</span></div>
 </section>
@@ -172,7 +183,7 @@ footer{display:flex;align-items:center;justify-content:center;gap:16px}
   <button class="q" data-say="Gib mir den Lagebericht.">Lagebericht</button>
   <button class="q" data-say="Was steht als Nächstes an?">Was steht an?</button>
   <button class="q" data-say="Wie läuft Instagram gerade?">Instagram</button>
-  <button class="q" data-say="Wie ist der Stand beim Jubiläums-Flash?">Jubiläum</button>
+  <button class="q" data-say="Wie lief die letzte Woche auf Instagram?">Diese Woche</button>
   <button class="q" data-say="Gib mir einen kurzen Satz, der mich heute antreibt. Ohne Kitsch.">Motivier mich</button>
 </nav>
 
@@ -243,7 +254,7 @@ function renderLage(){
   jubi();
 }
 function jubi(){
-  const J = L?.jubilaeum; if (!J) return;
+  const J = null; if (!J) { if (L && L.views_30d != null) { $("cJ").textContent = fmt(L.views_30d); $("cJd").textContent = "Aufrufe der letzten 30 Tage"; } return; }
   const now = Date.now(), st = Date.parse(J.start_at), en = Date.parse(J.ende_at);
   const n = (J.vergeben || []).length, g = J.gesamt || 8;
   let target = null, label = "";

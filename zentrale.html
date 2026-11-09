@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Zentrale</title>
-<meta name="theme-color" content="#14113A" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F3F2F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#06080C">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -15,37 +14,20 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Chakra+Petch:wght@400;500;600&family=Barlow:wght@400;500;600&display=swap">
 <style>
 /* Layout: Schablone. Oben das Netz als Bühne (links Zenturions Gedächtnis, rechts das Gehirn des Autopiloten, dazwischen die Legion um Zenturion), daneben das Detailblatt zum angetippten Punkt. Darunter der Dienstplan des Tages, dann Reiter für Legion, Gedächtnis, Gehirn, Lage, Konsole und Archiv. Farben wie eine Tattoo-Schablone: violette Transferlinien auf hellem Papier, nachts auf tiefem Indigo statt Schwarz. Feine, gleichmäßige Linien wie beim Fineline-Stich. */
 :root{
-  --paper:#F3F2F8; --sheet:#FBFBFE; --sunk:#E8E6F3;
-  --ink:#1F1760; --ink-2:#4A4389; --ink-3:#655EA0;
-  --line:#DAD7EE; --line-2:#BBB5DF;
-  --violet:#5B3DF5; --rose:#C8336E; --teal:#00849C; --on-violet:#FFFFFF;
-  --ok:#13866F; --warn:#A35F00; --bad:#C92A3A;
-  --veil:rgba(243,242,248,.86);
-  --f-display:"Josefin Sans","Futura","Century Gothic","Avenir Next",sans-serif;
-  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#14113A; --sheet:#1B1747; --sunk:#100D30;
-    --ink:#ECE9FF; --ink-2:#B9B2EA; --ink-3:#938DCB;
-    --line:#2D2766; --line-2:#463E8E;
-    --violet:#8F7BFF; --rose:#E8508A; --teal:#1FA3BC; --on-violet:#120F33;
-    --ok:#4FD1A5; --warn:#F2B04E; --bad:#FF6B78;
-    --veil:rgba(20,17,58,.84);
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#14113A; --sheet:#1B1747; --sunk:#100D30;
-  --ink:#ECE9FF; --ink-2:#B9B2EA; --ink-3:#938DCB;
-  --line:#2D2766; --line-2:#463E8E;
-  --violet:#8F7BFF; --rose:#E8508A; --teal:#1FA3BC; --on-violet:#120F33;
-  --ok:#4FD1A5; --warn:#F2B04E; --bad:#FF6B78;
-  --veil:rgba(20,17,58,.84);
+  --paper:#06080C; --sheet:#0B1016; --sunk:#04060A;
+  --ink:#ECE6D8; --ink-2:#AEB8C2; --ink-3:#7F8B98;
+  --line:#18222D; --line-2:#2A3947;
+  --violet:#3FE0F0; --rose:#D84A40; --teal:#C9974F; --on-violet:#031015;
+  --bronze:#C9974F; --bronze-hi:#F0C988; --legion:#D84A40;
+  --ok:#4FD1A5; --warn:#F2B04E; --bad:#FF5A55;
+  --veil:rgba(6,8,12,.84);
+  --f-display:"Cinzel","Trajan Pro","Times New Roman",serif;
+  --f-body:"Barlow","Segoe UI",system-ui,sans-serif;
+  --f-hud:"Chakra Petch","Barlow",ui-monospace,monospace;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -280,6 +262,31 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 .unlock input{background:var(--paper);border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;font-size:16px;letter-spacing:.08em;text-transform:uppercase;min-width:0}
 .unlock .err{color:var(--bad);font-size:13.5px}
 body{padding-top:calc(env(safe-area-inset-top,0px) + 12px)}
+
+/* ===== Brücke der Legion ===== */
+body{background:radial-gradient(120% 70% at 50% -10%,rgba(63,224,240,.07),transparent 60%),linear-gradient(rgba(63,224,240,.025) 1px,transparent 1px) 0 0/100% 32px,linear-gradient(90deg,rgba(63,224,240,.025) 1px,transparent 1px) 0 0/32px 100%,var(--paper);font-family:var(--f-body)}
+h1,h2,h3{font-family:var(--f-display)!important}
+.mark h1{font-weight:600;letter-spacing:.24em;text-transform:uppercase;background:linear-gradient(180deg,var(--bronze-hi),var(--bronze) 60%,#7d5a2a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mark p,.tab,.legend,.sub,.d-kind,.grp,.plan .next,.c-foot,.kpi span{font-family:var(--f-hud);letter-spacing:.08em}
+.sec h2,.plan h2,.detail h2,.raster h2{text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+.sec h2,.plan h2,.raster h2{color:var(--bronze-hi);font-size:20px}
+.net{background:repeating-radial-gradient(circle at 50% 50%,transparent 0 79px,rgba(63,224,240,.07) 79px 80px),radial-gradient(70% 70% at 50% 50%,#0c1620,var(--sunk));border:1px solid var(--line-2);border-radius:4px}
+.net::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,rgba(63,224,240,.16),rgba(63,224,240,0) 14%,transparent 100%);animation:sweep 9s linear infinite;pointer-events:none}
+.net canvas{z-index:1}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.detail,.plan,.console,.goal,.vault{border:1px solid var(--line-2);border-radius:4px;background:linear-gradient(180deg,rgba(63,224,240,.035),transparent 45%),var(--sheet)}
+.rt{border-radius:3px;border-top:2px solid var(--bronze);background:linear-gradient(180deg,rgba(201,151,79,.07),transparent 60%),var(--sheet)}
+.rt b{font-family:var(--f-hud)}
+.agents{counter-reset:leg}
+.ag{border-radius:3px;position:relative;padding-left:52px}
+.ag::before{counter-increment:leg;content:counter(leg,upper-roman);position:absolute;left:12px;top:12px;width:30px;font-family:var(--f-display);font-weight:700;font-size:15px;color:var(--bronze);text-align:center;border-bottom:1px solid var(--legion);padding-bottom:3px}
+.tab{text-transform:uppercase;font-size:13px}
+.tab[aria-selected="true"]{color:var(--violet);border-bottom-color:var(--violet);text-shadow:0 0 12px rgba(63,224,240,.5)}
+.btn{border-radius:3px;font-family:var(--f-hud);text-transform:uppercase;letter-spacing:.08em;font-size:12.5px}
+.btn.go{box-shadow:0 0 16px rgba(63,224,240,.35)}
+.kpi b,.goal .big b,.count{font-family:var(--f-hud)!important}
+.parole{font-family:var(--f-display);border-left-color:var(--legion);color:var(--bronze-hi)}
+@media (prefers-reduced-motion:reduce){.net::before{animation:none}}
 </style>
 </head>
 <body>
