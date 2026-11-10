@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-09T20:15:00Z",
-  "lagesatz": "99 Follower, 1 fehlt bis 100. Nächster Post Di 10.11. um 19 Uhr: Karussell „gegenstand als zeichen“. Alles ruhig.",
-  "parole": "Die ruhigste Hand zieht die längste Linie.",
+  "stand": "2026-11-10T06:20:00Z",
+  "lagesatz": "99 Follower, einer fehlt bis 100. Heute um 19 Uhr geht das Karussell „gegenstand als zeichen“ raus.",
+  "parole": "Eine feine Linie verzeiht keine Eile.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-09T06:25:00Z"
+      "zuletzt": "2026-11-10T06:20:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-08T22:20:00Z"
+      "zuletzt": "2026-11-09T22:20:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-09T05:54:40Z"
+      "zuletzt": "2026-11-10T05:54:45Z"
     }
   ]
 }
