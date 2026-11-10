@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-10T06:20:00Z",
-  "lagesatz": "99 Follower, einer fehlt bis 100. Heute um 19 Uhr geht das Karussell „gegenstand als zeichen“ raus.",
-  "parole": "Eine feine Linie verzeiht keine Eile.",
+  "stand": "2026-11-10T20:15:10Z",
+  "lagesatz": "99 Follower, einer fehlt bis 100. Heute lief das Karussell „gegenstand als zeichen“, Donnerstag um 19 Uhr folgt ein Reel. Alles ruhig.",
+  "parole": "Wer langsam zieht, zieht die Linie gerade.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 438,
-  "views_30d": 3062,
+  "reach_30d": 334,
+  "views_30d": 2921,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-10T18:00:00Z",
-      "titel": "gegenstand als zeichen"
-    },
     {
       "slot_at": "2026-11-12T18:00:00Z",
       "titel": "bekanntes symbol, eigene geschichte"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-14T18:00:00Z",
       "titel": "worte für das motiv finden"
+    },
+    {
+      "slot_at": "2026-11-15T18:00:00Z",
+      "titel": "einladung: fang mit einem wort an"
     }
   ],
   "jubilaeum": {
@@ -28,65 +28,17 @@
     "vergeben": []
   },
   "legion": [
-    {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-10T06:20:00Z"
-    },
-    {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-11-09T16:55:41Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-11-08T10:56:39Z"
-    },
-    {
-      "name": "Chronist",
-      "status": "ok",
-      "zuletzt": "2026-11-09T22:20:00Z"
-    },
-    {
-      "name": "Veröffentlicher",
-      "status": "ok",
-      "zuletzt": "2026-11-08T19:51:00Z"
-    },
-    {
-      "name": "Späher",
-      "status": "ok",
-      "zuletzt": "2026-11-09T09:18:21Z"
-    },
-    {
-      "name": "Wochenbericht",
-      "status": "ok",
-      "zuletzt": "2026-11-08T18:52:00Z"
-    },
-    {
-      "name": "Schatzmeister",
-      "status": "ok",
-      "zuletzt": "2026-11-08T17:12:56Z"
-    },
-    {
-      "name": "Kommentare",
-      "status": "ok",
-      "zuletzt": "2026-11-09T19:37:43Z"
-    },
-    {
-      "name": "Stories",
-      "status": "ok",
-      "zuletzt": "2026-11-09T15:07:59Z"
-    },
-    {
-      "name": "Wachstums-Check",
-      "status": "ok",
-      "zuletzt": "2026-11-09T15:04:26Z"
-    },
-    {
-      "name": "Gehirn-Ansicht",
-      "status": "ok",
-      "zuletzt": "2026-11-10T05:54:45Z"
-    }
+    {"name": "Kommandant", "status": "ok", "zuletzt": "2026-11-10T06:20:00Z"},
+    {"name": "Tagesrunde", "status": "ok", "zuletzt": "2026-11-10T16:54:44Z"},
+    {"name": "Content-Planer", "status": "ok", "zuletzt": "2026-11-08T10:56:39Z"},
+    {"name": "Chronist", "status": "ok", "zuletzt": "2026-11-09T22:20:00Z"},
+    {"name": "Veröffentlicher", "status": "ok", "zuletzt": "2026-11-10T19:52:00Z"},
+    {"name": "Späher", "status": "ok", "zuletzt": "2026-11-09T09:18:21Z"},
+    {"name": "Wochenbericht", "status": "ok", "zuletzt": "2026-11-08T18:52:00Z"},
+    {"name": "Schatzmeister", "status": "ok", "zuletzt": "2026-11-08T17:12:56Z"},
+    {"name": "Kommentare", "status": "ok", "zuletzt": "2026-11-10T19:36:35Z"},
+    {"name": "Stories", "status": "ok", "zuletzt": "2026-11-10T15:09:04Z"},
+    {"name": "Wachstums-Check", "status": "ok", "zuletzt": "2026-11-09T15:04:26Z"},
+    {"name": "Gehirn-Ansicht", "status": "ok", "zuletzt": "2026-11-10T05:54:45Z"}
   ]
 }
