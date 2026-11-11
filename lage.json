@@ -1,12 +1,12 @@
 {
-  "stand": "2026-11-11T06:20:10Z",
-  "lagesatz": "99 Follower, einer fehlt bis 100. Morgen um 19 Uhr kommt das Reel „bekanntes symbol, eigene geschichte“. Alles ruhig.",
-  "parole": "Eine feine Linie verzeiht keine Eile.",
+  "stand": "2026-11-11T20:16:09Z",
+  "lagesatz": "99 Follower, einer fehlt bis 100. Morgen um 19 Uhr kommt das Reel „bekanntes symbol, eigene geschichte“.",
+  "parole": "Wer langsam zieht, muss die Linie nur einmal ziehen.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 334,
-  "views_30d": 2921,
+  "reach_30d": 333,
+  "views_30d": 2972,
   "naechste_posts": [
     {
       "slot_at": "2026-11-12T18:00:00Z",
@@ -31,12 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-10T20:22:00Z"
+      "zuletzt": "2026-11-11T20:16:09Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-10T16:54:44Z"
+      "zuletzt": "2026-11-11T16:54:22Z"
     },
     {
       "name": "Content-Planer",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-10T19:36:35Z"
+      "zuletzt": "2026-11-11T19:37:13Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-10T15:09:04Z"
+      "zuletzt": "2026-11-11T15:07:44Z"
     },
     {
       "name": "Wachstums-Check",
