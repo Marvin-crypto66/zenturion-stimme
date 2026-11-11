@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-10T20:15:10Z",
-  "lagesatz": "99 Follower, einer fehlt bis 100. Heute lief das Karussell „gegenstand als zeichen“, Donnerstag um 19 Uhr folgt ein Reel. Alles ruhig.",
-  "parole": "Wer langsam zieht, zieht die Linie gerade.",
+  "stand": "2026-11-11T06:20:10Z",
+  "lagesatz": "99 Follower, einer fehlt bis 100. Morgen um 19 Uhr kommt das Reel „bekanntes symbol, eigene geschichte“. Alles ruhig.",
+  "parole": "Eine feine Linie verzeiht keine Eile.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -28,17 +28,65 @@
     "vergeben": []
   },
   "legion": [
-    {"name": "Kommandant", "status": "ok", "zuletzt": "2026-11-10T06:20:00Z"},
-    {"name": "Tagesrunde", "status": "ok", "zuletzt": "2026-11-10T16:54:44Z"},
-    {"name": "Content-Planer", "status": "ok", "zuletzt": "2026-11-08T10:56:39Z"},
-    {"name": "Chronist", "status": "ok", "zuletzt": "2026-11-09T22:20:00Z"},
-    {"name": "Veröffentlicher", "status": "ok", "zuletzt": "2026-11-10T19:52:00Z"},
-    {"name": "Späher", "status": "ok", "zuletzt": "2026-11-09T09:18:21Z"},
-    {"name": "Wochenbericht", "status": "ok", "zuletzt": "2026-11-08T18:52:00Z"},
-    {"name": "Schatzmeister", "status": "ok", "zuletzt": "2026-11-08T17:12:56Z"},
-    {"name": "Kommentare", "status": "ok", "zuletzt": "2026-11-10T19:36:35Z"},
-    {"name": "Stories", "status": "ok", "zuletzt": "2026-11-10T15:09:04Z"},
-    {"name": "Wachstums-Check", "status": "ok", "zuletzt": "2026-11-09T15:04:26Z"},
-    {"name": "Gehirn-Ansicht", "status": "ok", "zuletzt": "2026-11-10T05:54:45Z"}
+    {
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-11-10T20:22:00Z"
+    },
+    {
+      "name": "Tagesrunde",
+      "status": "ok",
+      "zuletzt": "2026-11-10T16:54:44Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-08T10:56:39Z"
+    },
+    {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-11-10T22:22:00Z"
+    },
+    {
+      "name": "Veröffentlicher",
+      "status": "ok",
+      "zuletzt": "2026-11-10T19:52:00Z"
+    },
+    {
+      "name": "Späher",
+      "status": "ok",
+      "zuletzt": "2026-11-09T09:18:21Z"
+    },
+    {
+      "name": "Wochenbericht",
+      "status": "ok",
+      "zuletzt": "2026-11-08T18:52:00Z"
+    },
+    {
+      "name": "Schatzmeister",
+      "status": "ok",
+      "zuletzt": "2026-11-08T17:12:56Z"
+    },
+    {
+      "name": "Kommentare",
+      "status": "ok",
+      "zuletzt": "2026-11-10T19:36:35Z"
+    },
+    {
+      "name": "Stories",
+      "status": "ok",
+      "zuletzt": "2026-11-10T15:09:04Z"
+    },
+    {
+      "name": "Wachstums-Check",
+      "status": "ok",
+      "zuletzt": "2026-11-09T15:04:26Z"
+    },
+    {
+      "name": "Gehirn-Ansicht",
+      "status": "ok",
+      "zuletzt": "2026-11-11T05:54:05Z"
+    }
   ]
 }
