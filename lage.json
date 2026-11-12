@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-11T20:16:09Z",
-  "lagesatz": "99 Follower, einer fehlt bis 100. Morgen um 19 Uhr kommt das Reel „bekanntes symbol, eigene geschichte“.",
-  "parole": "Wer langsam zieht, muss die Linie nur einmal ziehen.",
+  "stand": "2026-11-12T06:16:56Z",
+  "lagesatz": "99 Follower, einer fehlt bis 100. Heute um 19 Uhr kommt das Reel „bekanntes symbol, eigene geschichte“. Alles ruhig.",
+  "parole": "Eine ruhige Hand braucht keinen lauten Tag.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-11T20:16:09Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-11T16:54:22Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-08T10:56:39Z"
+      "zuletzt": "2026-11-12T06:16:56Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-10T22:22:00Z"
+      "zuletzt": "2026-11-11T22:20:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-08T10:56:39Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-11T05:54:05Z"
+      "zuletzt": "2026-11-12T05:53:44Z"
     }
   ]
 }
