@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-12T06:16:56Z",
-  "lagesatz": "99 Follower, einer fehlt bis 100. Heute um 19 Uhr kommt das Reel „bekanntes symbol, eigene geschichte“. Alles ruhig.",
-  "parole": "Eine ruhige Hand braucht keinen lauten Tag.",
+  "stand": "2026-11-12T20:14:56Z",
+  "lagesatz": "99 Follower, einer fehlt bis 100. Nächster Post am Samstag um 19 Uhr, das Karussell „worte für das motiv finden“. Nichts wartet auf dich.",
+  "parole": "Feine Linien entstehen, wenn man sich Zeit lässt.",
   "followers": 99,
   "ziel": 1000,
-  "delta_7d": 1,
-  "reach_30d": 333,
-  "views_30d": 2972,
+  "delta_7d": 0,
+  "reach_30d": 313,
+  "views_30d": 2906,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-12T18:00:00Z",
-      "titel": "bekanntes symbol, eigene geschichte"
-    },
     {
       "slot_at": "2026-11-14T18:00:00Z",
       "titel": "worte für das motiv finden"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-15T18:00:00Z",
       "titel": "einladung: fang mit einem wort an"
+    },
+    {
+      "slot_at": "2026-11-17T18:00:00Z",
+      "titel": "tier als zeichen"
     }
   ],
   "jubilaeum": {
@@ -29,14 +29,19 @@
   },
   "legion": [
     {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-11-11T16:54:22Z"
-    },
-    {
       "name": "Kommandant",
       "status": "ok",
       "zuletzt": "2026-11-12T06:16:56Z"
+    },
+    {
+      "name": "Tagesrunde",
+      "status": "ok",
+      "zuletzt": "2026-11-12T16:55:05Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-12T10:55:30Z"
     },
     {
       "name": "Chronist",
@@ -44,19 +49,14 @@
       "zuletzt": "2026-11-11T22:20:00Z"
     },
     {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-11-08T10:56:39Z"
-    },
-    {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-11-10T19:52:00Z"
+      "zuletzt": "2026-11-12T19:52:00Z"
     },
     {
       "name": "Späher",
       "status": "ok",
-      "zuletzt": "2026-11-09T09:18:21Z"
+      "zuletzt": "2026-11-12T09:16:42Z"
     },
     {
       "name": "Wochenbericht",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-11T19:37:13Z"
+      "zuletzt": "2026-11-12T19:36:27Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-11T15:07:44Z"
+      "zuletzt": "2026-11-12T15:07:25Z"
     },
     {
       "name": "Wachstums-Check",
