@@ -1,12 +1,12 @@
 {
-  "stand": "2026-11-13T06:18:02Z",
-  "lagesatz": "99 Follower, einer fehlt bis 100. Nächster Post morgen, Samstag um 19 Uhr, das Karussell „worte für das motiv finden“.",
-  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
-  "followers": 99,
+  "stand": "2026-11-13T20:14:47Z",
+  "lagesatz": "98 Follower, eins weniger als vor 7 Tagen; morgen um 19 Uhr kommt das Karussell „worte für das motiv finden“.",
+  "parole": "Jede feine Linie beginnt mit einem ruhigen Atemzug.",
+  "followers": 98,
   "ziel": 1000,
-  "delta_7d": 0,
-  "reach_30d": 313,
-  "views_30d": 2906,
+  "delta_7d": -1,
+  "reach_30d": 329,
+  "views_30d": 2989,
   "naechste_posts": [
     {
       "slot_at": "2026-11-14T18:00:00Z",
@@ -31,12 +31,12 @@
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-12T16:55:05Z"
+      "zuletzt": "2026-11-13T16:56:55Z"
     },
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-12T20:20:00Z"
+      "zuletzt": "2026-11-13T20:14:47Z"
     },
     {
       "name": "Chronist",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-12T19:36:27Z"
+      "zuletzt": "2026-11-13T19:36:32Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-12T15:07:25Z"
+      "zuletzt": "2026-11-13T15:45:22Z"
     },
     {
       "name": "Wachstums-Check",
