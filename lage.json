@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-12T20:14:56Z",
-  "lagesatz": "99 Follower, einer fehlt bis 100. Nächster Post am Samstag um 19 Uhr, das Karussell „worte für das motiv finden“. Nichts wartet auf dich.",
-  "parole": "Feine Linien entstehen, wenn man sich Zeit lässt.",
+  "stand": "2026-11-13T06:18:02Z",
+  "lagesatz": "99 Follower, einer fehlt bis 100. Nächster Post morgen, Samstag um 19 Uhr, das Karussell „worte für das motiv finden“.",
+  "parole": "Eine ruhige Hand zieht die Linie, die bleibt.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 0,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-12T06:16:56Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-12T16:55:05Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-12T10:55:30Z"
+      "zuletzt": "2026-11-12T20:20:00Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-11T22:20:00Z"
+      "zuletzt": "2026-11-12T22:17:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-12T10:55:30Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-12T05:53:44Z"
+      "zuletzt": "2026-11-13T05:54:16Z"
     }
   ]
 }
