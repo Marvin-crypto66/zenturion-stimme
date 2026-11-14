@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-13T20:14:47Z",
-  "lagesatz": "98 Follower, eins weniger als vor 7 Tagen; morgen um 19 Uhr kommt das Karussell „worte für das motiv finden“.",
-  "parole": "Jede feine Linie beginnt mit einem ruhigen Atemzug.",
+  "stand": "2026-11-14T06:15:35Z",
+  "lagesatz": "98 Follower, eins weniger als vor 7 Tagen; heute um 19 Uhr kommt das Karussell „worte für das motiv finden“.",
+  "parole": "Eine ruhige Hand zieht die Linie, die lange hält.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": -1,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-11-13T16:56:55Z"
-    },
-    {
       "name": "Kommandant",
       "status": "ok",
       "zuletzt": "2026-11-13T20:14:47Z"
     },
     {
-      "name": "Chronist",
+      "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-12T22:17:00Z"
+      "zuletzt": "2026-11-13T16:56:55Z"
     },
     {
       "name": "Content-Planer",
       "status": "ok",
       "zuletzt": "2026-11-12T10:55:30Z"
+    },
+    {
+      "name": "Chronist",
+      "status": "ok",
+      "zuletzt": "2026-11-13T22:19:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-13T05:54:16Z"
+      "zuletzt": "2026-11-14T05:54:21Z"
     }
   ]
 }
