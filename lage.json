@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-14T20:14:45Z",
-  "lagesatz": "98 Follower, Ziel 1000. Als Nächstes am Sonntag um 19 Uhr das Reel „einladung: fang mit einem wort an“. Alles ruhig.",
-  "parole": "Wer langsam zieht, muss die Linie nur einmal ziehen.",
+  "stand": "2026-11-15T06:16:56Z",
+  "lagesatz": "98 Follower, nächster Post heute 19:00 Uhr: „einladung: fang mit einem wort an“. Alles ruhig.",
+  "parole": "Eine ruhige Hand braucht keinen lauten Tag.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": -1,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-11-15T06:16:56Z"
+    },
+    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-14T16:55:26Z"
     },
     {
-      "name": "Kommandant",
+      "name": "Content-Planer",
       "status": "ok",
-      "zuletzt": "2026-11-14T06:20:00Z"
+      "zuletzt": "2026-11-12T10:55:30Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-13T22:19:00Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-11-12T10:55:30Z"
+      "zuletzt": "2026-11-14T22:20:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-14T05:54:21Z"
+      "zuletzt": "2026-11-15T05:54:24Z"
     }
   ]
 }
