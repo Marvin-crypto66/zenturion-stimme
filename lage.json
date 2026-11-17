@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-16T20:14:36Z",
-  "lagesatz": "98 Follower, Ziel 1000. Morgen um 19 Uhr kommt das Karussell „tier als zeichen“, alles ruhig.",
-  "parole": "Feine Linien brauchen Zeit, nicht Eile.",
+  "stand": "2026-11-17T06:14:53Z",
+  "lagesatz": "98 Follower, Ziel 1000. Heute um 19 Uhr kommt das Karussell „tier als zeichen“, alles ruhig.",
+  "parole": "Jede ruhige Linie beginnt mit einem geduldigen Atemzug.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": -1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-16T06:15:31Z"
+      "zuletzt": "2026-11-17T06:14:53Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-15T22:18:00Z"
+      "zuletzt": "2026-11-16T22:20:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-16T05:54:21Z"
+      "zuletzt": "2026-11-17T05:54:55Z"
     }
   ]
 }
