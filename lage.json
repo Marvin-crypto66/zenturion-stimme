@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-17T06:14:53Z",
-  "lagesatz": "98 Follower, Ziel 1000. Heute um 19 Uhr kommt das Karussell „tier als zeichen“, alles ruhig.",
-  "parole": "Jede ruhige Linie beginnt mit einem geduldigen Atemzug.",
+  "stand": "2026-11-17T20:14:38Z",
+  "lagesatz": "98 Follower, nächster Post Do 19.11. um 19 Uhr. Die heutige Story ist ausgefallen, der Stories-Agent braucht ffmpeg.",
+  "parole": "Eine feine Linie wird nicht schneller, nur weil man drängt.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": -1,
-  "reach_30d": 324,
-  "views_30d": 2887,
+  "reach_30d": 287,
+  "views_30d": 2821,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-17T18:00:00Z",
-      "titel": "tier als zeichen"
-    },
     {
       "slot_at": "2026-11-19T18:00:00Z",
       "titel": "ein normaler dienstag als zeichen"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-21T18:00:00Z",
       "titel": "woran du ein bleibendes motiv erkennst"
+    },
+    {
+      "slot_at": "2026-11-22T18:00:00Z",
+      "titel": "wellenlinie als strecke"
     }
   ],
   "jubilaeum": {
@@ -31,12 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-17T06:14:53Z"
+      "zuletzt": "2026-11-17T06:20:00Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-16T16:56:40Z"
+      "zuletzt": "2026-11-17T16:54:27Z"
     },
     {
       "name": "Content-Planer",
@@ -51,7 +51,7 @@
     {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-11-15T19:51:00Z"
+      "zuletzt": "2026-11-17T19:50:50Z"
     },
     {
       "name": "Späher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-16T19:36:31Z"
+      "zuletzt": "2026-11-17T19:36:22Z"
     },
     {
       "name": "Stories",
-      "status": "ok",
-      "zuletzt": "2026-11-16T15:08:40Z"
+      "status": "error",
+      "zuletzt": "2026-11-17T15:08:43Z"
     },
     {
       "name": "Wachstums-Check",
