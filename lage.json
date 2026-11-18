@@ -1,12 +1,12 @@
 {
-  "stand": "2026-11-17T20:14:38Z",
-  "lagesatz": "98 Follower, nächster Post Do 19.11. um 19 Uhr. Die heutige Story ist ausgefallen, der Stories-Agent braucht ffmpeg.",
-  "parole": "Eine feine Linie wird nicht schneller, nur weil man drängt.",
+  "stand": "2026-11-18T20:14:52Z",
+  "lagesatz": "98 Follower, nächster Post Do 19.11. um 19 Uhr. Gehirn-Ansicht und Chronist sind seit über einem Tag nicht gelaufen.",
+  "parole": "Wer ruhig atmet, zieht die Linie ohne Zittern.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": -1,
-  "reach_30d": 287,
-  "views_30d": 2821,
+  "reach_30d": 286,
+  "views_30d": 2838,
   "naechste_posts": [
     {
       "slot_at": "2026-11-19T18:00:00Z",
@@ -31,12 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-17T06:20:00Z"
+      "zuletzt": "2026-11-17T20:21:00Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-17T16:54:27Z"
+      "zuletzt": "2026-11-18T16:54:10Z"
     },
     {
       "name": "Content-Planer",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-17T19:36:22Z"
+      "zuletzt": "2026-11-18T19:36:45Z"
     },
     {
       "name": "Stories",
-      "status": "error",
-      "zuletzt": "2026-11-17T15:08:43Z"
+      "status": "warn",
+      "zuletzt": "2026-11-17T20:20:25Z"
     },
     {
       "name": "Wachstums-Check",
