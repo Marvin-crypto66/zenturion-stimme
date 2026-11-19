@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-18T20:14:52Z",
-  "lagesatz": "98 Follower, nächster Post Do 19.11. um 19 Uhr. Gehirn-Ansicht und Chronist sind seit über einem Tag nicht gelaufen.",
-  "parole": "Wer ruhig atmet, zieht die Linie ohne Zittern.",
+  "stand": "2026-11-19T06:14:53Z",
+  "lagesatz": "98 Follower, nächster Post heute um 19 Uhr. Die Stories sind seit dem 17.11. abends nicht mehr gelaufen.",
+  "parole": "Eine feine Linie braucht mehr Geduld als Kraft.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": -1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-17T20:21:00Z"
+      "zuletzt": "2026-11-18T20:20:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-16T22:20:00Z"
+      "zuletzt": "2026-11-18T22:15:59Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-17T05:54:55Z"
+      "zuletzt": "2026-11-19T05:54:31Z"
     }
   ]
 }
