@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-19T06:14:53Z",
-  "lagesatz": "98 Follower, nächster Post heute um 19 Uhr. Die Stories sind seit dem 17.11. abends nicht mehr gelaufen.",
-  "parole": "Eine feine Linie braucht mehr Geduld als Kraft.",
+  "stand": "2026-11-19T20:16:11Z",
+  "lagesatz": "98 Follower, das Reel lief heute um 19 Uhr, nächster Post Samstag um 19 Uhr. Alle Agenten laufen ruhig.",
+  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": -1,
-  "reach_30d": 286,
-  "views_30d": 2838,
+  "reach_30d": 275,
+  "views_30d": 2774,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-19T18:00:00Z",
-      "titel": "ein normaler dienstag als zeichen"
-    },
     {
       "slot_at": "2026-11-21T18:00:00Z",
       "titel": "woran du ein bleibendes motiv erkennst"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-22T18:00:00Z",
       "titel": "wellenlinie als strecke"
+    },
+    {
+      "slot_at": "2026-11-24T18:00:00Z",
+      "titel": "neues zeichen, altes zeichen"
     }
   ],
   "jubilaeum": {
@@ -29,19 +29,14 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-18T20:20:00Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-18T16:54:10Z"
+      "zuletzt": "2026-11-19T16:56:00Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-15T10:55:52Z"
+      "zuletzt": "2026-11-19T06:24:00Z"
     },
     {
       "name": "Chronist",
@@ -49,14 +44,19 @@
       "zuletzt": "2026-11-18T22:15:59Z"
     },
     {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-19T10:54:40Z"
+    },
+    {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-11-17T19:50:50Z"
+      "zuletzt": "2026-11-19T19:51:00Z"
     },
     {
       "name": "Späher",
       "status": "ok",
-      "zuletzt": "2026-11-16T09:23:34Z"
+      "zuletzt": "2026-11-19T09:17:15Z"
     },
     {
       "name": "Wochenbericht",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-18T19:36:45Z"
+      "zuletzt": "2026-11-19T19:36:22Z"
     },
     {
       "name": "Stories",
-      "status": "warn",
-      "zuletzt": "2026-11-17T20:20:25Z"
+      "status": "ok",
+      "zuletzt": "2026-11-19T15:07:45Z"
     },
     {
       "name": "Wachstums-Check",
