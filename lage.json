@@ -1,12 +1,12 @@
 {
-  "stand": "2026-11-20T06:15:14Z",
-  "lagesatz": "98 Follower, nächster Post Samstag um 19 Uhr (Karussell). Alle Agenten laufen ruhig.",
-  "parole": "Eine feine Linie verzeiht keine Eile, aber sie wartet auf dich.",
+  "stand": "2026-11-20T20:15:00Z",
+  "lagesatz": "98 Follower, nächster Post morgen, Samstag, um 19 Uhr (Karussell). Alle Agenten laufen.",
+  "parole": "Wer ruhig zieht, muss eine Linie nur einmal ziehen.",
   "followers": 98,
   "ziel": 1000,
-  "delta_7d": -1,
-  "reach_30d": 275,
-  "views_30d": 2774,
+  "delta_7d": 0,
+  "reach_30d": 279,
+  "views_30d": 2795,
   "naechste_posts": [
     {
       "slot_at": "2026-11-21T18:00:00Z",
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-19T20:18:35Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-19T16:56:00Z"
+      "zuletzt": "2026-11-20T16:54:41Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-19T10:54:40Z"
+      "zuletzt": "2026-11-20T06:20:00Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
       "zuletzt": "2026-11-19T22:17:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-19T10:54:40Z"
     },
     {
       "name": "Veröffentlicher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-19T19:36:22Z"
+      "zuletzt": "2026-11-20T19:36:27Z"
     },
     {
       "name": "Stories",
-      "status": "ok",
-      "zuletzt": "2026-11-19T15:07:45Z"
+      "status": "warn",
+      "zuletzt": "2026-11-20T15:11:47Z"
     },
     {
       "name": "Wachstums-Check",
