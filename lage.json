@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-19T20:16:11Z",
-  "lagesatz": "98 Follower, das Reel lief heute um 19 Uhr, nächster Post Samstag um 19 Uhr. Alle Agenten laufen ruhig.",
-  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
+  "stand": "2026-11-20T06:15:14Z",
+  "lagesatz": "98 Follower, nächster Post Samstag um 19 Uhr (Karussell). Alle Agenten laufen ruhig.",
+  "parole": "Eine feine Linie verzeiht keine Eile, aber sie wartet auf dich.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": -1,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-11-19T20:18:35Z"
+    },
+    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-19T16:56:00Z"
     },
     {
-      "name": "Kommandant",
+      "name": "Content-Planer",
       "status": "ok",
-      "zuletzt": "2026-11-19T06:24:00Z"
+      "zuletzt": "2026-11-19T10:54:40Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-18T22:15:59Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-11-19T10:54:40Z"
+      "zuletzt": "2026-11-19T22:17:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-19T05:54:31Z"
+      "zuletzt": "2026-11-20T05:54:36Z"
     }
   ]
 }
