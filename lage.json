@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-20T20:15:00Z",
-  "lagesatz": "98 Follower, nächster Post morgen, Samstag, um 19 Uhr (Karussell). Alle Agenten laufen.",
-  "parole": "Wer ruhig zieht, muss eine Linie nur einmal ziehen.",
+  "stand": "2026-11-21T06:14:42Z",
+  "lagesatz": "98 Follower, alle Agenten bereit. Heute um 19 Uhr kommt das Karussell „woran du ein bleibendes motiv erkennst“.",
+  "parole": "Eine feine Linie verzeiht keine Eile, nur Geduld.",
   "followers": 98,
   "ziel": 1000,
   "delta_7d": 0,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
+      "name": "Kommandant",
+      "status": "ok",
+      "zuletzt": "2026-11-20T20:21:00Z"
+    },
+    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-20T16:54:41Z"
     },
     {
-      "name": "Kommandant",
+      "name": "Content-Planer",
       "status": "ok",
-      "zuletzt": "2026-11-20T06:20:00Z"
+      "zuletzt": "2026-11-19T10:54:40Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-19T22:17:00Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-11-19T10:54:40Z"
+      "zuletzt": "2026-11-20T22:17:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-20T05:54:36Z"
+      "zuletzt": "2026-11-21T05:53:00Z"
     }
   ]
 }
