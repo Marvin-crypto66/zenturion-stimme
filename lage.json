@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-21T21:05:31Z",
+  "stand": "2026-11-21T21:08:21Z",
   "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr kommt das Karussell „wellenlinie als strecke“.",
-  "parole": "Geduld ist die Hälfte jeder sauberen Linie.",
+  "parole": "Eine ruhige Hand braucht keinen zweiten Strich.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-21T20:16:00Z"
+      "zuletzt": "2026-11-21T21:08:00Z"
     },
     {
       "name": "Tagesrunde",
