@@ -1158,11 +1158,27 @@ function getKey(){ try { return normKey(localStorage.getItem(KEYSTORE) || ""); }
 function setKey(k){ try { if (k) localStorage.setItem(KEYSTORE, k); else localStorage.removeItem(KEYSTORE); } catch {} }
 async function fetchJson(f){ const r = await fetch(f + "?t=" + Date.now(), { cache: "no-store" }); if (!r.ok){ const e = new Error(f + " " + r.status); e.missing = r.status === 404; throw e; } return r.json(); }
 const b64 = (x) => Uint8Array.from(atob(x), c => c.charCodeAt(0));
-async function unseal(box, pass){
+async function aesOpen(box, pass){
   const km = await crypto.subtle.importKey("raw", new TextEncoder().encode(pass), "PBKDF2", false, ["deriveKey"]);
   const key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt: b64(box.salt), iterations: box.iter || 150000, hash: "SHA-256" }, km, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
-  const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(box.iv) }, key, b64(box.ct));
-  return JSON.parse(new TextDecoder().decode(pt));
+  return crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(box.iv) }, key, b64(box.ct));
+}
+/* Ab Version 2 verschlüsselt der Kommandant mit dem öffentlichen Schlüssel der Zentrale. Den privaten Schlüssel
+   (schluessel.json) öffnet nur dein Schlüssel, deshalb braucht der Kommandant deinen Schlüssel nicht mehr. */
+let PRIV = null, PRIVPASS = null;
+async function privKey(pass){
+  if (PRIV && PRIVPASS === pass) return PRIV;
+  const raw = await aesOpen(await fetchJson("schluessel.json"), pass);
+  PRIV = await crypto.subtle.importKey("pkcs8", raw, { name: "RSA-OAEP", hash: "SHA-256" }, false, ["decrypt"]); PRIVPASS = pass;
+  return PRIV;
+}
+async function unseal(box, pass){
+  if (box && box.v === 2){
+    const aes = await crypto.subtle.decrypt({ name: "RSA-OAEP" }, await privKey(pass), b64(box.ek));
+    const key = await crypto.subtle.importKey("raw", aes, "AES-GCM", false, ["decrypt"]);
+    return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(box.iv) }, key, b64(box.ct))));
+  }
+  return JSON.parse(new TextDecoder().decode(await aesOpen(box, pass)));
 }
 const LABEL2ID = { "Kommandant": "kommandant", "Chronist": "chronist", "Späher": "spaeher", "Schatzmeister": "schatzmeister", "Tagesrunde": "daily", "Content-Planer": "content", "Veröffentlicher": "publisher", "Wochenbericht": "report", "Kommentare": "comments", "Stories": "stories", "Wachstums-Check": "wachstum", "Wachstum": "wachstum", "Gehirn-Ansicht": "gehirn", "Gehirn": "gehirn" };
 const ZEN = new Set(["kommandant", "chronist", "spaeher", "schatzmeister"]);
@@ -1223,7 +1239,7 @@ document.addEventListener("submit", async (e) => {
   }
   if (bad && !ok){ er.hidden = false; er.textContent = "Der Schlüssel passt nicht."; return; }
   if (!ok){ er.hidden = false; er.textContent = "Gerade sind keine Daten zum Prüfen da. Versuch es gleich noch einmal."; return; }
-  $("keyIn").value = "";
+  $("keyIn").value = ""; $("keyIn").blur();
   setKey(k);
   toast("Entsperrt.");
   load();
