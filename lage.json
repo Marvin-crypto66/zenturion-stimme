@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-21T21:08:21Z",
+  "stand": "2026-11-21T21:14:29Z",
   "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr kommt das Karussell „wellenlinie als strecke“.",
-  "parole": "Eine ruhige Hand braucht keinen zweiten Strich.",
+  "parole": "Feine Linien entstehen dort, wo niemand drängt.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-21T21:08:00Z"
+      "zuletzt": "2026-11-21T21:14:29Z"
     },
     {
       "name": "Tagesrunde",
