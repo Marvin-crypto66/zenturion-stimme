@@ -1176,7 +1176,9 @@ async function unseal(box, pass){
   if (box && box.v === 2){
     const aes = await crypto.subtle.decrypt({ name: "RSA-OAEP" }, await privKey(pass), b64(box.ek));
     const key = await crypto.subtle.importKey("raw", aes, "AES-GCM", false, ["decrypt"]);
-    return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(box.iv) }, key, b64(box.ct))));
+    const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(box.iv) }, key, b64(box.ct));
+    if (box.z === "gzip") return JSON.parse(await new Response(new Blob([pt]).stream().pipeThrough(new DecompressionStream("gzip"))).text());
+    return JSON.parse(new TextDecoder().decode(pt));
   }
   return JSON.parse(new TextDecoder().decode(await aesOpen(box, pass)));
 }
