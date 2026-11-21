@@ -230,7 +230,7 @@ function greet(){
   const g = h < 5 ? "Gute Nacht" : h < 11 ? "Guten Morgen" : h < 17 ? "Guten Tag" : h < 22 ? "Guten Abend" : "Gute Nacht";
   $("hello").innerHTML = g + ", <em>Marvin</em>";
   const now = new Date();
-  $("meta").textContent = dtf(now, { weekday: "short", day: "2-digit", month: "2-digit" }) + " · " + dtf(now, { hour: "2-digit", minute: "2-digit" }) + (L?.stand ? " · Lage " + dtf(new Date(L.stand), { hour: "2-digit", minute: "2-digit" }) : "");
+  $("meta").textContent = dtf(now, { weekday: "short", day: "2-digit", month: "2-digit" }) + " · " + dtf(now, { hour: "2-digit", minute: "2-digit" }) + (L?.stand && Number.isFinite(+new Date(L.stand)) ? " · Lage " + dtf(new Date(L.stand), { weekday: "short", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) + (Date.now() - Date.parse(L.stand) > 26 * 3600e3 ? " (veraltet)" : "") : "");
 }
 function renderLage(){
   greet();

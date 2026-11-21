@@ -429,7 +429,8 @@ const SERVER = "Claude Code Remote";
 const fmt = (n) => (n == null || isNaN(n)) ? "–" : Number(n).toLocaleString("de-DE");
 const eur = (n) => (n == null || isNaN(n)) ? "–" : Number(n).toLocaleString("de-DE", { maximumFractionDigits: 0 }) + " €";
 const dtf = (d, o) => new Intl.DateTimeFormat("de-DE", Object.assign({ timeZone: TZ }, o)).format(d);
-const hm = (t) => dtf(new Date(t), { hour: "2-digit", minute: "2-digit" });
+const okT = (t) => t != null && t !== "" && Number.isFinite(+new Date(t));
+const hm = (t) => okT(t) ? dtf(new Date(t), { hour: "2-digit", minute: "2-digit" }) : "–";
 function ago(iso){
   if (!iso) return "noch nie";
   const t = Date.parse(iso); if (isNaN(t)) return "–";
@@ -446,25 +447,26 @@ function until(t){
   return dtf(new Date(t), { weekday: "short" }) + " " + hm(t);
 }
 function when(t){
+  if (!okT(t)) return "–";
   const d = new Date(t), today = bParts(Date.now()), b = bParts(t);
   const same = today.y === b.y && today.m === b.m && today.d === b.d;
   const tom = bParts(Date.now() + 864e5);
   const isTom = tom.y === b.y && tom.m === b.m && tom.d === b.d;
   return (same ? "heute " : isTom ? "morgen " : dtf(d, { weekday: "short", day: "2-digit", month: "2-digit" }) + " ") + hm(t);
 }
-function shortWhen(t){ const a = bParts(Date.now()), b = bParts(t); return a.y === b.y && a.m === b.m && a.d === b.d ? hm(t) : dtf(new Date(t), { weekday: "short" }) + " " + hm(t); }
+function shortWhen(t){ if (!okT(t)) return "–"; const a = bParts(Date.now()), b = bParts(t); return a.y === b.y && a.m === b.m && a.d === b.d ? hm(t) : dtf(new Date(t), { weekday: "short" }) + " " + hm(t); }
 let toastT;
 function toast(msg){ const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, 3400); }
 
 /* Berliner Zeit ohne Bibliothek */
 const PF = new Intl.DateTimeFormat("en-US", { timeZone: TZ, hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit" });
-function bParts(t){ const o = {}; PF.formatToParts(new Date(t)).forEach(x => o[x.type] = x.value); return { y: +o.year, m: +o.month, d: +o.day, h: +o.hour, mi: +o.minute, s: +o.second }; }
+function bParts(t){ if (!okT(t)) t = Date.now(); const o = {}; PF.formatToParts(new Date(t)).forEach(x => o[x.type] = x.value); return { y: +o.year, m: +o.month, d: +o.day, h: +o.hour, mi: +o.minute, s: +o.second }; }
 function offAt(t){ const b = bParts(t); return Date.UTC(b.y, b.m - 1, b.d, b.h, b.mi, b.s) - Math.floor(t / 1000) * 1000; }
 function berlin(y, m, d, h, mi){ const g = Date.UTC(y, m - 1, d, h, mi); let t = g - offAt(g); t = g - offAt(t); return t; }
 
 /* Takt der Agenten (Berliner Zeit; Wochentage 0 = Sonntag) */
 const SCHED = {
-  kommandant: { t: ["07:14","13:14","21:14"] },
+  kommandant: { t: ["07:14","21:14"] },
   chronist: { t: ["23:12"] },
   spaeher: { w: [1,4], t: ["10:12"] },
   schatzmeister: { w: [0], t: ["18:12"] },
@@ -473,9 +475,9 @@ const SCHED = {
   publisher: { w: [2,4,6,0], t: ["18:50"] },
   report: { w: [0], t: ["19:40"] },
   comments: { t: ["12:35","20:35"] },
-  stories: { t: ["12:05","20:05","22:05"], von: "2026-10-14", bis: "2026-10-31" },
+  stories: { t: ["12:05","16:05"], von: "2026-11-03" },
   wachstum: { w: [1], t: ["08:41"] },
-  gehirn: { t: ["06:50","21:50"] }
+  gehirn: { t: ["06:50"] }
 };
 function slotsOn(id, y, m, d){
   const s = SCHED[id]; if (!s) return [];
@@ -496,7 +498,7 @@ const ACCESS = {
   content: { liest: ["Marke/Ziel und Mandat","Marke/Wachstumsplan","Marke/Stimme","Marke/Säulen und Rhythmus","Marke/Harte Regeln","Gelerntes/Was funktioniert","Gelerntes/Was nicht funktioniert","Posts/Übersicht","Ideen/Von Marvin","Ideen/Ideenspeicher","Entscheidungen/Entscheidungslog"], schreibt: ["Ideen/Ideenspeicher","Ideen/Von Marvin","Posts/Übersicht"] },
   publisher: { liest: ["Posts/Vorlage"], schreibt: ["Posts/","Posts/Übersicht","Gelerntes/Technik Instagram"] },
   report: { liest: ["Gelerntes/","Posts/","Zahlen/","Tage/","Ideen/","Wochen/"], schreibt: ["Wochen/","Gelerntes/Was funktioniert","Gelerntes/Was nicht funktioniert","Ideen/Vorschläge der Agenten","Marke/Wachstumsplan","Entscheidungen/Entscheidungslog","01 Index"] },
-  stories: { liest: ["Aktionen/Jubiläum 2026"], schreibt: ["Aktionen/Jubiläum 2026"] },
+  stories: { liest: ["00 Start","Gelerntes/Marvins Ton"], schreibt: [] },
   gehirn: { liest: ["*"], schreibt: ["Gehirn Ansicht"] },
   kommandant: { liest: ["00 Start","Ideen/Von Marvin"], schreibt: ["Ideen/Von Marvin"], merkt: true },
   chronist: { liest: ["00 Start","01 Index"], schreibt: ["Zenturion/","01 Index"], merkt: true },
@@ -709,11 +711,12 @@ function memShape(n, x, y, r, col, fill){
   else if (art === "beobachtung"){ cx.beginPath(); cx.moveTo(x - r, y); cx.lineTo(x + r, y); cx.moveTo(x, y - r); cx.lineTo(x, y + r); cx.stroke(); }
   else { cx.beginPath(); cx.arc(x, y, r, 0, 6.283); cx.fill(); cx.stroke(); }
 }
-let running = true;
+let running = true, rafId = 0;
+function loopRAF(){ cancelAnimationFrame(rafId); rafId = requestAnimationFrame(frame); }
 function frame(ts){
   const T = reduced ? 0 : ts / 1000;
   cx.clearRect(0, 0, W, H);
-  if (!G.nodes.length){ if (!reduced && running) requestAnimationFrame(frame); return; }
+  if (!G.nodes.length){ if (!reduced && running) loopRAF(); return; }
   const F = focusSet();
   const dim = (id) => F && !F.has(id);
   // Regionen
@@ -822,12 +825,12 @@ function frame(ts){
   // Ring um die Auswahl
   const s = G.byId.get(selId);
   if (s && s.kind !== "core"){ cx.strokeStyle = C.ink; cx.lineWidth = 1.2; cx.setLineDash([3, 3]); cx.beginPath(); cx.arc(s.x, s.y, s.r + 6, 0, 6.283); cx.stroke(); cx.setLineDash([]); }
-  if (running && !reduced) requestAnimationFrame(frame);
+  if (running && !reduced) loopRAF();
 }
 const core = () => G.byId.get("z") || { x: W / 2, y: H / 2, r: 18 };
-function redraw(){ if (reduced || !running) requestAnimationFrame(frame); }
-document.addEventListener("visibilitychange", () => { const was = running; running = document.visibilityState === "visible"; if (running && !was && !reduced) requestAnimationFrame(frame); });
-requestAnimationFrame(frame);
+function redraw(){ if (reduced || !running) loopRAF(); }
+document.addEventListener("visibilitychange", () => { const was = running; running = document.visibilityState === "visible"; if (running && !was && !reduced) loopRAF(); });
+loopRAF();
 
 /* Antippen und Überfahren */
 function hit(px, py){
@@ -864,6 +867,7 @@ function select(id, scroll){
 /* ---------- Detailblatt ---------- */
 function chipsFor(ids, cls){ return ids.map(id => { const n = G.byId.get(id); if (!n) return ""; const lab = n.kind === "note" ? n.ref.titel : n.kind === "agent" ? n.ref.label : String(n.ref?.text || "").slice(0, 40); return `<button class="chip ${cls}" data-sel="${esc(id)}">${esc(lab)}</button>`; }).join(""); }
 function renderDetail(){
+  const kin = $("keyIn"); if (kin && (document.activeElement === kin || kin.value)) return;
   const el = $("detail"), id = S.sel, n = id && G.byId.get(id);
   if (!n){ el.innerHTML = coreDetail(); return; }
   if (n.kind === "agent"){
@@ -1088,7 +1092,7 @@ function renderWatch(){
   const L = S.lage, st = $("wState"), tx = $("wText");
   const bad = S.legion.filter(a => a.last_status === "error");
   if (!L){ st.className = "state warn"; tx.textContent = "wartet auf die Lage"; return; }
-  const age = (Date.now() - Date.parse(L.updated_at)) / 3600e3;
+  const pa = Date.parse(L.updated_at), age = isNaN(pa) ? Infinity : (Date.now() - pa) / 3600e3;
   st.className = "state" + (bad.length ? " bad" : age > 14 ? " warn" : "");
   tx.textContent = bad.length ? bad.length + " Agent mit Fehler" : age > 14 ? "Wache verspätet" : "Wache aktiv";
   $("wLage").textContent = "Lage " + ago(L.updated_at);
@@ -1099,7 +1103,7 @@ function renderWatch(){
 function clock(){ $("clock").textContent = dtf(new Date(), { weekday: "long", hour: "2-digit", minute: "2-digit" }); }
 clock(); setInterval(clock, 20000);
 function renderChart(){
-  const svg = $("chart"), v = S.lage?.verlauf;
+  const svg = $("chart"), v = Array.isArray(S.lage?.verlauf) ? S.lage.verlauf.map(Number).filter(Number.isFinite) : null;
   if (!svg || $("p-lage").hidden) return;
   if (!v || v.length < 2){ svg.innerHTML = ""; $("chartNote").textContent = "Der Verlauf erscheint, sobald zwei Tage gezählt sind."; return; }
   const w = svg.clientWidth || 500, h = 170, pl = 34, pr = 34, pt = 12, pb = 24;
@@ -1218,8 +1222,10 @@ document.addEventListener("submit", async (e) => {
     try { await unseal(await fetchJson(f), k); ok = true; none = false; } catch (x) { if (x.name === "OperationError"){ bad = true; none = false; } }
   }
   if (bad && !ok){ er.hidden = false; er.textContent = "Der Schlüssel passt nicht."; return; }
+  if (!ok){ er.hidden = false; er.textContent = "Gerade sind keine Daten zum Prüfen da. Versuch es gleich noch einmal."; return; }
+  $("keyIn").value = "";
   setKey(k);
-  toast(none ? "Gespeichert. Die verschlüsselten Daten kommen mit dem nächsten Lauf des Kommandanten." : "Entsperrt.");
+  toast("Entsperrt.");
   load();
 });
 setInterval(() => { if (document.visibilityState === "visible") load(); }, 5 * 60 * 1000);
