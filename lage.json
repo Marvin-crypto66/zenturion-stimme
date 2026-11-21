@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-21T06:14:42Z",
-  "lagesatz": "98 Follower, alle Agenten bereit. Heute um 19 Uhr kommt das Karussell „woran du ein bleibendes motiv erkennst“.",
-  "parole": "Eine feine Linie verzeiht keine Eile, nur Geduld.",
-  "followers": 98,
+  "stand": "2026-11-21T20:16:00Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr kommt das Karussell „wellenlinie als strecke“.",
+  "parole": "Wer ruhig atmet, zieht die Linie gerader.",
+  "followers": 99,
   "ziel": 1000,
-  "delta_7d": 0,
-  "reach_30d": 279,
-  "views_30d": 2795,
+  "delta_7d": 1,
+  "reach_30d": 281,
+  "views_30d": 2764,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-21T18:00:00Z",
-      "titel": "woran du ein bleibendes motiv erkennst"
-    },
     {
       "slot_at": "2026-11-22T18:00:00Z",
       "titel": "wellenlinie als strecke"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-24T18:00:00Z",
       "titel": "neues zeichen, altes zeichen"
+    },
+    {
+      "slot_at": "2026-11-26T18:00:00Z",
+      "titel": "zeichen für die ganze familie"
     }
   ],
   "jubilaeum": {
@@ -31,17 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-20T20:21:00Z"
+      "zuletzt": "2026-11-21T20:16:00Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-20T16:54:41Z"
-    },
-    {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-11-19T10:54:40Z"
+      "zuletzt": "2026-11-21T16:54:55Z"
     },
     {
       "name": "Chronist",
@@ -49,9 +44,9 @@
       "zuletzt": "2026-11-20T22:17:00Z"
     },
     {
-      "name": "Veröffentlicher",
+      "name": "Content-Planer",
       "status": "ok",
-      "zuletzt": "2026-11-19T19:51:00Z"
+      "zuletzt": "2026-11-19T10:54:40Z"
     },
     {
       "name": "Späher",
@@ -59,9 +54,9 @@
       "zuletzt": "2026-11-19T09:17:15Z"
     },
     {
-      "name": "Wochenbericht",
+      "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-11-15T18:52:00Z"
+      "zuletzt": "2026-11-21T19:51:00Z"
     },
     {
       "name": "Schatzmeister",
@@ -69,14 +64,19 @@
       "zuletzt": "2026-11-15T17:13:05Z"
     },
     {
+      "name": "Wochenbericht",
+      "status": "ok",
+      "zuletzt": "2026-11-15T18:52:00Z"
+    },
+    {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-20T19:36:27Z"
+      "zuletzt": "2026-11-21T19:36:10Z"
     },
     {
       "name": "Stories",
-      "status": "warn",
-      "zuletzt": "2026-11-20T15:11:47Z"
+      "status": "ok",
+      "zuletzt": "2026-11-21T15:06:40Z"
     },
     {
       "name": "Wachstums-Check",
