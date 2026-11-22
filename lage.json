@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-22T06:16:14Z",
-  "lagesatz": "99 Follower, alle Agenten bereit. Heute um 19 Uhr kommt das Karussell „wellenlinie als strecke“.",
-  "parole": "Eine feine Linie entsteht aus vielen ruhigen Atemzügen.",
+  "stand": "2026-11-22T20:14:38Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Am Dienstag um 19 Uhr kommt das Reel „neues zeichen, altes zeichen“.",
+  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 281,
-  "views_30d": 2764,
+  "reach_30d": 284,
+  "views_30d": 2844,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-22T18:00:00Z",
-      "titel": "wellenlinie als strecke"
-    },
     {
       "slot_at": "2026-11-24T18:00:00Z",
       "titel": "neues zeichen, altes zeichen"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-26T18:00:00Z",
       "titel": "zeichen für die ganze familie"
+    },
+    {
+      "slot_at": "2026-11-28T18:00:00Z",
+      "titel": "was aus diesem jahr bleiben soll"
     }
   ],
   "jubilaeum": {
@@ -29,14 +29,19 @@
   },
   "legion": [
     {
-      "name": "Tagesrunde",
-      "status": "ok",
-      "zuletzt": "2026-11-21T16:54:55Z"
-    },
-    {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-21T21:20:25Z"
+      "zuletzt": "2026-11-22T06:22:00Z"
+    },
+    {
+      "name": "Tagesrunde",
+      "status": "ok",
+      "zuletzt": "2026-11-22T16:54:40Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-22T10:54:55Z"
     },
     {
       "name": "Chronist",
@@ -44,14 +49,9 @@
       "zuletzt": "2026-11-21T22:20:00Z"
     },
     {
-      "name": "Content-Planer",
-      "status": "ok",
-      "zuletzt": "2026-11-19T10:54:40Z"
-    },
-    {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-11-21T19:51:00Z"
+      "zuletzt": "2026-11-22T19:51:00Z"
     },
     {
       "name": "Späher",
@@ -61,22 +61,22 @@
     {
       "name": "Wochenbericht",
       "status": "ok",
-      "zuletzt": "2026-11-15T18:52:00Z"
+      "zuletzt": "2026-11-22T18:55:03Z"
     },
     {
       "name": "Schatzmeister",
       "status": "ok",
-      "zuletzt": "2026-11-15T17:13:05Z"
+      "zuletzt": "2026-11-22T17:12:50Z"
     },
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-21T19:36:10Z"
+      "zuletzt": "2026-11-22T19:36:15Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-21T15:06:40Z"
+      "zuletzt": "2026-11-22T15:06:24Z"
     },
     {
       "name": "Wachstums-Check",
