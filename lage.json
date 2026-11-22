@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-21T21:20:25Z",
-  "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr kommt das Karussell „wellenlinie als strecke“.",
-  "parole": "Was bleiben soll, bekommt Zeit und eine ruhige Hand.",
+  "stand": "2026-11-22T06:16:14Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Heute um 19 Uhr kommt das Karussell „wellenlinie als strecke“.",
+  "parole": "Eine feine Linie entsteht aus vielen ruhigen Atemzügen.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-21T21:20:25Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-21T16:54:55Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-19T10:54:40Z"
+      "zuletzt": "2026-11-21T21:20:25Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-20T22:17:00Z"
+      "zuletzt": "2026-11-21T22:20:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-19T10:54:40Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-21T05:53:00Z"
+      "zuletzt": "2026-11-22T05:54:27Z"
     }
   ]
 }
