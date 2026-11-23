@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-22T20:14:38Z",
+  "stand": "2026-11-23T06:16:54Z",
   "lagesatz": "99 Follower, alle Agenten bereit. Am Dienstag um 19 Uhr kommt das Reel „neues zeichen, altes zeichen“.",
-  "parole": "Wer langsam zieht, zieht die Linie nur einmal.",
+  "parole": "Eine ruhige Hand braucht keinen lauten Tag.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-22T06:22:00Z"
+      "zuletzt": "2026-11-22T20:20:00Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-21T22:20:00Z"
+      "zuletzt": "2026-11-22T22:16:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-22T05:54:27Z"
+      "zuletzt": "2026-11-23T05:54:26Z"
     }
   ]
 }
