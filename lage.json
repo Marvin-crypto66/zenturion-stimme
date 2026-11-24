@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-23T20:15:08Z",
-  "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr kommt das Reel „neues zeichen, altes zeichen“.",
-  "parole": "Feine Linien entstehen dort, wo niemand drängt.",
+  "stand": "2026-11-24T06:14:40Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Heute um 19 Uhr kommt das Reel „neues zeichen, altes zeichen“.",
+  "parole": "Eine ruhige Hand zieht jede Linie nur einmal.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-22T22:16:00Z"
+      "zuletzt": "2026-11-23T22:16:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-23T05:54:26Z"
+      "zuletzt": "2026-11-24T05:54:29Z"
     }
   ]
 }
