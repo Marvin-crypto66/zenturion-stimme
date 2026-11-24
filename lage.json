@@ -1,17 +1,13 @@
 {
-  "stand": "2026-11-24T06:14:40Z",
-  "lagesatz": "99 Follower, alle Agenten bereit. Heute um 19 Uhr kommt das Reel „neues zeichen, altes zeichen“.",
-  "parole": "Eine ruhige Hand zieht jede Linie nur einmal.",
+  "stand": "2026-11-24T20:15:08Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Das Reel von heute ist online, Donnerstag um 19 Uhr folgt das Karussell „zeichen für die ganze familie“.",
+  "parole": "Wer langsam zieht, muss die Linie nicht zweimal ziehen.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 285,
-  "views_30d": 2921,
+  "reach_30d": 281,
+  "views_30d": 2903,
   "naechste_posts": [
-    {
-      "slot_at": "2026-11-24T18:00:00Z",
-      "titel": "neues zeichen, altes zeichen"
-    },
     {
       "slot_at": "2026-11-26T18:00:00Z",
       "titel": "zeichen für die ganze familie"
@@ -19,6 +15,10 @@
     {
       "slot_at": "2026-11-28T18:00:00Z",
       "titel": "was aus diesem jahr bleiben soll"
+    },
+    {
+      "slot_at": "2026-11-29T18:00:00Z",
+      "titel": "wort aus der gegend als zeichen"
     }
   ],
   "jubilaeum": {
@@ -31,12 +31,12 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-23T20:15:08Z"
+      "zuletzt": "2026-11-24T06:14:40Z"
     },
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-23T16:54:44Z"
+      "zuletzt": "2026-11-24T16:55:15Z"
     },
     {
       "name": "Content-Planer",
@@ -51,7 +51,7 @@
     {
       "name": "Veröffentlicher",
       "status": "ok",
-      "zuletzt": "2026-11-22T19:51:00Z"
+      "zuletzt": "2026-11-24T19:51:00Z"
     },
     {
       "name": "Späher",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-23T19:36:40Z"
+      "zuletzt": "2026-11-24T19:36:16Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-23T15:08:05Z"
+      "zuletzt": "2026-11-24T15:07:07Z"
     },
     {
       "name": "Wachstums-Check",
