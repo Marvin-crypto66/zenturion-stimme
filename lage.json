@@ -1,12 +1,12 @@
 {
-  "stand": "2026-11-25T06:15:03Z",
+  "stand": "2026-11-25T20:16:43Z",
   "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr folgt das Karussell „zeichen für die ganze familie“.",
-  "parole": "Die feinste Linie entsteht aus dem ruhigsten Atem.",
+  "parole": "Wer langsam zieht, bekommt die klarere Linie.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
-  "reach_30d": 281,
-  "views_30d": 2903,
+  "reach_30d": 299,
+  "views_30d": 2979,
   "naechste_posts": [
     {
       "slot_at": "2026-11-26T18:00:00Z",
@@ -36,7 +36,7 @@
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-24T16:55:15Z"
+      "zuletzt": "2026-11-25T16:54:58Z"
     },
     {
       "name": "Content-Planer",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-24T19:36:16Z"
+      "zuletzt": "2026-11-25T19:36:14Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-24T15:07:07Z"
+      "zuletzt": "2026-11-25T15:06:59Z"
     },
     {
       "name": "Wachstums-Check",
