@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-24T20:15:08Z",
-  "lagesatz": "99 Follower, alle Agenten bereit. Das Reel von heute ist online, Donnerstag um 19 Uhr folgt das Karussell „zeichen für die ganze familie“.",
-  "parole": "Wer langsam zieht, muss die Linie nicht zweimal ziehen.",
+  "stand": "2026-11-25T06:15:03Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr folgt das Karussell „zeichen für die ganze familie“.",
+  "parole": "Die feinste Linie entsteht aus dem ruhigsten Atem.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -31,7 +31,7 @@
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-24T06:14:40Z"
+      "zuletzt": "2026-11-25T06:15:03Z"
     },
     {
       "name": "Tagesrunde",
@@ -46,7 +46,7 @@
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-23T22:16:00Z"
+      "zuletzt": "2026-11-24T22:17:00Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-24T05:54:29Z"
+      "zuletzt": "2026-11-25T05:53:00Z"
     }
   ]
 }
