@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-25T20:16:43Z",
-  "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr folgt das Karussell „zeichen für die ganze familie“.",
-  "parole": "Wer langsam zieht, bekommt die klarere Linie.",
+  "stand": "2026-11-26T06:16:34Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Heute um 19 Uhr kommt das Karussell „zeichen für die ganze familie“.",
+  "parole": "Eine feine Linie wächst nicht schneller, wenn man drückt.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-25T06:15:03Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-25T16:54:58Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-22T10:54:55Z"
+      "zuletzt": "2026-11-26T06:16:34Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-24T22:17:00Z"
+      "zuletzt": "2026-11-25T22:16:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-22T10:54:55Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-25T05:53:00Z"
+      "zuletzt": "2026-11-26T05:54:36Z"
     }
   ]
 }
