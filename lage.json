@@ -1,12 +1,12 @@
 {
-  "stand": "2026-11-27T06:16:58Z",
-  "lagesatz": "99 Follower, alle Agenten bereit. Am Samstag um 19 Uhr kommt das Reel „was aus diesem jahr bleiben soll“.",
-  "parole": "Eine feine Linie braucht Zeit, keine Eile.",
+  "stand": "2026-11-27T20:15:07Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Morgen um 19 Uhr kommt das Reel „was aus diesem jahr bleiben soll“.",
+  "parole": "Ruhige Hände ziehen die Linie, die bleibt.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
   "reach_30d": 300,
-  "views_30d": 3043,
+  "views_30d": 3106,
   "naechste_posts": [
     {
       "slot_at": "2026-11-28T18:00:00Z",
@@ -31,12 +31,12 @@
     {
       "name": "Tagesrunde",
       "status": "ok",
-      "zuletzt": "2026-11-26T16:54:59Z"
+      "zuletzt": "2026-11-27T16:55:30Z"
     },
     {
       "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-26T20:15:03Z"
+      "zuletzt": "2026-11-27T06:21:35Z"
     },
     {
       "name": "Chronist",
@@ -71,12 +71,12 @@
     {
       "name": "Kommentare",
       "status": "ok",
-      "zuletzt": "2026-11-26T19:35:53Z"
+      "zuletzt": "2026-11-27T19:36:15Z"
     },
     {
       "name": "Stories",
       "status": "ok",
-      "zuletzt": "2026-11-26T15:06:41Z"
+      "zuletzt": "2026-11-27T15:06:36Z"
     },
     {
       "name": "Wachstums-Check",
