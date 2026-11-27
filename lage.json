@@ -1,7 +1,7 @@
 {
-  "stand": "2026-11-26T20:15:03Z",
-  "lagesatz": "99 Follower, alle Agenten bereit. Das Karussell von heute ist online, am Samstag um 19 Uhr kommt das Reel „was aus diesem jahr bleiben soll“.",
-  "parole": "Ruhige Hände ziehen die Linie, die bleibt.",
+  "stand": "2026-11-27T06:16:58Z",
+  "lagesatz": "99 Follower, alle Agenten bereit. Am Samstag um 19 Uhr kommt das Reel „was aus diesem jahr bleiben soll“.",
+  "parole": "Eine feine Linie braucht Zeit, keine Eile.",
   "followers": 99,
   "ziel": 1000,
   "delta_7d": 1,
@@ -29,24 +29,24 @@
   },
   "legion": [
     {
-      "name": "Kommandant",
-      "status": "ok",
-      "zuletzt": "2026-11-26T06:16:34Z"
-    },
-    {
       "name": "Tagesrunde",
       "status": "ok",
       "zuletzt": "2026-11-26T16:54:59Z"
     },
     {
-      "name": "Content-Planer",
+      "name": "Kommandant",
       "status": "ok",
-      "zuletzt": "2026-11-26T10:59:30Z"
+      "zuletzt": "2026-11-26T20:15:03Z"
     },
     {
       "name": "Chronist",
       "status": "ok",
-      "zuletzt": "2026-11-25T22:16:00Z"
+      "zuletzt": "2026-11-26T22:16:00Z"
+    },
+    {
+      "name": "Content-Planer",
+      "status": "ok",
+      "zuletzt": "2026-11-26T10:59:30Z"
     },
     {
       "name": "Veröffentlicher",
@@ -86,7 +86,7 @@
     {
       "name": "Gehirn-Ansicht",
       "status": "ok",
-      "zuletzt": "2026-11-26T05:54:36Z"
+      "zuletzt": "2026-11-27T05:55:32Z"
     }
   ]
 }
